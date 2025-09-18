@@ -1,0 +1,165 @@
+#root {
+  width: 100%;     /* full width */
+  max-width: 100%; /* don’t constrain */
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  place-items: center;
+  overflow-x: hidden;
+}
+.responsive-row {
+  flex-wrap: wrap;         /* allow wrapping */
+  width: 100%;             /* never exceed parent */
+  box-sizing: border-box;  /* respect padding */
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+/* Small helpers and responsive rules */
+
+/* keep nav-links visible by default; mobile will hide it */
+.nav-links {
+  display: flex;
+}
+
+/* hide mobile icon by default on desktop */
+.mobile-menu-icon {
+  display: none;
+}
+
+/* overlay styling fallback (most inline styles in JSX already set) */
+.mobile-nav-overlay ul a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Hero & typography tweaks */
+.hero-title {
+  /* desktop font-size is inline (50px). We only override on small screens */
+  line-height: 1.05;
+}
+
+.hero-kicker {
+  line-height: 1;
+}
+
+/* Make all .responsive-row stack on mobile */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 40px !important;
+  }
+}
+
+/* Mobile / narrow screens */
+@media (max-width: 768px) {
+  .responsive-row {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    align-items: stretch !important;
+  }
+
+  .responsive-row > div {
+    width: 100% !important;
+  }
+
+  .responsive-row img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Make hero flexible on mobile (so text won't overflow) */
+  .hero-section {
+    height: auto !important;
+    padding: 3rem 1rem !important;
+    min-height: 60vh;
+  }
+
+  .hero-title {
+    font-size: 2rem !important;
+  }
+
+  .hero-kicker {
+    font-size: 1rem !important;
+  }
+
+  .hero-section p {
+    font-size: 0.95rem !important;
+  }
+
+  /* Hide desktop links and show mobile icon */
+  .nav-links {
+    display: none !important;
+  }
+
+  .mobile-menu-icon {
+    display: block !important;
+  }
+
+  /* Two photos stack nicely */
+  .two-photos {
+    flex-direction: column !important;
+    margin: 1rem !important;
+  }
+
+  .two-photos > div {
+    width: 100% !important;
+  }
+
+  /* Video section stack & reduce padding */
+  .video-section {
+    flex-direction: column !important;
+    padding: 2rem !important;
+  }
+
+  /* Card grid responsive */
+  .card-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+  }
+
+  .card-grid > div {
+    width: calc(50% - 1rem) !important;
+    height: auto !important;
+  }
+}
