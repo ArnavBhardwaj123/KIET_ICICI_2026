@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar";
-import heroimage from "./assets/KIET.jpg";
+import heroimage from "./assets/KIET1.jpg";
 import Footer from "./components/Footer"
 import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
 import "./App.css";
@@ -44,7 +44,7 @@ export default function App() {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: "rgba(0, 0, 0, 0.7)",
+            backgroundColor: "rgba(11, 31, 58, 0.6)",
             zIndex: -1,
           }}
         />
@@ -351,10 +351,10 @@ export default function App() {
       </div>
 
       {/* New Section with Two Photos */}
-<div
-  style={{ color: "white", display: "flex", gap: "2rem", padding: "2rem" }}
-  className="two-photos"
->
+      <div
+        style={{ color: "white", display: "flex", gap: "2rem", padding: "2rem" }}
+        className="two-photos"
+      >
 
         {/* First Section */}
         <div
@@ -441,7 +441,7 @@ export default function App() {
           ))}
         </div>
       </div>
-       <Footer /> 
+      <Footer />
     </div>
   );
 }
