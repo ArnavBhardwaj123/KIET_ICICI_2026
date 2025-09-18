@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
   // lock body scroll when mobile menu open
   useEffect(() => {
@@ -11,6 +12,17 @@ export default function Navbar() {
       document.body.style.overflow = "auto";
     };
   }, [isOpen]);
+
+  const closeMenu = () => {
+    setIsClosing(true); // Start fade-out animation
+    // After the animation, set isOpen to false to unmount the component
+    setTimeout(() => {
+      setIsOpen(false);
+      setIsClosing(false); // Reset isClosing state
+    }, 300); // This duration should match the CSS transition-duration
+  };
+
+  const mobileNavRef = useRef(null); // Ref for the mobile nav overlay
 
   const items = [
     "HOME",
@@ -57,16 +69,7 @@ export default function Navbar() {
         >
           {items.map((item) => (
             <li key={item}>
-              <a
-                href="#"
-                style={{
-                  color: "white",
-                  textDecoration: "none",
-                  fontWeight: "400",
-                  fontSize: "0.95rem",
-                  letterSpacing: "0.5px",
-                }}
-              >
+                <a href="#">
                 {item}
               </a>
             </li>
@@ -95,22 +98,13 @@ export default function Navbar() {
       {isOpen && (
         <div
           className="mobile-nav-overlay"
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: "rgba(0,0,0,0.95)",
-            zIndex: 1100,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
+          ref={mobileNavRef}
+         // Add the "closing" class when isClosing is true
+          style={{ background: "rgba(0,0,0,0.95)" }} // Keep background here for initial render
+          className={`mobile-nav-overlay ${isClosing ? 'closing' : ''}`}
+      >
           <button
-            onClick={() => setIsOpen(false)}
+            onClick={closeMenu} // Use the new closeMenu function
             aria-label="Close menu"
             style={{
               position: "absolute",
@@ -120,6 +114,7 @@ export default function Navbar() {
               border: "none",
               color: "white",
               fontSize: "1.5rem",
+              zIndex: 1200,
             }}
           >
             <FaTimes />
@@ -140,7 +135,7 @@ export default function Navbar() {
               <li key={item}>
                 <a
                   href="#"
-                  onClick={() => setIsOpen(false)}
+                  onClick={closeMenu} // Use the new closeMenu function
                   style={{
                     color: "white",
                     textDecoration: "none",
