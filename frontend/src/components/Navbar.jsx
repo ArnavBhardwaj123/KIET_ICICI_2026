@@ -38,55 +38,88 @@ export default function Navbar() {
       style={{
         display: "flex",
         justifyContent: "center",
-        backgroundColor: "transparent",
+        backgroundColor: "rgba(255, 255, 255, 0.95)",
+        backdropFilter: "blur(10px)",
         position: "fixed",
         top: 0,
         left: 0,
         right: 0,
         zIndex: 1000,
-        paddingTop: "1rem",
+        padding: "0.5rem 0",
+        boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
       }}
     >
       <div
         style={{
           display: "flex",
-          justifyContent: "flex-end",
+          justifyContent: "space-between",
           alignItems: "center",
           width: "100%",
-          padding: "1rem 2rem",
-          margin: "0 4vh",
+          maxWidth: "1200px",
+          padding: "0 2rem",
         }}
       >
+        {/* Logo */}
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <img
+            src="/images/KIET-LOGO.png"
+            alt="KIET Logo"
+            style={{
+              height: "50px",
+              width: "auto",
+            }}
+          />
+        </div>
+
+        {/* Desktop Navigation */}
         <ul
           className="nav-links"
           style={{
             display: "flex",
             listStyle: "none",
-            gap: "3rem",
+            gap: "2rem",
             margin: 0,
             padding: 0,
           }}
         >
           {items.map((item) => (
             <li key={item}>
-                <a href="#">
+              <a
+                href="#"
+                style={{
+                  color: "#333",
+                  textDecoration: "none",
+                  fontWeight: "500",
+                  fontSize: "0.9rem",
+                  fontFamily: "Poppins",
+                  letterSpacing: "0.5px",
+                  transition: "color 0.3s ease",
+                  padding: "0.5rem 0",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.color = "#40E0D0";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.color = "#333";
+                }}
+              >
                 {item}
               </a>
             </li>
           ))}
         </ul>
 
-        {/* Mobile icon (hidden on desktop via CSS) */}
+        {/* Mobile menu button */}
         <button
           className="mobile-menu-icon"
           onClick={() => setIsOpen(true)}
           aria-label="Open menu"
           style={{
-            marginLeft: "auto",
+            display: "none",
             background: "transparent",
             border: "none",
-            color: "white",
-            fontSize: "1.25rem",
+            color: "#333",
+            fontSize: "1.5rem",
             cursor: "pointer",
           }}
         >
@@ -98,27 +131,57 @@ export default function Navbar() {
       {isOpen && (
         <div
           className="mobile-nav-overlay"
-          ref={mobileNavRef}
-         // Add the "closing" class when isClosing is true
-          style={{ background: "rgba(0,0,0,0.95)" }} // Keep background here for initial render
-          className={`mobile-nav-overlay ${isClosing ? 'closing' : ''}`}
-      >
-          <button
-            onClick={closeMenu} // Use the new closeMenu function
-            aria-label="Close menu"
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: "rgba(255, 255, 255, 0.98)",
+            backdropFilter: "blur(10px)",
+            zIndex: 1100,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {/* Mobile header with logo and close button */}
+          <div
             style={{
               position: "absolute",
-              top: 16,
-              right: 16,
-              background: "transparent",
-              border: "none",
-              color: "white",
-              fontSize: "1.5rem",
-              zIndex: 1200,
+              top: 0,
+              left: 0,
+              right: 0,
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              padding: "1rem 2rem",
+              borderBottom: "1px solid #eee",
             }}
           >
-            <FaTimes />
-          </button>
+            <img
+              src="/images/KIET-LOGO.png"
+              alt="KIET Logo"
+              style={{
+                height: "40px",
+                width: "auto",
+              }}
+            />
+            <button
+              onClick={() => setIsOpen(false)}
+              aria-label="Close menu"
+              style={{
+                background: "transparent",
+                border: "none",
+                color: "#333",
+                fontSize: "1.5rem",
+                cursor: "pointer",
+              }}
+            >
+              <FaTimes />
+            </button>
+          </div>
 
           <ul
             style={{
@@ -127,7 +190,7 @@ export default function Navbar() {
               margin: 0,
               display: "flex",
               flexDirection: "column",
-              gap: "1.5rem",
+              gap: "2rem",
               alignItems: "center",
             }}
           >
@@ -137,10 +200,18 @@ export default function Navbar() {
                   href="#"
                   onClick={closeMenu} // Use the new closeMenu function
                   style={{
-                    color: "white",
+                    color: "#333",
                     textDecoration: "none",
                     fontSize: "1.2rem",
                     fontFamily: "Poppins",
+                    fontWeight: "500",
+                    transition: "color 0.3s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.color = "#40E0D0";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.color = "#333";
                   }}
                 >
                   {item}

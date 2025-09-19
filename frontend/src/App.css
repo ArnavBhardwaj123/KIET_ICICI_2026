@@ -1,22 +1,28 @@
 #root {
-  width: 100%;     /* full width */
-  max-width: 100%; /* don’t constrain */
+  width: 100%;
+  /* full width */
+  max-width: 100%;
+  /* don’t constrain */
   margin: 0;
   padding: 0;
   text-align: center;
 }
 
-body{
+body {
   margin: 0;
   padding: 0;
   display: flex;
   place-items: center;
   overflow-x: hidden;
 }
+
 .responsive-row {
-  flex-wrap: wrap;         /* allow wrapping */
-  width: 100%;             /* never exceed parent */
-  box-sizing: border-box;  /* respect padding */
+  flex-wrap: wrap;
+  /* allow wrapping */
+  width: 100%;
+  /* never exceed parent */
+  box-sizing: border-box;
+  /* respect padding */
 }
 
 .logo {
@@ -25,9 +31,11 @@ body{
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -36,6 +44,7 @@ body{
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -54,6 +63,7 @@ body{
 .read-the-docs {
   color: #888;
 }
+
 /* Small helpers and responsive rules */
 
 /* keep nav-links visible by default; mobile will hide it */
@@ -93,26 +103,15 @@ body{
   display: none;
 }
 
-/* Base style for the mobile nav overlay */
-.mobile-nav-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.95);
-  z-index: 1100;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 1; /* Initial state: fully visible */
-  transition: opacity 0.3s ease-out; /* Smooth transition for opacity changes */
-}
+/* Navbar responsive styles */
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: 1.5rem !important;
+  }
 
-/* Style for when the overlay is closing (fade out) */
-.mobile-nav-overlay.closing {
-  opacity: 0; /* Final state: fully transparent */
+  .nav-links a {
+    font-size: 0.85rem !important;
+  }
 }
 
 /* overlay styling fallback (most inline styles in JSX already set) */
@@ -139,6 +138,42 @@ body{
   }
 }
 
+/* Progress Bar Styles */
+.progress-bar-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.3) 100%);
+  z-index: 3;
+  overflow: hidden;
+}
+
+.progress-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  z-index: 4;
+}
+
+.progress-point {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.progress-point:hover {
+  transform: scale(1.1);
+}
+
 /* Mobile / narrow screens */
 @media (max-width: 768px) {
   .responsive-row {
@@ -147,7 +182,7 @@ body{
     align-items: stretch !important;
   }
 
-  .responsive-row > div {
+  .responsive-row>div {
     width: 100% !important;
   }
 
@@ -156,23 +191,53 @@ body{
     height: auto !important;
   }
 
-  /* Make hero flexible on mobile (so text won't overflow) */
+  /* Make hero flexible on mobile */
   .hero-section {
     height: auto !important;
-    padding: 3rem 1rem !important;
-    min-height: 60vh;
+    padding-top: 70px !important;
+    min-height: 100vh !important;
   }
 
-  .hero-title {
-    font-size: 2rem !important;
+  .hero-section>div:first-of-type {
+    height: auto !important;
+    min-height: 50vh !important;
+    padding: 2rem 1rem !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 2rem !important;
   }
 
-  .hero-kicker {
+  .hero-section>div:first-of-type>div {
+    max-width: 100% !important;
+    text-align: center !important;
+    padding-left: 0 !important;
+  }
+
+  .hero-section>div:first-of-type h1 {
+    font-size: 2.5rem !important;
+    text-align: center !important;
+  }
+
+  .hero-section>div:first-of-type p {
     font-size: 1rem !important;
+    text-align: center !important;
+    max-width: 100% !important;
   }
 
-  .hero-section p {
-    font-size: 0.95rem !important;
+  .hero-section>div:last-of-type {
+    height: auto !important;
+    min-height: 50vh !important;
+    padding: 2rem 1rem !important;
+  }
+
+  .hero-section>div:last-of-type h2 {
+    font-size: 1.8rem !important;
+  }
+
+  .hero-section>div:last-of-type>div>div {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    align-items: flex-start !important;
   }
 
   /* Hide desktop links and show mobile icon */
@@ -190,7 +255,7 @@ body{
     margin: 1rem !important;
   }
 
-  .two-photos > div {
+  .two-photos>div {
     width: 100% !important;
   }
 
@@ -208,12 +273,155 @@ body{
     gap: 1rem !important;
   }
 
-  .card-grid > div {
+  .card-grid>div {
     width: calc(50% - 1rem) !important;
     height: auto !important;
   }
+
+  /* Progress bar mobile styles */
+  .progress-indicators {
+    padding: 0 1rem !important;
+  }
+
+  .progress-point {
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  .progress-point.active {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  /* Tracks section mobile responsive */
+  .tracks-orbit-section {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+
+  .tracks-orbit-section .tracks-content {
+    padding-right: 0 !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .tracks-orbit-section .orbit-container {
+    height: 400px !important;
+  }
 }
 
+/* EPIC TRACKS ORBITAL ANIMATIONS */
+@keyframes orbitPulse {
+  0% {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  100% {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes centralHubGlow {
+  0% {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 25px 50px rgba(102, 126, 234, 0.4);
+  }
+
+  100% {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes floatAnimation {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.orbit-track-item {
+  animation: orbitPulse 3s ease-in-out infinite;
+}
+
+.orbit-track-item:hover {
+  transform: scale(1.1) !important;
+  animation: none;
+}
+
+.central-hub {
+  animation: centralHubGlow 4s ease-in-out infinite;
+}
+
+.navigation-arrow {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navigation-arrow:hover:not(:disabled) {
+  transform: translateX(50%) scale(1.1);
+  background-color: #4A90E2;
+  color: white;
+  border-color: #4A90E2;
+}
+
+.track-info-card {
+  animation: floatAnimation 6s ease-in-out infinite;
+}
+
+/* SLIDING TRACK CARD ANIMATION */
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* TRACK CIRCLE APPEAR ANIMATION */
+@keyframes trackCircleAppear {
+  0% {
+    transform: translate(-50%, -50%) scale(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.2) rotate(180deg);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}
+}
+
+/* SLIDING TRACK CARD ANIMATION */
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 /* FOOTER */
 /* src/App.css */
 
