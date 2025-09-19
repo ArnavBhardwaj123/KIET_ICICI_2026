@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
   // lock body scroll when mobile menu open
   useEffect(() => {
@@ -11,6 +12,17 @@ export default function Navbar() {
       document.body.style.overflow = "auto";
     };
   }, [isOpen]);
+
+  const closeMenu = () => {
+    setIsClosing(true); // Start fade-out animation
+    // After the animation, set isOpen to false to unmount the component
+    setTimeout(() => {
+      setIsOpen(false);
+      setIsClosing(false); // Reset isClosing state
+    }, 300); // This duration should match the CSS transition-duration
+  };
+
+  const mobileNavRef = useRef(null); // Ref for the mobile nav overlay
 
   const items = [
     "HOME",
@@ -186,7 +198,7 @@ export default function Navbar() {
               <li key={item}>
                 <a
                   href="#"
-                  onClick={() => setIsOpen(false)}
+                  onClick={closeMenu} // Use the new closeMenu function
                   style={{
                     color: "#333",
                     textDecoration: "none",

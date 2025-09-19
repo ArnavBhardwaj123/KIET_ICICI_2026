@@ -925,15 +925,34 @@ export default function App() {
       <TracksOrbitSection />
 
       {/* New Section */}
-      <div style={{ backgroundColor: "white", minHeight: "50vh", padding: "4rem" }}>
+      <div
+        style={{
+          backgroundColor: "white",
+          minHeight: "50vh",
+          padding: "4rem",
+        }}
+      >
         {/* This section is intentionally left blank for now. */}
       </div>
 
       {/* New Section2 */}
-      <div style={{ backgroundColor: "white", padding: "4rem", textAlign: "center" }}>
+      <div
+        style={{
+          backgroundColor: "white",
+          padding: "4rem",
+          textAlign: "center",
+        }}
+      >
         <h2 style={{ color: "#333" }}>Lorem ipsum dolor sit amet</h2>
-        <p style={{ color: "gray", maxWidth: "600px", margin: "1rem auto 2rem auto" }}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <p
+          style={{
+            color: "gray",
+            maxWidth: "600px",
+            margin: "1rem auto 2rem auto",
+          }}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <div
           className="card-grid"
