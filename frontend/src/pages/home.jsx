@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
 import "../App.css";
 
@@ -1007,21 +1008,23 @@ export default function Home() {
           >
             A key highlight of the conference will be the keynote addresses delivered by globally recognized experts in artificial intelligence and computational techniques. These keynote sessions will offer attendees a unique opportunity to gain valuable perspectives on the latest advancements and future directions in AI and machine learning. In addition to the keynote addresses, ICICI-2026 will feature technical paper presentations, panel discussions, and interactive workshops designed to provide hands-on experience in areas like deep learning, AI-driven decision-making, and big data analytics.
           </p>
-          <button
-            style={{
-              backgroundColor: "navy",
-              color: "white",
-              border: "none",
-              borderRadius: "50px",
-              padding: "1rem 2rem",
-              fontSize: "1rem",
-              fontWeight: "bold",
-              marginTop: "2rem",
-              cursor: "pointer",
-            }}
-          >
-            Get Started
-          </button>
+          <Link to="/registration" style={{ textDecoration: 'none' }}>
+            <button
+              style={{
+                backgroundColor: "navy",
+                color: "white",
+                border: "none",
+                borderRadius: "50px",
+                padding: "1rem 2rem",
+                fontSize: "1rem",
+                fontWeight: "bold",
+                marginTop: "2rem",
+                cursor: "pointer",
+              }}
+            >
+              Get Started
+            </button>
+          </Link>
         </div>
 
         {/* Right Column: Video and SVG */}

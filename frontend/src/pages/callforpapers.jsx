@@ -75,7 +75,7 @@ export default function CallForPapers() {
         <div
           style={{
             backgroundColor: "white",
-            height: "50%",
+            height: "40%",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
@@ -159,7 +159,7 @@ export default function CallForPapers() {
         <div
           style={{
             position: "relative",
-            height: "75%",
+            height: "60%",
             backgroundImage: `url(${slides[currentSlide].backgroundImage})`,
             backgroundSize: "120%",
             backgroundPosition: "center",
