@@ -408,7 +408,7 @@ body {
     opacity: 1;
   }
 }
-}
+
 
 /* SLIDING TRACK CARD ANIMATION */
 @keyframes slideInFromRight {
@@ -544,5 +544,37 @@ body {
   .footer-map-section {
     height: 120px;
     margin-top: 1rem;
+  }
+}/*
+ NEW SPEAKER CARDS STYLES */
+.speaker-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15) !important;
+}
+
+.speaker-card:hover .speaker-image {
+  transform: scale(1.05);
+}
+
+.speaker-card:hover .image-overlay {
+  opacity: 1 !important;
+}
+
+/* New Speaker cards responsive */
+@media (max-width: 768px) {
+  .speaker-card {
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 300px !important;
+  }
+  
+  .speaker-card > div:first-child {
+    width: 100% !important;
+    height: 150px !important;
+  }
+  
+  .speaker-card > div:last-child {
+    width: 100% !important;
+    padding: 1.5rem !important;
   }
 }

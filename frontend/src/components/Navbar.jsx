@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,12 +26,12 @@ export default function Navbar() {
   const mobileNavRef = useRef(null); // Ref for the mobile nav overlay
 
   const items = [
-    "HOME",
-    "CALL FOR PAPERS",
-    "PAPER SUBMISSION",
-    "COMMITTEE",
-    "REGISTRATION",
-    "CONTACT",
+    { name: "HOME", path: "/" },
+    { name: "CALL FOR PAPERS", path: "/call-for-papers" },
+    { name: "PAPER SUBMISSION", path: "/paper-submission" },
+    { name: "COMMITTEE", path: "/committee" },
+    { name: "REGISTRATION", path: "/registration" },
+    { name: "CONTACT", path: "/contact" },
   ];
 
   return (
@@ -83,9 +84,9 @@ export default function Navbar() {
           }}
         >
           {items.map((item) => (
-            <li key={item}>
-              <a
-                href="#"
+            <li key={item.name}>
+              <Link
+                to={item.path}
                 style={{
                   color: "#333",
                   textDecoration: "none",
@@ -103,8 +104,8 @@ export default function Navbar() {
                   e.target.style.color = "#333";
                 }}
               >
-                {item}
-              </a>
+                {item.name}
+              </Link>
             </li>
           ))}
         </ul>
@@ -195,9 +196,9 @@ export default function Navbar() {
             }}
           >
             {items.map((item) => (
-              <li key={item}>
-                <a
-                  href="#"
+              <li key={item.name}>
+                <Link
+                  to={item.path}
                   onClick={closeMenu} // Use the new closeMenu function
                   style={{
                     color: "#333",
@@ -214,8 +215,8 @@ export default function Navbar() {
                     e.target.style.color = "#333";
                   }}
                 >
-                  {item}
-                </a>
+                  {item.name}
+                </Link>
               </li>
             ))}
           </ul>
