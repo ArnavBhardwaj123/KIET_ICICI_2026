@@ -538,8 +538,6 @@ export default function CallForPapers() {
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }

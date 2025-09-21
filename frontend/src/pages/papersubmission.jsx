@@ -550,7 +550,6 @@ export default function PaperSubmission() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
