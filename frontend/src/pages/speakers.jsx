@@ -10,7 +10,7 @@ export default function Speakers() {
         <h1>Speakers Page</h1>
         <p>Coming Soon...</p>
       </div>
-      <Footer />
+      
     </div>
   );
 }

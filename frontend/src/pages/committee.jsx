@@ -744,7 +744,6 @@ export default function Committee() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

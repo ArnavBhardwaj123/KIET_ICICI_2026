@@ -1099,8 +1099,6 @@ export default function Home() {
      
       {/* Speakers Section */}
       <SpeakersSection />
-      
-      <Footer />
     </div>
   );
 }

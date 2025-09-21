@@ -393,8 +393,6 @@ export default function Registration() {
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }
