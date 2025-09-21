@@ -233,344 +233,93 @@ const tracksData = [
   }
 ];
 
-// REVOLUTIONARY TRACKS ORBIT COMPONENT! 🌟
+//TRACKS ORBIT COMPONENT!
 function TracksOrbitSection() {
-  const [currentTrack, setCurrentTrack] = useState(0);
-  const [isRotating, setIsRotating] = useState(false);
-  const [showTrackCard, setShowTrackCard] = useState(false);
+  const [activeTrack, setActiveTrack] = useState(0);
+  const orbitRadius = 250; // Radius of the orbit in pixels
 
-  const rotateToNext = () => {
-    if (isRotating) return;
-    setIsRotating(true);
-    setShowTrackCard(false);
-    setCurrentTrack((prev) => (prev + 1) % tracksData.length);
-    setTimeout(() => {
-      setIsRotating(false);
-      setShowTrackCard(true);
-    }, 800);
+  const handleTrackClick = (index) => {
+    setActiveTrack(index);
   };
 
-  const rotateToPrev = () => {
-    if (isRotating) return;
-    setIsRotating(true);
-    setShowTrackCard(false);
-    setCurrentTrack((prev) => (prev - 1 + tracksData.length) % tracksData.length);
-    setTimeout(() => {
-      setIsRotating(false);
-      setShowTrackCard(true);
-    }, 800);
+  // Calculate position for each track node on the orbit
+ // src/pages/home.jsx -> Inside TracksOrbitSection function
+
+  // Calculate position for each track node on the orbit
+    const getPosition = (index) => {
+    const angle = (index / tracksData.length) * 2 * Math.PI - Math.PI / 2; // Start from top
+    const x = orbitRadius * Math.cos(angle);
+    const y = orbitRadius * Math.sin(angle);
+    // Use CSS custom properties (variables) to set the position
+    return {
+      '--x-pos': `${x}px`,
+      '--y-pos': `${y}px`,
+    };
   };
 
   return (
-    <div style={{
-      backgroundColor: "#f8f9fa",
-      minHeight: "100vh",
-      padding: "4rem 2rem",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between",
-      position: "relative",
-      overflow: "hidden"
-    }}>
-
-      {/* LEFT CONTENT - SIMPLIFIED */}
-      <div style={{ flex: 1, maxWidth: "500px", paddingRight: "4rem" }}>
-        <p style={{
-          color: "#4A90E2",
-          fontSize: "1.2rem",
-          fontFamily: "Poppins",
-          fontWeight: "600",
-          margin: "0 0 1rem 0",
-          letterSpacing: "1px",
-        }}>
-          SHAPING THE FUTURE WITH IDEAS
-        </p>
-
-        <h1 style={{
-          color: "#333",
-          fontFamily: "Poppins",
-          fontSize: "3.5rem",
-          fontWeight: "bold",
-          lineHeight: "1.1",
-          margin: "0 0 2rem 0",
-        }}>
-          Explore the Frontiers of<br />
-          Computational<br />
+    <div className="tracks-section">
+      {/* Left Content */}
+      <div className="tracks-left-content">
+        <p className="tracks-kicker">SHAPING THE FUTURE WITH IDEAS</p>
+        <h1 className="tracks-title">
+          Explore the Frontiers of
+          <br />
+          Computational
+          <br />
           Intelligence
         </h1>
-
-        <p style={{
-          color: "#666",
-          fontFamily: "Poppins",
-          fontSize: "1.1rem",
-          lineHeight: "1.6",
-          margin: "0 0 3rem 0",
-        }}>
-          Diverse Tracks Showcasing<br />
-          Cutting-Edge Research<br />
-          and Innovation
+        <p className="tracks-subtitle">
+          Diverse Tracks Showcasing Cutting-Edge Research and Innovation
         </p>
 
-        <div style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "2rem",
-          marginBottom: "3rem"
-        }}>
-          <div style={{
-            fontSize: "4rem",
-            fontWeight: "bold",
-            color: "#4A90E2",
-            fontFamily: "Poppins"
-          }}>
-            08
-          </div>
-          <div>
-            <p style={{
-              color: "#666",
-              fontFamily: "Poppins",
-              fontSize: "1.1rem",
-              fontWeight: "600",
-              margin: 0,
-              lineHeight: "1.2"
-            }}>
-              TRACKS TO<br />
-              TRANSFORM THE<br />
+        <div className="tracks-info-box">
+          <div className="tracks-count-container">
+            <div className="tracks-count">08</div>
+            <p className="tracks-count-text">
+              TRACKS TO
+              <br />
+              TRANSFORM THE
+              <br />
               WORLD
             </p>
           </div>
-        </div>
-
-        {/* NAVIGATION BUTTONS MOVED HERE */}
-        <div style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "1rem",
-          marginBottom: "2rem"
-        }}>
-          <button
-            onClick={rotateToPrev}
-            disabled={isRotating}
-            style={{
-              width: "50px",
-              height: "50px",
-              borderRadius: "50%",
-              backgroundColor: "white",
-              border: "2px solid #ddd",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              cursor: isRotating ? "not-allowed" : "pointer",
-              fontSize: "1.5rem",
-              color: "#666",
-              boxShadow: "0 5px 15px rgba(0,0,0,0.1)",
-              transition: "all 0.3s ease",
-              opacity: isRotating ? 0.5 : 1
-            }}
-          >
-            ↑
-          </button>
-
-          <div style={{
-            color: "#666",
-            fontFamily: "Poppins",
-            fontSize: "0.9rem",
-            textAlign: "center"
-          }}>
-            Track {currentTrack + 1}:<br />
-            <strong>{tracksData[currentTrack].title}</strong>
+          <div className="active-track-info">
+            <h3>{tracksData[activeTrack].title}</h3>
+            <p>Select the track you want to explore by clicking on the icons.</p>
           </div>
-
-          <button
-            onClick={rotateToNext}
-            disabled={isRotating}
-            style={{
-              width: "50px",
-              height: "50px",
-              borderRadius: "50%",
-              backgroundColor: "white",
-              border: "2px solid #ddd",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              cursor: isRotating ? "not-allowed" : "pointer",
-              fontSize: "1.5rem",
-              color: "#666",
-              boxShadow: "0 5px 15px rgba(0,0,0,0.1)",
-              transition: "all 0.3s ease",
-              opacity: isRotating ? 0.5 : 1
-            }}
-          >
-            ↓
-          </button>
         </div>
-
-        <p style={{
-          color: "#999",
-          fontFamily: "Poppins",
-          fontSize: "0.9rem",
-          margin: 0
-        }}>
-          Select the track you want to explore by<br />
-          clicking on the arrows
-        </p>
       </div>
 
-      {/* RIGHT SIDE - HALF CIRCLE ATTACHED TO RIGHT EDGE! */}
-      <div style={{
-        position: "absolute",
-        right: 0,
-        top: 0,
-        bottom: 0,
-        width: "400px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "flex-end"
-      }}>
-
-        {/* HALF CIRCLE PATH ATTACHED TO RIGHT EDGE */}
-        <div style={{
-          position: "relative",
-          width: "400px",
-          height: "400px",
-          border: "3px solid rgba(0,0,0,0.2)",
-          borderRadius: "50%",
-          borderRight: "none", // Remove right border to attach to edge
-          marginRight: "-200px", // Push half of it off screen
-          transform: `rotate(${currentTrack * 45}deg)`,
-          transition: isRotating ? "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)" : "none"
-        }}>
-
-          {/* TRACK CIRCLE THAT APPEARS ON PATH */}
-          <div style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            width: "80px",
-            height: "80px",
-            borderRadius: "50%",
-            backgroundColor: tracksData[currentTrack].color,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: "2rem",
-            color: "white",
-            fontWeight: "bold",
-            boxShadow: "0 15px 30px rgba(0,0,0,0.2)",
-            border: "4px solid white",
-            transform: `translate(-50%, -50%) rotate(${-currentTrack * 45}deg)`,
-            transition: isRotating ? "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)" : "all 0.3s ease",
-            zIndex: 10,
-            animation: showTrackCard ? "trackCircleAppear 0.6s cubic-bezier(0.4, 0, 0.2, 1)" : "none"
-          }}>
-            {tracksData[currentTrack].icon}
+      {/* Right Content - The Orbit */}
+      <div className="tracks-right-content">
+        <div className="orbit-container">
+          {/* Central Hub with Image */}
+          <div className="central-hub">
+            <img 
+              src="/images/robotic-hand.png" // IMPORTANT: Add your robotic hand image here
+              alt="Computational Intelligence" 
+              className="central-hub-image"
+            />
           </div>
 
-          {/* PATH DOTS */}
-          <div style={{
-            position: "absolute",
-            top: "-6px",
-            left: "50%",
-            transform: `translateX(-50%) rotate(${-currentTrack * 45}deg)`,
-            width: "12px",
-            height: "12px",
-            borderRadius: "50%",
-            backgroundColor: "#666",
-            transition: isRotating ? "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)" : "none"
-          }} />
+          {/* Dotted line for the orbit path */}
+          <div className="orbit-path"></div>
 
-          <div style={{
-            position: "absolute",
-            bottom: "-6px",
-            left: "50%",
-            transform: `translateX(-50%) rotate(${-currentTrack * 45}deg)`,
-            width: "12px",
-            height: "12px",
-            borderRadius: "50%",
-            backgroundColor: "#666",
-            transition: isRotating ? "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)" : "none"
-          }} />
-
-          <div style={{
-            position: "absolute",
-            top: "50%",
-            left: "-6px",
-            transform: `translateY(-50%) rotate(${-currentTrack * 45}deg)`,
-            width: "12px",
-            height: "12px",
-            borderRadius: "50%",
-            backgroundColor: "#666",
-            transition: isRotating ? "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)" : "none"
-          }} />
-        </div>
-
-        {/* TRACK INFO CARD - SLIDES IN FROM RIGHT */}
-        {showTrackCard && (
-          <div style={{
-            position: "absolute",
-            right: "220px",
-            top: "50%",
-            transform: "translateY(-50%)",
-            backgroundColor: "white",
-            padding: "1.5rem",
-            borderRadius: "15px",
-            boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
-            maxWidth: "280px",
-            zIndex: 20,
-            animation: "slideInFromRight 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
-            border: `3px solid ${tracksData[currentTrack].color}`
-          }}>
-            <div style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "1rem",
-              marginBottom: "1rem"
-            }}>
-              <div style={{
-                width: "50px",
-                height: "50px",
-                borderRadius: "50%",
-                backgroundColor: tracksData[currentTrack].color,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "1.8rem"
-              }}>
-                {tracksData[currentTrack].icon}
-              </div>
-              <div>
-                <p style={{
-                  color: tracksData[currentTrack].color,
-                  fontFamily: "Poppins",
-                  fontSize: "0.9rem",
-                  fontWeight: "600",
-                  margin: 0
-                }}>
-                  Track {currentTrack + 1}:
-                </p>
-                <h3 style={{
-                  color: "#333",
-                  fontFamily: "Poppins",
-                  fontSize: "1.1rem",
-                  fontWeight: "600",
-                  margin: 0,
-                  lineHeight: "1.2"
-                }}>
-                  {tracksData[currentTrack].title}
-                </h3>
+          {/* Track Nodes */}
+          {tracksData.map((track, index) => (
+            <div
+              key={track.id}
+              className={`track-node ${activeTrack === index ? "active" : ""}`}
+              style={getPosition(index)}
+              onClick={() => handleTrackClick(index)}
+            >
+              <div className="track-node-icon" style={{ backgroundColor: track.color }}>
+                {track.icon}
               </div>
             </div>
-            <p style={{
-              color: "#666",
-              fontFamily: "Poppins",
-              fontSize: "0.85rem",
-              lineHeight: "1.4",
-              margin: 0
-            }}>
-              {tracksData[currentTrack].description.substring(0, 120)}...
-            </p>
-          </div>
-        )}
+          ))}
+        </div>
       </div>
     </div>
   );
