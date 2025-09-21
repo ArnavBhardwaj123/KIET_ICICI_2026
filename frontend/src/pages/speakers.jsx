@@ -11,7 +11,6 @@ export default function Speakers() {
         <p>Coming Soon...</p>
       </div>
       
-      <Footer />
     </div>
   );
 }
