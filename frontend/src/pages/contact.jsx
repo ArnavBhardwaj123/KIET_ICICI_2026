@@ -59,7 +59,7 @@ export default function Contact() {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            padding: "0 4rem",
+            padding: "0 2rem",
             position: "relative",
           }}
         >
@@ -202,9 +202,9 @@ export default function Contact() {
 
       {/* Contact Content */}
       <div style={{ backgroundColor: "#f5f5f5", padding: "4rem 2rem", minHeight: "100vh" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", gap: "2rem" }}>
+        <div className="responsive-row" style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", gap: "2rem" }}>
           {/* Left Sidebar */}
-          <div style={{ width: "300px", display: "flex", flexDirection: "column", gap: "1rem" }}>
+          <div className="sidebar" style={{ width: "300px", display: "flex", flexDirection: "column", gap: "1rem" }}>
             <div style={{ backgroundColor: "#4a5568", borderRadius: "15px", padding: "1.5rem", color: "white" }}>
               <div style={{ backgroundColor: "#2d3748", borderRadius: "20px", padding: "0.5rem 1rem", fontSize: "0.8rem", fontFamily: "Poppins", fontWeight: "600", marginBottom: "1rem", textAlign: "center", letterSpacing: "1px" }}>
                 IMPORTANT DATES
@@ -223,8 +223,7 @@ export default function Contact() {
               <div style={{ fontFamily: "Poppins", fontSize: "0.9rem", lineHeight: "1.6", color: "#e2e8f0" }}>
                 <p style={{ margin: "0.5rem 0" }}>KIET Group of Institutions</p>
                 <p style={{ margin: "0.5rem 0" }}>Delhi-NCR, Ghaziabad</p>
-                <p style={{ margin: "0.5rem 0" }}>Email: icici2026@kiet.edu</p>
-                <p style={{ margin: "0.5rem 0" }}>Phone: +91-7949335337</p>
+                <p style={{ margin: "0.5rem 0" }}>Email: icici2026@kiet.edu</p><p style={{ margin: "0.5rem 0" }}>Phone: +91-120-2844000</p>
               </div>
             </div>
           </div>
@@ -257,7 +256,7 @@ export default function Contact() {
                   <FaPhone style={{ marginRight: "0.5rem" }} /> Phone
                 </h3>
                 <p style={{ fontFamily: "Poppins", color: "#666", lineHeight: "1.6" }}>
-                  +91-7949335337
+                  +91-120-2844000
                 </p>
                 <h3 style={{ fontFamily: "Poppins", fontSize: "1.2rem", color: "#4299e1", marginTop: "1.5rem", marginBottom: "1rem" }}>
                   <FaEnvelope style={{ marginRight: "0.5rem" }} /> Email

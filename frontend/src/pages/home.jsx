@@ -645,11 +645,11 @@ export default function Home() {
         <div
           style={{
             backgroundColor: "white",
-            height: "50%",
+            height: "40%",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            padding: "0 4rem",
+            padding: "0 2rem",
             position: "relative",
           }}
         >
@@ -718,7 +718,7 @@ export default function Home() {
         <div
           style={{
             position: "relative",
-            height: "75%",
+            height: "60%",
             backgroundImage: `url(${slides[currentSlide].backgroundImage})`,
             backgroundSize: "120%",
             backgroundPosition: "center",
