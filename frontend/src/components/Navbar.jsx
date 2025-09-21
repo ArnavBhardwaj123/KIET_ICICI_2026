@@ -31,6 +31,7 @@ export default function Navbar() {
 
   const items = [
     { name: "HOME", path: "/" },
+    { name: "SPEAKERS", path: "/speakers" }, // Added Speakers link
     { name: "CALL FOR PAPERS", path: "/call-for-papers" },
     { name: "PAPER SUBMISSION", path: "/paper-submission" },
     { name: "COMMITTEE", path: "/committee" },
