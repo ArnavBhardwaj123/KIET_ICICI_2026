@@ -75,11 +75,11 @@ export default function CallForPapers() {
         <div
           style={{
             backgroundColor: "white",
-            height: "50%",
+            height: "40%",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            padding: "0 4rem",
+            padding: "0 2rem",
             position: "relative",
           }}
         >
@@ -159,7 +159,7 @@ export default function CallForPapers() {
         <div
           style={{
             position: "relative",
-            height: "75%",
+            height: "60%",
             backgroundImage: `url(${slides[currentSlide].backgroundImage})`,
             backgroundSize: "120%",
             backgroundPosition: "center",
@@ -295,7 +295,7 @@ export default function CallForPapers() {
         padding: "4rem 2rem",
         minHeight: "100vh"
       }}>
-        <div style={{
+        <div className="responsive-row" style={{
           maxWidth: "1200px",
           margin: "0 auto",
           display: "flex",
@@ -303,7 +303,7 @@ export default function CallForPapers() {
         }}>
           
           {/* Left Sidebar */}
-          <div style={{
+          <div className="sidebar" style={{
             width: "300px",
             display: "flex",
             flexDirection: "column",
