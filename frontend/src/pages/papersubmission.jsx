@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
 import "../App.css";
 
 const heroimage = "/images/KIET1.jpg";
@@ -67,7 +64,6 @@ export default function PaperSubmission() {
 
   return (
     <div>
-      <Navbar />
       {/* Hero Section */}
       <div className="hero-section" style={{ width: "100%", height: "100vh", paddingTop: "90px" }}>
         {/* Top White Section */}
@@ -268,7 +264,7 @@ export default function PaperSubmission() {
       <div
         style={{
           backgroundColor: "#f5f5f5",
-          padding: "4rem 2rem",
+          paddingTop: "12rem",
           minHeight: "100vh",
         }}
       >
@@ -279,7 +275,7 @@ export default function PaperSubmission() {
             display: "flex",
             gap: "2rem",
           }}
-          className="responsive-row"
+          className="responsive-row page-container"
         >
           {/* Left Sidebar */}
           <div
@@ -289,6 +285,7 @@ export default function PaperSubmission() {
               flexDirection: "column",
               gap: "1rem",
             }}
+            className="page-sidebar"
           >
             {/* Important Dates Card */}
             <div
@@ -298,6 +295,7 @@ export default function PaperSubmission() {
                 padding: "1.5rem",
                 color: "white",
               }}
+              className="sidebar-card"
             >
               <div
                 style={{
@@ -336,6 +334,7 @@ export default function PaperSubmission() {
                 padding: "1.5rem",
                 color: "white",
               }}
+              className="sidebar-card"
             >
               <div
                 style={{
@@ -375,6 +374,7 @@ export default function PaperSubmission() {
               borderRadius: "15px",
               padding: "2rem",
             }}
+            className="page-main-content"
           >
             {/* Author Guidelines */}
             <div style={{ marginBottom: "2rem" }}>
@@ -547,7 +547,6 @@ export default function PaperSubmission() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

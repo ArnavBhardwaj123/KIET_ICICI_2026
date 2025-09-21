@@ -122,105 +122,189 @@ export default function Navbar() {
             color: "#333",
             fontSize: "1.5rem",
             cursor: "pointer",
+            outline: "none",
+            padding: "0.5rem",
+            borderRadius: "4px",
+            transition: "all 0.2s ease",
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.backgroundColor = "#f0f0f0";
+            e.target.style.color = "#40E0D0";
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.backgroundColor = "transparent";
+            e.target.style.color = "#333";
+          }}
+          onFocus={(e) => {
+            e.target.style.backgroundColor = "#f0f0f0";
+            e.target.style.color = "#40E0D0";
+          }}
+          onBlur={(e) => {
+            e.target.style.backgroundColor = "transparent";
+            e.target.style.color = "#333";
           }}
         >
           <FaBars />
         </button>
       </div>
 
-      {/* Mobile full-screen nav overlay */}
+      {/* Mobile sidebar navigation */}
       {isOpen && (
-        <div
-          className="mobile-nav-overlay"
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: "rgba(255, 255, 255, 0.98)",
-            backdropFilter: "blur(10px)",
-            zIndex: 1100,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          {/* Mobile header with logo and close button */}
+        <>
+          {/* Backdrop overlay */}
           <div
+            className="mobile-nav-backdrop"
             style={{
-              position: "absolute",
+              position: "fixed",
               top: 0,
               left: 0,
               right: 0,
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              padding: "1rem 2rem",
-              borderBottom: "1px solid #eee",
+              bottom: 0,
+              backgroundColor: "rgba(0, 0, 0, 0.7)",
+              zIndex: 9998,
+              opacity: isClosing ? 0 : 1,
+              transition: "opacity 0.3s ease",
             }}
-          >
-            <img
-              src="/images/KIET-LOGO.png"
-              alt="KIET Logo"
-              style={{
-                height: "40px",
-                width: "auto",
-              }}
-            />
-            <button
-              onClick={() => setIsOpen(false)}
-              aria-label="Close menu"
-              style={{
-                background: "transparent",
-                border: "none",
-                color: "#333",
-                fontSize: "1.5rem",
-                cursor: "pointer",
-              }}
-            >
-              <FaTimes />
-            </button>
-          </div>
-
-          <ul
+            onClick={closeMenu}
+          />
+          
+          {/* Left sidebar */}
+          <div
+            className="mobile-nav-sidebar"
             style={{
-              listStyle: "none",
-              padding: 0,
-              margin: 0,
+              position: "fixed",
+              top: 0,
+              left: 0,
+              bottom: 0,
+              width: "280px",
+              backgroundColor: "#ffffff",
+              zIndex: 9999,
+              boxShadow: "4px 0 20px rgba(0,0,0,0.3)",
+              transform: isClosing ? "translateX(-100%)" : "translateX(0)",
+              transition: "transform 0.3s ease",
               display: "flex",
               flexDirection: "column",
-              gap: "2rem",
-              alignItems: "center",
+              border: "none",
+              opacity: 1,
             }}
           >
-            {items.map((item) => (
-              <li key={item.name}>
-                <Link
-                  to={item.path}
-                  onClick={closeMenu} // Use the new closeMenu function
-                  style={{
-                    color: "#333",
-                    textDecoration: "none",
-                    fontSize: "1.2rem",
-                    fontFamily: "Poppins",
-                    fontWeight: "500",
-                    transition: "color 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.color = "#40E0D0";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.color = "#333";
-                  }}
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+            {/* Sidebar header */}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                padding: "1rem 1.5rem",
+                borderBottom: "1px solid #eee",
+                backgroundColor: "#ffffff",
+                opacity: 1,
+              }}
+            >
+              <img
+                src="/images/KIET-LOGO.png"
+                alt="KIET Logo"
+                style={{
+                  height: "40px",
+                  width: "auto",
+                }}
+              />
+              <button
+                onClick={closeMenu}
+                aria-label="Close menu"
+                style={{
+                  background: "transparent",
+                  border: "none",
+                  color: "#333",
+                  fontSize: "1.5rem",
+                  cursor: "pointer",
+                  padding: "0.5rem",
+                  borderRadius: "4px",
+                  transition: "background-color 0.2s ease",
+                  outline: "none",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = "#e9ecef";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "transparent";
+                }}
+                onFocus={(e) => {
+                  e.target.style.backgroundColor = "#e9ecef";
+                }}
+                onBlur={(e) => {
+                  e.target.style.backgroundColor = "transparent";
+                }}
+              >
+                <FaTimes />
+              </button>
+            </div>
+
+            {/* Navigation links */}
+            <nav style={{ flex: 1, padding: "1rem 0" }}>
+              <ul
+                style={{
+                  listStyle: "none",
+                  padding: 0,
+                  margin: 0,
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                {items.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      to={item.path}
+                      onClick={closeMenu}
+                      style={{
+                        display: "block",
+                        color: "#333",
+                        textDecoration: "none",
+                        fontSize: "1rem",
+                        fontFamily: "Poppins",
+                        fontWeight: "500",
+                        padding: "1rem 1.5rem",
+                        transition: "all 0.2s ease",
+                        borderLeft: "3px solid transparent",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.backgroundColor = "#f8f9fa";
+                        e.target.style.color = "#40E0D0";
+                        e.target.style.borderLeftColor = "#40E0D0";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.backgroundColor = "transparent";
+                        e.target.style.color = "#333";
+                        e.target.style.borderLeftColor = "transparent";
+                      }}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            {/* Footer section in sidebar */}
+            <div
+              style={{
+                padding: "1rem 1.5rem",
+                borderTop: "1px solid #eee",
+                backgroundColor: "#ffffff",
+                fontSize: "0.8rem",
+                color: "#666",
+                textAlign: "center",
+                opacity: 1,
+              }}
+            >
+              <p style={{ margin: 0, fontFamily: "Poppins" }}>
+                IEEE ICICI 2026
+              </p>
+              <p style={{ margin: "0.25rem 0 0 0", fontFamily: "Poppins" }}>
+                KIET Group of Institutions
+              </p>
+            </div>
+          </div>
+        </>
       )}
     </nav>
   );

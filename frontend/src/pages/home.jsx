@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
 import "../App.css";
 
@@ -636,7 +634,6 @@ export default function Home() {
 
   return (
     <div>
-      <Navbar />
       {/* Hero Section */}
       <div className="hero-section" style={{ width: "100%", height: "100vh", paddingTop: "90px" }}>
 
@@ -861,7 +858,7 @@ export default function Home() {
           alignItems: "center",
           gap: "2rem",
         }}
-        className="responsive-row"
+        className="responsive-row about-section"
       >
         {/* Left Column: Text Content */}
         <div style={{ flex: 1, textAlign: "left" }}>
@@ -920,7 +917,7 @@ export default function Home() {
           alignItems: "center",
           gap: "2rem",
         }}
-        className="responsive-row"
+        className="responsive-row about-section"
       >
         <div style={{ flex: 1 }}>
           <img
@@ -1097,8 +1094,6 @@ export default function Home() {
      
       {/* Speakers Section */}
       <SpeakersSection />
-      
-      <Footer />
     </div>
   );
 }

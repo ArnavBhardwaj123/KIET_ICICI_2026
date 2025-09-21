@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
 import "../App.css";
 
@@ -67,7 +65,6 @@ export default function CallForPapers() {
 
   return (
     <div>
-      <Navbar />
       {/* Hero Section */}
       <div className="hero-section" style={{ width: "100%", height: "100vh", paddingTop: "90px" }}>
 
@@ -292,7 +289,7 @@ export default function CallForPapers() {
       {/* Call for Papers Content */}
       <div style={{
         backgroundColor: "#f5f5f5",
-        padding: "4rem 2rem",
+        paddingTop: "12rem",
         minHeight: "100vh"
       }}>
         <div style={{
@@ -300,7 +297,7 @@ export default function CallForPapers() {
           margin: "0 auto",
           display: "flex",
           gap: "2rem"
-        }}>
+        }} className="page-container">
           
           {/* Left Sidebar */}
           <div style={{
@@ -308,7 +305,7 @@ export default function CallForPapers() {
             display: "flex",
             flexDirection: "column",
             gap: "1rem"
-          }}>
+          }} className="page-sidebar">
             
             {/* Important Dates Card */}
             <div style={{
@@ -316,7 +313,7 @@ export default function CallForPapers() {
               borderRadius: "15px",
               padding: "1.5rem",
               color: "white"
-            }}>
+            }} className="sidebar-card">
               <div style={{
                 backgroundColor: "#2d3748",
                 borderRadius: "20px",
@@ -349,7 +346,7 @@ export default function CallForPapers() {
               borderRadius: "15px",
               padding: "1.5rem",
               color: "white"
-            }}>
+            }} className="sidebar-card">
               <div style={{
                 backgroundColor: "#2d3748",
                 borderRadius: "20px",
@@ -383,7 +380,7 @@ export default function CallForPapers() {
             backgroundColor: "white",
             borderRadius: "15px",
             padding: "2rem"
-          }}>
+          }} className="page-main-content">
             
             {/* Header */}
             <div style={{ marginBottom: "2rem" }}>
@@ -538,8 +535,6 @@ export default function CallForPapers() {
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }

@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import "../App.css";
 
@@ -381,7 +379,6 @@ export default function Committee() {
 
   return (
     <div>
-      <Navbar />
       {/* Hero Section */}
       <div className="hero-section" style={{ width: "100%", height: "100vh", paddingTop: "90px" }}>
         {/* Top White Section */}
@@ -579,7 +576,7 @@ export default function Committee() {
       <div
         style={{
           backgroundColor: "#f5f5f5",
-          padding: "4rem 2rem",
+          paddingTop: "12rem",
           minHeight: "100vh",
         }}
       >
@@ -590,7 +587,7 @@ export default function Committee() {
             display: "flex",
             gap: "2rem",
           }}
-          className="responsive-row"
+          className="responsive-row page-container"
         >
           {/* Left Sidebar */}
           <div
@@ -600,6 +597,7 @@ export default function Committee() {
               flexDirection: "column",
               gap: "1rem",
             }}
+            className="page-sidebar"
           >
             {/* Important Dates Card */}
             <div
@@ -609,6 +607,7 @@ export default function Committee() {
                 padding: "1.5rem",
                 color: "white",
               }}
+              className="sidebar-card"
             >
               <div
                 style={{
@@ -647,6 +646,7 @@ export default function Committee() {
                 padding: "1.5rem",
                 color: "white",
               }}
+              className="sidebar-card"
             >
               <div
                 style={{
@@ -687,6 +687,7 @@ export default function Committee() {
               padding: "2rem",
               textAlign: "left", // Added to left-align all content
             }}
+            className="page-main-content"
           >
             {committeesData.map((committee, index) => (
               <div key={index} style={{ marginBottom: "1rem" }}>
@@ -744,7 +745,6 @@ export default function Committee() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
