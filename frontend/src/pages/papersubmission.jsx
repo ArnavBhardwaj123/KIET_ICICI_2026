@@ -74,11 +74,11 @@ export default function PaperSubmission() {
         <div
           style={{
             backgroundColor: "white",
-            height: "50%",
+            height: "40%",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            padding: "0 4rem",
+            padding: "0 2rem",
             position: "relative",
           }}
         >
@@ -149,9 +149,9 @@ export default function PaperSubmission() {
                 textAlign: "left",
               }}
             >
-              <div>Share your unpublished work with IEEE and gain</div>
-              <div>visibility among leading researchers, experts, and</div>
-              <div>innovators.</div>
+              <div>Contribute Your Original, Unpublished Work</div>
+              <div>And Be Part Of IEEE's Global Research And</div>
+              <div>Innovation Community</div>
             </div>
           </div>
         </div>
@@ -160,7 +160,7 @@ export default function PaperSubmission() {
         <div
           style={{
             position: "relative",
-            height: "75%",
+            height: "60%",
             backgroundImage: `url(${slides[currentSlide].backgroundImage})`,
             backgroundSize: "120%",
             backgroundPosition: "center",
@@ -396,6 +396,7 @@ export default function PaperSubmission() {
                   color: "#666",
                   lineHeight: "1.8",
                   paddingLeft: "1.5rem",
+                  textAlign: "left",
                 }}
               >
                 <li>Papers must be original, unpublished, and not under consideration elsewhere.</li>
@@ -428,6 +429,7 @@ export default function PaperSubmission() {
                   color: "#666",
                   lineHeight: "1.8",
                   paddingLeft: "1.5rem",
+                  textAlign: "left",
                 }}
               >
                 <li>Papers should be submitted in PDF format following the IEEE conference template.</li>
@@ -502,6 +504,7 @@ export default function PaperSubmission() {
                   color: "#666",
                   lineHeight: "1.8",
                   paddingLeft: "1.5rem",
+                  textAlign: "left",
                 }}
               >
                 <li>Authors should create an account on the Microsoft CMT platform for submission.</li>

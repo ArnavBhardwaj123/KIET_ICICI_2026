@@ -679,8 +679,7 @@ export default function Home() {
               }}
             >
               Shaping the Future of<br />
-              Intelligent<br />
-              Computing
+              Intelligent Computing
             </h1>
           </div>
 
