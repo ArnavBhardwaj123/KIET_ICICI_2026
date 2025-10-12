@@ -431,20 +431,22 @@ export default function PaperSubmission() {
                 >
                   Authors may download the IEEE paper template here.
                 </p>
-                <button
-                  style={{
-                    backgroundColor: "rgba(0,0,100,0.8)",
-                    color: "white",
-                    border: "none",
-                    borderRadius: "8px",
-                    padding: "0.75rem 1.5rem",
-                    fontSize: "0.9rem",
-                    fontWeight: "bold",
-                    cursor: "pointer",
-                  }}
-                >
-                  Download
-                </button>
+                <a href="https://www.kiet.edu/icici2026/images/Paper%20Template.docx" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                  <button
+                    style={{
+                      backgroundColor: "rgba(0,0,100,0.8)",
+                      color: "white",
+                      border: "none",
+                      borderRadius: "8px",
+                      padding: "0.75rem 1.5rem",
+                      fontSize: "0.9rem",
+                      fontWeight: "bold",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Download
+                  </button>
+                </a>
               </div>
             </div>
 
@@ -496,20 +498,22 @@ export default function PaperSubmission() {
                 >
                   Submit your paper through the Microsoft CMT Portal.
                 </p>
-                <button
-                  style={{
-                    backgroundColor: "rgba(0,100,0,0.8)",
-                    color: "white",
-                    border: "none",
-                    borderRadius: "8px",
-                    padding: "0.75rem 1.5rem",
-                    fontSize: "0.9rem",
-                    fontWeight: "bold",
-                    cursor: "pointer",
-                  }}
-                >
-                  Submission Link
-                </button>
+                <a href="https://cmt3.research.microsoft.com/ICICI2026" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                  <button
+                    style={{
+                      backgroundColor: "rgba(0,100,0,0.8)",
+                      color: "white",
+                      border: "none",
+                      borderRadius: "8px",
+                      padding: "0.75rem 1.5rem",
+                      fontSize: "0.9rem",
+                      fontWeight: "bold",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Submission Link
+                  </button>
+                </a>
               </div>
             </div>
             
