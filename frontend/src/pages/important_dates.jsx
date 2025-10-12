@@ -635,8 +635,6 @@ export default function ImportantDates() {
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }

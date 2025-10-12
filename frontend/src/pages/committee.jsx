@@ -6,7 +6,7 @@ import "../App.css";
 
 const heroimage = "/images/KIET1.jpg";
 
-// Committee Data Structure
+// Committee Data Structure - REVERTED to original
 const committeesData = [
   {
     title: "Chief Patron(s)",
@@ -19,7 +19,7 @@ const committeesData = [
   {
     title: "Patron(s)",
     members: [
-      "Shri Manoj Goel, Joint Director, KIET Group of Institutions, Delhi-NCR, Ghaziabad, UP, India",
+      "Dr. Manoj Goel, Executive Director, KIET Group of Institutions, Delhi-NCR, Ghaziabad, UP, India",
       "Prof.(Dr.) Adesh K. Pandey, Director (Academics), KIET Group of Institutions, Delhi-NCR, Ghaziabad, UP, India",
     ],
   },
@@ -318,29 +318,15 @@ const committeesData = [
 export default function Committee() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [progress, setProgress] = useState(0);
-  const [openSection, setOpenSection] = useState(null); // State to manage which section is open
+  const [openSection, setOpenSection] = useState(null);
 
-  // Slider data - Same as home page
   const slides = [
-    {
-      id: 1,
-      backgroundImage: heroimage,
-    },
-    {
-      id: 2,
-      backgroundImage: heroimage,
-    },
-    {
-      id: 3,
-      backgroundImage: heroimage,
-    },
-    {
-      id: 4,
-      backgroundImage: heroimage,
-    },
+    { id: 1, backgroundImage: heroimage },
+    { id: 2, backgroundImage: heroimage },
+    { id: 3, backgroundImage: heroimage },
+    { id: 4, backgroundImage: heroimage },
   ];
 
-  // Auto-slide functionality with progress tracking
   useEffect(() => {
     let progressInterval;
     let slideInterval;
@@ -348,12 +334,7 @@ export default function Committee() {
     const startProgress = () => {
       setProgress(0);
       progressInterval = setInterval(() => {
-        setProgress((prev) => {
-          if (prev >= 100) {
-            return 100;
-          }
-          return prev + 2;
-        });
+        setProgress((prev) => (prev >= 100 ? 100 : prev + 2));
       }, 100);
 
       slideInterval = setTimeout(() => {
@@ -492,7 +473,7 @@ export default function Committee() {
               left: 0,
               right: 0,
               bottom: 0,
-              background: "linear-gradient(135deg, rgba(0, 50, 150, 0.9), rgba(0, 100, 200, 0.8))",
+              background: "linear-gradient(135deg, rgba(0, 50, 150, 0.9), rgba(0, 100, 200,.8))",
               zIndex: 1,
             }}
           />
@@ -522,7 +503,6 @@ export default function Committee() {
           </div>
           {/* Progress Points/Indicators */}
           <div className="progress-indicators">
-            {/* Connecting Line Background */}
             <div
               style={{
                 position: "absolute",
@@ -535,7 +515,6 @@ export default function Committee() {
                 zIndex: 1,
               }}
             />
-            {/* Progress Line */}
             <div
               style={{
                 position: "absolute",
@@ -594,6 +573,7 @@ export default function Committee() {
         >
           {/* Left Sidebar */}
           <div
+            className="sidebar"
             style={{
               width: "300px",
               display: "flex",
@@ -685,7 +665,7 @@ export default function Committee() {
               backgroundColor: "white",
               borderRadius: "15px",
               padding: "2rem",
-              textAlign: "left", // Added to left-align all content
+              textAlign: "left",
             }}
           > 
             <div style={{ border: '1px solid #e2e8f0', borderRadius: '12px', overflow: 'hidden' }}>
