@@ -409,18 +409,7 @@ export default function PaperSubmission() {
                 <li>The ”“Best Paper Awards”” will be given for each track of conference selected by the committee among the presented papers in ICICI- 2026.</li>
                 <li>Submit your papers through the conference submission portal by **November 15, 2025**.</li>
               </ul>
-              <div
-                style={{
-                  backgroundColor: "rgba(0,0,100,0.05)",
-                  padding: "1.5rem",
-                  borderRadius: "10px",
-                  marginTop: "2rem",
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  borderLeft: "5px solid rgba(0,0,100,0.8)"
-                }}
-              >
+              <div className="submission-box">
                 <p
                   style={{
                     fontFamily: "Poppins",
@@ -476,18 +465,7 @@ export default function PaperSubmission() {
                 <li>Authors should create an account on the Microsoft CMT platform for submission.</li>
                 <li>The submission link will be available under the Communication section on the conference website.</li>
               </ul>
-               <div
-                style={{
-                  backgroundColor: "rgba(0,100,0,0.05)",
-                  padding: "1.5rem",
-                  borderRadius: "10px",
-                  marginTop: "2rem",
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  borderLeft: "5px solid rgba(0,100,0,0.8)"
-                }}
-              >
+               <div className="submission-box green">
                 <p
                   style={{
                     fontFamily: "Poppins",
@@ -583,3 +561,4 @@ export default function PaperSubmission() {
     </div>
   );
 }
+

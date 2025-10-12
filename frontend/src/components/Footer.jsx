@@ -25,16 +25,16 @@ export default function Footer() {
           {/* Column 3: Socials and Contact */}
           <div className="footer-section contact-socials">
             <div className="social-icons">
-              <a href="#">
+              <a href="https://www.facebook.com/kiet.edu/?ref=br_rs" target="_blank" rel="noopener noreferrer">
                 <FaFacebook size={24} color="white" />
               </a>
-              <a href="#">
+              <a href="https://www.instagram.com/kiet_edu/" target="_blank" rel="noopener noreferrer">
                 <FaInstagram size={24} color="white" />
               </a>
-              <a href="#">
+              <a href="https://www.linkedin.com/company/kiet-group-of-institutions/" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin size={24} color="white" />
               </a>
-              <a href="#">
+              <a href="https://www.youtube.com/@KietEduGzb" target="_blank" rel="noopener noreferrer">
                 <FaYoutube size={24} color="white" />
               </a>
             </div>
@@ -47,7 +47,7 @@ export default function Footer() {
         {/* Map Section */}
         <div className="footer-map-section">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.782084227301!2d77.49841877479717!3d28.694600175620984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf250d4f10731%3A0x6a0a09e0807b539c!2sKIET%20Group%20of%20Institutions!5e0!3m2!1sen!2sin!4v1717255906232!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3497.8932140537333!2d77.49580101501783!3d28.75254258237105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf47204124251%3A0xf5c6d6eefa89a5df!2sKIET%20Group%20of%20Institutions!5e0!3m2!1sen!2sin!4v1676882822910!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}

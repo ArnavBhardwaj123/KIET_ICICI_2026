@@ -46,6 +46,7 @@ export default function Navbar() {
         style={{
           display: "flex",
           justifyContent: "space-between",
+          alignItems: "center",
           backgroundColor: "rgba(255, 255, 255, 0.95)",
           backdropFilter: "blur(10px)",
           position: "fixed",
@@ -53,13 +54,13 @@ export default function Navbar() {
           left: 0,
           right: 0,
           zIndex: 1000,
-          padding: "1.2rem 0",
+          padding: "1.2rem 2rem",
           boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
           width: "100%",
         }}
       >
-        {/* Logo Container - Separate */}
-        {/* <div style={{ display: "flex", alignItems: "center", gap: "1rem", padding: "0 2rem" }}>
+        {/* Logo Container */}
+        <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
           <img
             src="/images/KIET-LOGO.png"
             alt="KIET Logo"
@@ -93,17 +94,14 @@ export default function Navbar() {
               width: "auto",
             }}
           />
-        </div> */}
+        </div>
 
-        {/* Links Container - Separate */}
+        {/* Links Container */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
             gap: "2rem",
-            maxWidth: "1200px",
-            padding: "0 2rem",
-            margin: "0 2rem 0 auto"
           }}
         >
           {/* Desktop Navigation */}
@@ -302,36 +300,6 @@ export default function Navbar() {
           onClick={closeMenu}
         />
       )}
-
-      {/* Custom styles for mobile responsiveness */}
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .nav-links {
-            display: none !important;
-          }
-          
-          .mobile-menu-icon {
-            display: block !important;
-          }
-        }
-        
-        @media (min-width: 769px) {
-          .nav-links {
-            display: flex !important;
-          }
-          
-          .mobile-menu-icon {
-            display: none !important;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .mobile-nav-overlay {
-            width: 100vw !important;
-            right: 0 !important;
-          }
-        }
-      `}</style>
     </>
   );
 }
