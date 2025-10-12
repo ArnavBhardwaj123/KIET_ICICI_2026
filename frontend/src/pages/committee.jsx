@@ -687,60 +687,67 @@ export default function Committee() {
               padding: "2rem",
               textAlign: "left", // Added to left-align all content
             }}
-          >
-            {committeesData.map((committee, index) => (
-              <div key={index} style={{ marginBottom: "1rem" }}>
-                <div
-                  onClick={() => toggleSection(index)}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    cursor: "pointer",
-                    padding: "0.5rem",
-                    transition: "background-color 0.3s ease",
-                    "&:hover": {
-                      backgroundColor: "#f0f0f0",
-                    },
-                  }}
-                >
-                  <h2
+          > 
+            <div style={{ border: '1px solid #e2e8f0', borderRadius: '12px', overflow: 'hidden' }}>
+              {committeesData.map((committee, index) => (
+                <div key={index} style={{ borderBottom: index === committeesData.length - 1 ? 'none' : '1px solid #e2e8f0' }}>
+                  <div
+                    onClick={() => toggleSection(index)}
                     style={{
-                      fontFamily: "Poppins",
-                      fontSize: "1.5rem",
-                      color: "#333",
-                      margin: "0",
-                      fontWeight: "bold",
-                      flexGrow: 1,
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      cursor: "pointer",
+                      padding: "1rem 1.5rem",
+                      backgroundColor: openSection === index ? "#f7fafc" : "white",
+                      transition: "background-color 0.2s ease-in-out",
                     }}
+                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f7fafc'}
+                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = openSection === index ? '#f7fafc' : 'white'}
                   >
-                    {committee.title}
-                  </h2>
-                  {openSection === index ? (
-                    <FaAngleUp style={{ fontSize: "1.5rem" }} />
-                  ) : (
-                    <FaAngleDown style={{ fontSize: "1.5rem" }} />
-                  )}
-                </div>
-                {openSection === index && (
-                  <ul
+                    <h2
+                      style={{
+                        fontFamily: "Poppins",
+                        fontSize: "1.2rem",
+                        color: "#2d3748",
+                        margin: "0",
+                        fontWeight: "600",
+                      }}
+                    >
+                      {committee.title}
+                    </h2>
+                    {openSection === index ? (
+                      <FaAngleUp style={{ fontSize: "1.2rem", color: "#4a5568" }} />
+                    ) : (
+                      <FaAngleDown style={{ fontSize: "1.2rem", color: "#718096" }} />
+                    )}
+                  </div>
+                  <div
                     style={{
-                      fontFamily: "Poppins",
-                      fontSize: "1rem",
-                      color: "#666",
-                      lineHeight: "1.8",
-                      paddingLeft: "1.5rem",
-                      marginTop: "0.5rem",
-                      transition: "max-height 0.5s ease-in-out",
+                      maxHeight: openSection === index ? `${committee.members.length * 50}px` : "0",
                       overflow: "hidden",
+                      transition: "max-height 0.4s ease-in-out",
+                      backgroundColor: "#fdfdff",
                     }}
                   >
-                    {committee.members.map((member, memberIndex) => (
-                      <li key={memberIndex}>{member}</li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            ))}
+                    <ul
+                      style={{
+                        fontFamily: "Poppins",
+                        fontSize: "0.95rem",
+                        color: "#4a5568",
+                        lineHeight: "1.8",
+                        padding: "1rem 1.5rem 1.5rem 3rem",
+                        margin: 0,
+                      }}
+                    >
+                      {committee.members.map((member, memberIndex) => (
+                        <li key={memberIndex} style={{ marginBottom: '0.25rem' }}>{member}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

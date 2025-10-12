@@ -6,59 +6,7 @@ import "../App.css";
 
 const heroimage = "/images/KIET1.jpg";
 
-// SPEAKERS DATA
-const speakersData = [
-  {
-    id: 1,
-    name: "Dr. Rajesh Kumar",
-    title: "AI Research Director",
-    organization: "Indian Institute of Technology, Delhi",
-    image: "/images/speaker_1.png",
-    expertise: "Artificial Intelligence and Machine Learning"
-  },
-  {
-    id: 2,
-    name: "Prof. Priya Sharma",
-    title: "Data Science Expert",
-    organization: "Stanford University, USA",
-    image: "/images/speaker2.png",
-    expertise: "Big Data Analytics and Computational Intelligence"
-  },
-  {
-    id: 3,
-    name: "Dr. Michael Chen",
-    title: "Cybersecurity Specialist",
-    organization: "MIT, USA",
-    image: "/images/speaker_3.png",
-    expertise: "Cybersecurity and Cryptography"
-  },
-  {
-    id: 4,
-    name: "Prof. Sarah Johnson",
-    title: "IoT Innovation Lead",
-    organization: "Oxford University, UK",
-    image: "/images/speaker_4.png",
-    expertise: "Internet of Things and Smart Systems"
-  },
-  {
-    id: 5,
-    name: "Dr. Ahmed Hassan",
-    title: "Blockchain Expert",
-    organization: "University of Toronto, Canada",
-    image: "/images/speaker_1.png",
-    expertise: "Blockchain Technology and Distributed Systems"
-  },
-  {
-    id: 6,
-    name: "Prof. Lisa Wang",
-    title: "Computer Vision Researcher",
-    organization: "Carnegie Mellon University, USA",
-    image: "/images/speaker2.png",
-    expertise: "Computer Vision and Image Processing"
-  }
-];
-
-export default function Speakers() {
+export default function ImportantDates() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [progress, setProgress] = useState(0);
 
@@ -160,7 +108,7 @@ export default function Speakers() {
                 textAlign: "left",
               }}
             >
-              Keynote Speakers
+              Important Dates
             </h1>
             <p
               style={{
@@ -173,7 +121,7 @@ export default function Speakers() {
                 textAlign: "left",
               }}
             >
-              Learn From Leading Experts and Researchers
+              Key Deadlines and Conference Schedule
             </p>
           </div>
 
@@ -200,9 +148,9 @@ export default function Speakers() {
                 textAlign: "left",
               }}
             >
-              <div>Join us to hear from distinguished speakers sharing</div>
-              <div>cutting-edge research and insights from leading</div>
-              <div>institutions worldwide.</div>
+              <div>Stay updated with all important conference</div>
+              <div>deadlines and events. Mark your calendar</div>
+              <div>to ensure timely submissions.</div>
             </div>
           </div>
         </div>
@@ -248,7 +196,7 @@ export default function Speakers() {
               >
                 <FaCalendarAlt style={{ color: "white" }} />
                 <p style={{ fontFamily: "Poppins", fontSize: "1.1rem", margin: "0" }}>
-                  Conference Date: March 2026
+                  Conference Dates: 13th-14th February, 2026
                 </p>
               </div>
               <div
@@ -276,8 +224,8 @@ export default function Speakers() {
                   textAlign: "left",
                 }}
               >
-                Learn From The Best<br />
-                Minds In Technology
+                Plan Ahead For<br />
+                Conference Success
               </h2>
             </div>
           </div>
@@ -341,7 +289,7 @@ export default function Speakers() {
         </div>
       </div>
 
-      {/* Speakers Content */}
+      {/* Important Dates Content */}
       <div style={{
         backgroundColor: "#f5f5f5",
         padding: "4rem 2rem",
@@ -391,7 +339,7 @@ export default function Speakers() {
                 <p style={{ margin: "0.5rem 0" }}>Paper Submission: 31st January, 2026</p>
                 <p style={{ margin: "0.5rem 0" }}>Notification: 15th February, 2026</p>
                 <p style={{ margin: "0.5rem 0" }}>Camera Ready: 20th February, 2026</p>
-                <p style={{ margin: "0.5rem 0" }}>Conference: 15th-18th March, 2026</p>
+                <p style={{ margin: "0.5rem 0" }}>Conference: 13th-14th February, 2026</p>
               </div>
             </div>
 
@@ -446,7 +394,7 @@ export default function Speakers() {
                 margin: "0 0 1rem 0",
                 fontWeight: "bold"
               }}>
-                KEYNOTE SPEAKERS
+                IMPORTANT DATES
               </h1>
               <p style={{
                 fontFamily: "Poppins",
@@ -455,86 +403,201 @@ export default function Speakers() {
                 lineHeight: "1.6",
                 margin: "0"
               }}>
-                We are honored to have distinguished speakers from leading institutions around the world who will share their expertise and insights in various domains of computational intelligence.
+                Please note all the important deadlines for IEEE ICICI 2026. All deadlines are at 11:59 PM anywhere on earth (AoE).
               </p>
             </div>
 
-            {/* Speakers Grid */}
+            {/* Dates Timeline */}
             <div style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
+              display: "flex",
+              flexDirection: "column",
               gap: "2rem",
               marginTop: "2rem"
             }}>
               
-              {speakersData.map((speaker) => (
-                <div
-                  key={speaker.id}
-                  style={{
-                    backgroundColor: "#f8f9fa",
-                    borderRadius: "12px",
-                    padding: "1.5rem",
-                    textAlign: "center",
-                    border: "1px solid #e9ecef",
-                    boxShadow: "0 2px 10px rgba(0,0,0,0.05)"
-                  }}
-                >
-                  {/* Speaker Image */}
-                  <div style={{
-                    width: "120px",
-                    height: "120px",
-                    borderRadius: "50%",
-                    overflow: "hidden",
-                    margin: "0 auto 1rem auto",
-                    border: "3px solid #05B8A8"
-                  }}>
-                    <img
-                      src={speaker.image}
-                      alt={speaker.name}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover"
-                      }}
-                    />
-                  </div>
-                  
+              {/* Paper Submission */}
+              <div style={{
+                backgroundColor: "#f8f9fa",
+                borderRadius: "12px",
+                padding: "2rem",
+                border: "1px solid #e9ecef",
+                boxShadow: "0 2px 10px rgba(0,0,0,0.05)"
+              }}>
+                <div style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  marginBottom: "1rem"
+                }}>
                   <h3 style={{
                     fontFamily: "Poppins",
-                    fontSize: "1.3rem",
+                    fontSize: "1.4rem",
                     color: "#333",
-                    margin: "0 0 0.5rem 0",
+                    margin: "0",
                     fontWeight: "600"
                   }}>
-                    {speaker.name}
+                    Paper Submission Deadline
                   </h3>
-                  <p style={{
-                    fontFamily: "Poppins",
-                    fontSize: "1rem",
-                    color: "#05B8A8",
-                    margin: "0 0 0.5rem 0",
-                    fontWeight: "500"
-                  }}>
-                    {speaker.title}
-                  </p>
-                  <p style={{
-                    fontFamily: "Poppins",
+                  <div style={{
+                    backgroundColor: "#05B8A8",
+                    color: "white",
+                    padding: "0.5rem 1rem",
+                    borderRadius: "20px",
                     fontSize: "0.9rem",
-                    color: "#666",
-                    margin: "0 0 1rem 0"
-                  }}>
-                    {speaker.organization}
-                  </p>
-                  <p style={{
                     fontFamily: "Poppins",
-                    fontSize: "0.85rem",
-                    color: "#555",
-                    lineHeight: "1.5"
+                    fontWeight: "600"
                   }}>
-                    <strong>Expertise:</strong> {speaker.expertise}
-                  </p>
+                    31st January, 2026
+                  </div>
                 </div>
-              ))}
+                <p style={{
+                  fontFamily: "Poppins",
+                  fontSize: "1rem",
+                  color: "#666",
+                  lineHeight: "1.6",
+                  margin: "0"
+                }}>
+                  Submit your research papers through the conference submission system. All papers must be in IEEE format and should not exceed 6 pages including references.
+                </p>
+              </div>
+
+              {/* Notification */}
+              <div style={{
+                backgroundColor: "#f8f9fa",
+                borderRadius: "12px",
+                padding: "2rem",
+                border: "1px solid #e9ecef",
+                boxShadow: "0 2px 10px rgba(0,0,0,0.05)"
+              }}>
+                <div style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  marginBottom: "1rem"
+                }}>
+                  <h3 style={{
+                    fontFamily: "Poppins",
+                    fontSize: "1.4rem",
+                    color: "#333",
+                    margin: "0",
+                    fontWeight: "600"
+                  }}>
+                    Acceptance Notification
+                  </h3>
+                  <div style={{
+                    backgroundColor: "#4a5568",
+                    color: "white",
+                    padding: "0.5rem 1rem",
+                    borderRadius: "20px",
+                    fontSize: "0.9rem",
+                    fontFamily: "Poppins",
+                    fontWeight: "600"
+                  }}>
+                    15th February, 2026
+                  </div>
+                </div>
+                <p style={{
+                  fontFamily: "Poppins",
+                  fontSize: "1rem",
+                  color: "#666",
+                  lineHeight: "1.6",
+                  margin: "0"
+                }}>
+                  Authors will receive notification about the acceptance or rejection of their papers via email. Detailed reviewer comments will be provided for accepted papers.
+                </p>
+              </div>
+
+              {/* Camera Ready */}
+              <div style={{
+                backgroundColor: "#f8f9fa",
+                borderRadius: "12px",
+                padding: "2rem",
+                border: "1px solid #e9ecef",
+                boxShadow: "0 2px 10px rgba(0,0,0,0.05)"
+              }}>
+                <div style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  marginBottom: "1rem"
+                }}>
+                  <h3 style={{
+                    fontFamily: "Poppins",
+                    fontSize: "1.4rem",
+                    color: "#333",
+                    margin: "0",
+                    fontWeight: "600"
+                  }}>
+                    Camera Ready Submission
+                  </h3>
+                  <div style={{
+                    backgroundColor: "#6366f1",
+                    color: "white",
+                    padding: "0.5rem 1rem",
+                    borderRadius: "20px",
+                    fontSize: "0.9rem",
+                    fontFamily: "Poppins",
+                    fontWeight: "600"
+                  }}>
+                    20th February, 2026
+                  </div>
+                </div>
+                <p style={{
+                  fontFamily: "Poppins",
+                  fontSize: "1rem",
+                  color: "#666",
+                  lineHeight: "1.6",
+                  margin: "0"
+                }}>
+                  Final versions of accepted papers must be submitted along with the signed copyright transfer form. Authors must also complete their conference registration.
+                </p>
+              </div>
+
+              {/* Conference Dates */}
+              <div style={{
+                backgroundColor: "#f8f9fa",
+                borderRadius: "12px",
+                padding: "2rem",
+                border: "1px solid #e9ecef",
+                boxShadow: "0 2px 10px rgba(0,0,0,0.05)"
+              }}>
+                <div style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  marginBottom: "1rem"
+                }}>
+                  <h3 style={{
+                    fontFamily: "Poppins",
+                    fontSize: "1.4rem",
+                    color: "#333",
+                    margin: "0",
+                    fontWeight: "600"
+                  }}>
+                    Conference Dates
+                  </h3>
+                  <div style={{
+                    backgroundColor: "#dc2626",
+                    color: "white",
+                    padding: "0.5rem 1rem",
+                    borderRadius: "20px",
+                    fontSize: "0.9rem",
+                    fontFamily: "Poppins",
+                    fontWeight: "600"
+                  }}>
+                    13th-14th February, 2026
+                  </div>
+                </div>
+                <p style={{
+                  fontFamily: "Poppins",
+                  fontSize: "1rem",
+                  color: "#666",
+                  lineHeight: "1.6",
+                  margin: "0"
+                }}>
+                  The main conference will be held over two days featuring keynote speeches, technical sessions, poster presentations, and networking opportunities.
+                </p>
+              </div>
 
             </div>
 
@@ -553,19 +616,21 @@ export default function Speakers() {
                 fontWeight: "600",
                 margin: "0 0 1rem 0"
               }}>
-                Session Information
+                Important Notes
               </h3>
-              <p style={{
+              <ul style={{
                 color: "#666",
                 fontFamily: "Poppins",
                 fontSize: "0.95rem",
                 lineHeight: "1.6",
-                margin: "0"
+                margin: "0",
+                paddingLeft: "1.5rem"
               }}>
-                Each keynote session will be approximately 45 minutes long, including a 35-minute presentation followed by a 10-minute Q&A session. 
-                Sessions will be held in the main auditorium and will also be available via live streaming for remote participants. 
-                All registered attendees will have access to session recordings for 30 days after the conference.
-              </p>
+                <li>All times are in Anywhere on Earth (AoE) timezone</li>
+                <li>Late submissions will not be considered</li>
+                <li>At least one author must register for the conference to present the paper</li>
+                <li>Papers not presented at the conference will be withdrawn from IEEE Xplore</li>
+              </ul>
             </div>
           </div>
         </div>

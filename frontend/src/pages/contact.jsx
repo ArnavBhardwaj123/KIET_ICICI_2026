@@ -241,81 +241,73 @@ export default function Contact() {
 
             {/* Contact Details */}
             <div style={{ display: "flex", gap: "2rem", marginBottom: "3rem", flexWrap: "wrap" }}>
-              <div style={{ flex: 1, minWidth: "250px" }}>
-                <h3 style={{ fontFamily: "Poppins", fontSize: "1.2rem", color: "#4299e1", marginBottom: "1rem" }}>
-                  <FaMapMarkerAlt style={{ marginRight: "0.5rem" }} /> Address
-                </h3>
-                <p style={{ fontFamily: "Poppins", color: "#666", lineHeight: "1.6" }}>
-                  KIET Group of Institutions<br />
-                  Ghaziabad-Meerut Highway (NH-58)<br />
-                  Muradnagar, Ghaziabad, Uttar Pradesh, India - 201206
+              <div style={{ flex: 1, minWidth: "250px", fontFamily: "Poppins", color: "#666", lineHeight: "1.6" }}>
+                <h3 style={{ fontSize: "1.2rem", color: "#4299e1", marginBottom: "1rem" }}>Dr. Puneet Garg</h3>
+                <p>Associate Professor, Department of CSE-AI,</p>
+                <p>KIET Group of Institutions, Delhi-NCR, Ghaziabad</p>
+                <p style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                  <FaPhone /> +91-9996091999
+                </p>
+                <p style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                  <FaEnvelope /> puneet.garg@kiet.edu
                 </p>
               </div>
-              <div style={{ flex: 1, minWidth: "250px" }}>
-                <h3 style={{ fontFamily: "Poppins", fontSize: "1.2rem", color: "#4299e1", marginBottom: "1rem" }}>
-                  <FaPhone style={{ marginRight: "0.5rem" }} /> Phone
-                </h3>
-                <p style={{ fontFamily: "Poppins", color: "#666", lineHeight: "1.6" }}>
-                  +91-120-2844000
+              <div style={{ flex: 1, minWidth: "250px", fontFamily: "Poppins", color: "#666", lineHeight: "1.6" }}>
+                <h3 style={{ fontSize: "1.2rem", color: "#4299e1", marginBottom: "1rem" }}>Dr. Manish Bhardwaj</h3>
+                <p>Associate Professor, Department of CSIT,</p>
+                <p>KIET Group of Institutions, Delhi-NCR, Ghaziabad</p>
+                <p style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                  <FaPhone /> +91-8700600273
                 </p>
-                <h3 style={{ fontFamily: "Poppins", fontSize: "1.2rem", color: "#4299e1", marginTop: "1.5rem", marginBottom: "1rem" }}>
-                  <FaEnvelope style={{ marginRight: "0.5rem" }} /> Email
-                </h3>
-                <p style={{ fontFamily: "Poppins", color: "#666", lineHeight: "1.6" }}>
-                  icici2026@kiet.edu
+                <p style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                  <FaEnvelope /> manish.bhardwaj@kiet.edu
                 </p>
               </div>
             </div>
 
-            {/* Map */}
-            <div style={{ marginBottom: "3rem" }}>
+            {/* For Authors Section */}
+            <div style={{ marginTop: "3rem" }}>
               <h2 style={{ fontFamily: "Poppins", fontSize: "1.8rem", color: "#333", margin: "0 0 1.5rem 0", fontWeight: "600" }}>
-                Our Location
+                For Authors
               </h2>
-              <div style={{ height: "300px", borderRadius: "10px", overflow: "hidden" }}>
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.782084227301!2d77.49841877479717!3d28.694600175620984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf250d4f10731%3A0x6a0a09e0807b539c!2sKIET%20Group%20of%20Institutions!5e0!3m2!1sen!2sin!4v1717255906232!5m2!1sen!2sin"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="KIET Group of Institutions location"
-                ></iframe>
-              </div>
-            </div>
-
-            {/* Contact Form */}
-            <div>
-              <h2 style={{ fontFamily: "Poppins", fontSize: "1.8rem", color: "#333", margin: "0 0 1.5rem 0", fontWeight: "600" }}>
-                Send Us a Message
-              </h2>
-              <form>
-                <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
-                  <input type="text" placeholder="Your Name" style={{ width: "50%", padding: "0.8rem", borderRadius: "5px", border: "1px solid #ccc", fontFamily: "Poppins" }} />
-                  <input type="email" placeholder="Your Email" style={{ width: "50%", padding: "0.8rem", borderRadius: "5px", border: "1px solid #ccc", fontFamily: "Poppins" }} />
-                </div>
-                <div style={{ marginBottom: "1rem" }}>
-                  <input type="text" placeholder="Subject" style={{ width: "100%", padding: "0.8rem", borderRadius: "5px", border: "1px solid #ccc", fontFamily: "Poppins" }} />
-                </div>
-                <div style={{ marginBottom: "1.5rem" }}>
-                  <textarea placeholder="Your Message" rows="6" style={{ width: "100%", padding: "0.8rem", borderRadius: "5px", border: "1px solid #ccc", fontFamily: "Poppins", resize: "vertical" }}></textarea>
-                </div>
-                <button type="submit" style={{
-                  backgroundColor: "#4299e1",
-                  color: "white",
-                  border: "none",
-                  borderRadius: "50px",
-                  padding: "0.8rem 2rem",
-                  fontSize: "1rem",
-                  fontWeight: "bold",
-                  cursor: "pointer",
-                  transition: "background-color 0.3s"
-                }}>
-                  Send Message
+              <div
+                style={{
+                  backgroundColor: "rgba(0,0,100,0.8)",
+                  padding: "1.5rem",
+                  borderRadius: "10px",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  flexWrap: "wrap",
+                  gap: "1rem"
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: "Poppins",
+                    fontSize: "1rem",
+                    color: "white",
+                    margin: "0",
+                  }}
+                >
+                  Authors may contact us for any queries regarding paper submission.
+                </p>
+                <button
+                  onClick={() => window.location.href = '/paper-submission'}
+                  style={{
+                    backgroundColor: "white",
+                    color: "black",
+                    border: "none",
+                    borderRadius: "5px",
+                    padding: "0.75rem 1.5rem",
+                    fontSize: "0.9rem",
+                    fontWeight: "bold",
+                    cursor: "pointer",
+                  }}
+                >
+                  Submission Guidelines
                 </button>
-              </form>
+              </div>
             </div>
           </div>
         </div>
