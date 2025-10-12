@@ -667,7 +667,7 @@ export default function Committee() {
               padding: "2rem",
               textAlign: "left",
             }}
-          >
+          > 
             <div style={{ border: '1px solid #e2e8f0', borderRadius: '12px', overflow: 'hidden' }}>
               {committeesData.map((committee, index) => (
                 <div key={index} style={{ borderBottom: index === committeesData.length - 1 ? 'none' : '1px solid #e2e8f0' }}>
@@ -704,7 +704,7 @@ export default function Committee() {
                   </div>
                   <div
                     style={{
-                      maxHeight: openSection === index ? `${committee.members.length * 45 + 32}px` : "0",
+                      maxHeight: openSection === index ? `${committee.members.length * 50}px` : "0",
                       overflow: "hidden",
                       transition: "max-height 0.4s ease-in-out",
                       backgroundColor: "#fdfdff",
@@ -716,7 +716,7 @@ export default function Committee() {
                         fontSize: "0.95rem",
                         color: "#4a5568",
                         lineHeight: "1.8",
-                        padding: "1.5rem 1.5rem 1.5rem 2.5rem",
+                        padding: "1rem 1.5rem 1.5rem 3rem",
                         margin: 0,
                       }}
                     >
@@ -731,7 +731,6 @@ export default function Committee() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

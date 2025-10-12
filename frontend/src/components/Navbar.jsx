@@ -31,10 +31,11 @@ export default function Navbar() {
 
   const items = [
     { name: "HOME", path: "/" },
-    { name: "SPEAKERS", path: "/speakers" }, // Added Speakers link
     { name: "CALL FOR PAPERS", path: "/call-for-papers" },
     { name: "PAPER SUBMISSION", path: "/paper-submission" },
     { name: "COMMITTEE", path: "/committee" },
+    { name: "IMPORTANT DATES", path: "/important_dates" },
+    { name: "SPEAKERS", path: "/speakers" },
     { name: "REGISTRATION", path: "/registration" },
     { name: "CONTACT", path: "/contact" },
   ];
@@ -44,7 +45,7 @@ export default function Navbar() {
       <nav
         style={{
           display: "flex",
-          justifyContent: "center",
+          justifyContent: "space-between",
           backgroundColor: "rgba(255, 255, 255, 0.95)",
           backdropFilter: "blur(10px)",
           position: "fixed",
@@ -52,33 +53,59 @@ export default function Navbar() {
           left: 0,
           right: 0,
           zIndex: 1000,
-          padding: "0.5rem 0",
-          boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+          padding: "1.2rem 0",
+          boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
           width: "100%",
         }}
       >
+        {/* Logo Container - Separate */}
+        {/* <div style={{ display: "flex", alignItems: "center", gap: "1rem", padding: "0 2rem" }}>
+          <img
+            src="/images/KIET-LOGO.png"
+            alt="KIET Logo"
+            style={{
+              height: "50px",
+              width: "auto",
+            }}
+          />
+           <img
+            src="/images/IEEE-CIS-logo-RGB-300ppi.png"
+            alt="SCS Logo"
+            style={{
+              height: "40px",
+              width: "auto",
+            }}
+          />
+          <img
+            src="/images/IEEE-SB-LOGO.png"
+            alt="IEEE Logo"
+            style={{
+              height: "40px",
+              width: "auto",
+            }}
+          />
+         
+          <img
+            src="/images/IEEE-STUDENT-CHAPTER.png"
+            alt="UP Section Logo"
+            style={{
+              height: "40px",
+              width: "auto",
+            }}
+          />
+        </div> */}
+
+        {/* Links Container - Separate */}
         <div
           style={{
             display: "flex",
-            justifyContent: "space-between",
             alignItems: "center",
-            width: "100%",
+            gap: "2rem",
             maxWidth: "1200px",
             padding: "0 2rem",
+            margin: "0 2rem 0 auto"
           }}
         >
-          {/* Logo */}
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <img
-              src="/images/KIET-LOGO.png"
-              alt="KIET Logo"
-              style={{
-                height: "50px",
-                width: "auto",
-              }}
-            />
-          </div>
-
           {/* Desktop Navigation */}
           <ul
             className="nav-links"
@@ -90,31 +117,31 @@ export default function Navbar() {
               padding: 0,
             }}
           >
-            {items.map((item) => (
-              <li key={item.name}>
-                <Link
-                  to={item.path}
-                  style={{
-                    color: "#333",
-                    textDecoration: "none",
-                    fontWeight: "500",
-                    fontSize: "0.9rem",
-                    fontFamily: "Poppins",
-                    letterSpacing: "0.5px",
-                    transition: "color 0.3s ease",
-                    padding: "0.5rem 0",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.color = "#40E0D0";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.color = "#333";
-                  }}
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
+          {items.map((item) => (
+            <li key={item.name}>
+              <Link
+                to={item.path}
+                style={{
+                  color: "#333",
+                  textDecoration: "none",
+                  fontWeight: "500",
+                  fontSize: "0.9rem",
+                  fontFamily: "Poppins",
+                  letterSpacing: "0.5px",
+                  transition: "color 0.3s ease",
+                  padding: "0.5rem 0",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.color = "#40E0D0";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.color = "#333";
+                }}
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
           </ul>
 
           {/* Mobile menu button */}
@@ -257,7 +284,6 @@ export default function Navbar() {
           </div>
         </div>
       )}
-
       {/* Backdrop for mobile menu */}
       {isOpen && (
         <div
