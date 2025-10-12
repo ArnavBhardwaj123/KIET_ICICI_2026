@@ -1,10 +1,46 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { FaCalendarAlt, FaMapMarkerAlt, FaPhone, FaEnvelope, FaUser, FaTag } from "react-icons/fa";
+import { FaPhone, FaEnvelope } from "react-icons/fa";
 import "../App.css";
 
 const heroimage = "/images/KIET1.jpg";
+
+// Contact Data
+const contactData = [
+  {
+    name: "Dr. Manish Bhardwaj",
+    title: "Associate Professor, Department of CSIT",
+    institution: "KIET Group of Institutions, Delhi-NCR, Ghaziabad",
+    phone: "+91-8700600273",
+    email: "manish.bhardwaj@kiet.edu",
+  },
+  {
+    name: "Dr. Puneet Garg",
+    title: "Associate Professor, Department of CSE-AI",
+    institution: "KIET Group of Institutions, Delhi-NCR, Ghaziabad",
+    phone: "+91-9996091999",
+    email: "puneet.garg@kiet.edu",
+  },
+  {
+    name: "Mr. Satyam Shivam Sundaram",
+    title: "For Conference fee related inquiries",
+    phone: "+91-xxxxxxxxxx",
+    email: "satyam.sundaram@kiet.edu",
+  },
+  {
+    name: "Mr. Rajeev Kumar Singh",
+    title: "For Paper Presentation related inquiries",
+    phone: "+91-7376495623",
+    email: "rajeev.singh@kiet.edu",
+  },
+  {
+    name: "Mr. Gagan Kumar",
+    title: "For Accommodation facility",
+    phone: "+91-8318670117",
+    email: "gagan.kumar@kiet.edu",
+  },
+];
 
 export default function Contact() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -164,20 +200,6 @@ export default function Contact() {
 
           {/* Content */}
           <div style={{ position: "relative", zIndex: 2, color: "white", width: "100%" }}>
-            <div style={{ marginBottom: "5rem" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem" }}>
-                <FaCalendarAlt style={{ color: "white" }} />
-                <p style={{ fontFamily: "Poppins", fontSize: "1.1rem", margin: "0" }}>
-                  Conference Dates: 15th - 18th February, 2026
-                </p>
-              </div>
-              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <FaMapMarkerAlt style={{ color: "white" }} />
-                <p style={{ fontFamily: "Poppins", fontSize: "1.1rem", margin: "0" }}>
-                  KIET Group Of Institutions, Ghaziabad, India
-                </p>
-              </div>
-            </div>
             <div>
               <h2 style={{ fontFamily: "Poppins", fontSize: "2.5rem", fontWeight: "300", margin: "0", lineHeight: "1.3", textAlign: "left" }}>
                 We Look Forward to<br />
@@ -229,40 +251,77 @@ export default function Contact() {
           </div>
 
           {/* Right Content Area */}
-          <div style={{ flex: 1, backgroundColor: "white", borderRadius: "15px", padding: "2rem" }}>
+          <div style={{ flex: 1, backgroundColor: "white", borderRadius: "15px", padding: "2rem", textAlign: "left" }}>
             <div style={{ marginBottom: "2rem" }}>
               <h1 style={{ fontFamily: "Poppins", fontSize: "2.5rem", color: "#333", margin: "0 0 1rem 0", fontWeight: "bold" }}>
                 Get In Touch
               </h1>
               <p style={{ fontFamily: "Poppins", fontSize: "1rem", color: "#666", lineHeight: "1.6", margin: "0" }}>
-                We welcome your questions, comments, and feedback. Please feel free to reach out to us using the contact details below or by filling out the contact form. Our team will get back to you as soon as possible.
+                We welcome your questions, comments, and feedback. Please feel free to reach out to us using the contact details below. Our team will get back to you as soon as possible.
               </p>
             </div>
 
             {/* Contact Details */}
-            <div style={{ display: "flex", gap: "2rem", marginBottom: "3rem", flexWrap: "wrap" }}>
-              <div style={{ flex: 1, minWidth: "250px", fontFamily: "Poppins", color: "#666", lineHeight: "1.6" }}>
-                <h3 style={{ fontSize: "1.2rem", color: "#4299e1", marginBottom: "1rem" }}>Dr. Puneet Garg</h3>
-                <p>Associate Professor, Department of CSE-AI,</p>
-                <p>KIET Group of Institutions, Delhi-NCR, Ghaziabad</p>
-                <p style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                  <FaPhone /> +91-9996091999
-                </p>
-                <p style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                  <FaEnvelope /> puneet.garg@kiet.edu
-                </p>
-              </div>
-              <div style={{ flex: 1, minWidth: "250px", fontFamily: "Poppins", color: "#666", lineHeight: "1.6" }}>
-                <h3 style={{ fontSize: "1.2rem", color: "#4299e1", marginBottom: "1rem" }}>Dr. Manish Bhardwaj</h3>
-                <p>Associate Professor, Department of CSIT,</p>
-                <p>KIET Group of Institutions, Delhi-NCR, Ghaziabad</p>
-                <p style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                  <FaPhone /> +91-8700600273
-                </p>
-                <p style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                  <FaEnvelope /> manish.bhardwaj@kiet.edu
-                </p>
-              </div>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem", marginBottom: "3rem" }}>
+              {contactData.map((contact, index) => (
+                <div key={index} style={{
+                  backgroundColor: "#f8f9fa",
+                  borderRadius: "12px",
+                  padding: "1.5rem",
+                  border: "1px solid #e9ecef",
+                  boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
+                  flex: "1 1 300px",
+                  maxWidth: "calc(50% - 1rem)",
+                }}>
+                  <h3 style={{
+                    fontFamily: "Poppins",
+                    fontSize: "1.3rem",
+                    color: "#333",
+                    margin: "0 0 0.5rem 0",
+                    fontWeight: "600"
+                  }}>
+                    {contact.name}
+                  </h3>
+                  <p style={{
+                    fontFamily: "Poppins",
+                    fontSize: "1rem",
+                    color: "#05B8A8",
+                    margin: "0 0 1rem 0",
+                    fontWeight: "500"
+                  }}>
+                    {contact.title}
+                  </p>
+                  {contact.institution && (
+                    <p style={{
+                      fontFamily: "Poppins",
+                      fontSize: "0.9rem",
+                      color: "#666",
+                      margin: "0 0 1rem 0"
+                    }}>
+                      {contact.institution}
+                    </p>
+                  )}
+                  <div style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "0.5rem",
+                    marginTop: "1rem",
+                    borderTop: "1px solid #e9ecef",
+                    paddingTop: "1rem"
+                  }}>
+                    {contact.phone && (
+                      <p style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontFamily: "Poppins", color: "#666", margin: 0 }}>
+                        <FaPhone /> {contact.phone}
+                      </p>
+                    )}
+                    {contact.email && (
+                      <p style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontFamily: "Poppins", color: "#666", margin: 0 }}>
+                        <FaEnvelope /> {contact.email}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
 
             {/* For Authors Section */}
@@ -309,9 +368,11 @@ export default function Contact() {
                 </button>
               </div>
             </div>
+
           </div>
         </div>
       </div>
     </div>
   );
 }
+

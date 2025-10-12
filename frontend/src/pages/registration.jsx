@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
+import { FaCalendarAlt, FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 import "../App.css";
 
 const heroimage = "/images/KIET1.jpg";
@@ -10,7 +10,6 @@ export default function Registration() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [progress, setProgress] = useState(0);
 
-  // Slider data - Same as home page
   const slides = [
     { id: 1, backgroundImage: heroimage },
     { id: 2, backgroundImage: heroimage },
@@ -18,7 +17,6 @@ export default function Registration() {
     { id: 4, backgroundImage: heroimage },
   ];
 
-  // Auto-slide functionality with progress tracking
   useEffect(() => {
     let progressInterval;
     let slideInterval;
@@ -26,12 +24,7 @@ export default function Registration() {
     const startProgress = () => {
       setProgress(0);
       progressInterval = setInterval(() => {
-        setProgress((prev) => {
-          if (prev >= 100) {
-            return 100;
-          }
-          return prev + 2;
-        });
+        setProgress((prev) => (prev >= 100 ? 100 : prev + 2));
       }, 100);
 
       slideInterval = setTimeout(() => {
@@ -70,138 +63,25 @@ export default function Registration() {
     fontSize: "0.85rem",
   };
 
-  // Responsive styles
-  const getResponsiveStyles = () => {
-    const isMobile = window.innerWidth <= 768;
-    const isTablet = window.innerWidth <= 1024 && window.innerWidth > 768;
-
-    return {
-      heroSection: {
-        width: "100%",
-        height: isMobile ? "auto" : "100vh",
-        paddingTop: "90px",
-      },
-      topSection: {
-        backgroundColor: "white",
-        height: isMobile ? "auto" : "40%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: isMobile ? "center" : "space-between",
-        padding: isMobile ? "2rem 1rem" : "0 2rem",
-        position: "relative",
-        flexDirection: isMobile ? "column" : "row",
-        textAlign: isMobile ? "center" : "left",
-        gap: isMobile ? "2rem" : "0",
-        minHeight: isMobile ? "50vh" : "auto",
-      },
-      leftContent: {
-        flex: 1,
-        maxWidth: isMobile ? "100%" : "60%",
-        textAlign: isMobile ? "center" : "left",
-      },
-      rightContent: {
-        position: isMobile ? "relative" : "absolute",
-        right: isMobile ? "auto" : 0,
-        flex: 1,
-        maxWidth: isMobile ? "100%" : "45%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: isMobile ? "center" : "flex-start",
-        paddingTop: isMobile ? "0" : "4rem",
-        paddingLeft: isMobile ? "0" : "2rem",
-        paddingRight: isMobile ? "0" : "5rem",
-      },
-      title: {
-        color: "#333",
-        fontFamily: "Poppins",
-        fontSize: isMobile ? "2.5rem" : isTablet ? "3rem" : "3.8rem",
-        fontWeight: "bold",
-        lineHeight: "1.1",
-        margin: "0",
-        textAlign: isMobile ? "center" : "left",
-      },
-      bottomSection: {
-        position: "relative",
-        height: isMobile ? "auto" : "60%",
-        backgroundImage: `url(${slides[currentSlide].backgroundImage})`,
-        backgroundSize: "120%",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        display: "flex",
-        alignItems: "center",
-        padding: isMobile ? "2rem 1rem" : "0 4rem",
-        overflow: "hidden",
-        minHeight: isMobile ? "50vh" : "auto",
-      },
-      bottomTitle: {
-        fontFamily: "Poppins",
-        fontSize: isMobile ? "1.8rem" : "2.5rem",
-        fontWeight: "300",
-        margin: "0",
-        lineHeight: "1.3",
-        textAlign: isMobile ? "center" : "left",
-      },
-      contentWrapper: {
-        backgroundColor: "#f5f5f5",
-        padding: isMobile ? "2rem 1rem" : "4rem 2rem",
-        minHeight: "100vh",
-      },
-      mainContent: {
-        maxWidth: "1200px",
-        margin: "0 auto",
-        display: "flex",
-        flexDirection: isMobile ? "column" : "row",
-        gap: "2rem",
-      },
-      sidebar: {
-        width: isMobile ? "100%" : "300px",
-        display: "flex",
-        flexDirection: "column",
-        gap: "1rem",
-        marginBottom: isMobile ? "2rem" : "0",
-      },
-      sidebarCard: {
-        backgroundColor: "#4a5568",
-        borderRadius: "15px",
-        padding: "1.5rem",
-        color: "white",
-        width: "100%",
-      },
-      rightPanel: {
-        flex: 1,
-        backgroundColor: "white",
-        borderRadius: "15px",
-        padding: isMobile ? "1.5rem" : "2rem",
-        width: "100%",
-        maxWidth: "100%",
-        overflow: "hidden",
-      },
-      tableContainer: {
-        width: "100%",
-        overflowX: "auto",
-        marginBottom: "2rem",
-      },
-      table: {
-        width: "100%",
-        minWidth: isMobile ? "300px" : "100%",
-        borderCollapse: "collapse",
-        fontFamily: "Poppins",
-        fontSize: isMobile ? "0.8rem" : "0.95rem",
-      },
-    };
-  };
-
-  const styles = getResponsiveStyles();
-
   return (
-    <div style={{ width: "100%", maxWidth: "100%", overflow: "hidden" }}>
+    <div>
       <Navbar />
       {/* Hero Section */}
-      <div className="hero-section" style={styles.heroSection}>
+      <div className="hero-section" style={{ width: "100%", height: "100vh", paddingTop: "90px" }}>
         {/* Top White Section */}
-        <div style={styles.topSection}>
+        <div
+          style={{
+            backgroundColor: "white",
+            height: "40%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            padding: "0 2rem",
+            position: "relative",
+          }}
+        >
           {/* Left Content */}
-          <div style={styles.leftContent}>
+          <div style={{ flex: 1, maxWidth: "60%", textAlign: "left" }}>
             <p
               style={{
                 color: "#05B8A8",
@@ -214,7 +94,17 @@ export default function Registration() {
             >
               IEEE ICICI 2026
             </p>
-            <h1 style={styles.title}>
+            <h1
+              style={{
+                color: "#333",
+                fontFamily: "Poppins",
+                fontSize: "3.8rem",
+                fontWeight: "bold",
+                lineHeight: "1.1",
+                margin: "0",
+                textAlign: "left",
+              }}
+            >
               Registration
             </h1>
             <p
@@ -225,7 +115,7 @@ export default function Registration() {
                 fontWeight: "500",
                 margin: "1rem 0 0 0",
                 letterSpacing: "0.5px",
-                textAlign: window.innerWidth <= 768 ? "center" : "left",
+                textAlign: "left",
               }}
             >
               Join the Global Community of Innovators
@@ -233,7 +123,18 @@ export default function Registration() {
           </div>
 
           {/* Right Content */}
-          <div style={styles.rightContent}>
+          <div style={{
+            position: "absolute",
+            right: 0,
+            flex: 1,
+            maxWidth: "45%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            paddingTop: "4rem",
+            paddingLeft: "2rem",
+            paddingRight: "5rem",
+          }}>
             <div
               style={{
                 color: "#666",
@@ -241,7 +142,7 @@ export default function Registration() {
                 fontSize: "1.1rem",
                 lineHeight: "1.7",
                 margin: "0",
-                textAlign: window.innerWidth <= 768 ? "center" : "left",
+                textAlign: "left",
               }}
             >
               <div>Secure your spot at ICICI 2026 and connect with</div>
@@ -251,7 +152,20 @@ export default function Registration() {
         </div>
 
         {/* Bottom Blue Tech Section - Slider */}
-        <div style={styles.bottomSection}>
+        <div
+          style={{
+            position: "relative",
+            height: "60%",
+            backgroundImage: `url(${slides[currentSlide].backgroundImage})`,
+            backgroundSize: "120%",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            display: "flex",
+            alignItems: "center",
+            padding: "0 4rem",
+            overflow: "hidden",
+          }}
+        >
           {/* Blue Overlay */}
           <div
             style={{
@@ -268,13 +182,13 @@ export default function Registration() {
           {/* Content */}
           <div style={{ position: "relative", zIndex: 2, color: "white", width: "100%" }}>
             <div style={{ marginBottom: "3rem" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem", justifyContent: window.innerWidth <= 768 ? "center" : "flex-start" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem" }}>
                 <FaCalendarAlt style={{ color: "white" }} />
                 <p style={{ fontFamily: "Poppins", fontSize: "1.1rem", margin: "0" }}>
                   15th - 18th February, 2026
                 </p>
               </div>
-              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", justifyContent: window.innerWidth <= 768 ? "center" : "flex-start" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
                 <FaMapMarkerAlt style={{ color: "white" }} />
                 <p style={{ fontFamily: "Poppins", fontSize: "1.1rem", margin: "0" }}>
                   KIET Group Of Institutions, Ghaziabad, India
@@ -282,7 +196,7 @@ export default function Registration() {
               </div>
             </div>
             <div>
-              <h2 style={styles.bottomTitle}>
+              <h2 style={{ fontFamily: "Poppins", fontSize: "2.5rem", fontWeight: "300", margin: "0", lineHeight: "1.3", textAlign: "left" }}>
                 Register Now to be a Part of<br />
                 ICICI 2026
               </h2>
@@ -304,11 +218,11 @@ export default function Registration() {
       </div>
 
       {/* Registration Content */}
-      <div style={styles.contentWrapper}>
-        <div className="responsive-row" style={styles.mainContent}>
+      <div style={{ backgroundColor: "#f5f5f5", padding: "4rem 2rem", minHeight: "100vh" }}>
+        <div className="responsive-row" style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", gap: "2rem" }}>
           {/* Left Sidebar */}
-          <div className="sidebar" style={styles.sidebar}>
-            <div style={styles.sidebarCard}>
+          <div className="sidebar" style={{ width: "300px", display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <div style={{ backgroundColor: "#4a5568", borderRadius: "15px", padding: "1.5rem", color: "white" }}>
               <div style={{ backgroundColor: "#2d3748", borderRadius: "20px", padding: "0.5rem 1rem", fontSize: "0.8rem", fontFamily: "Poppins", fontWeight: "600", marginBottom: "1rem", textAlign: "center", letterSpacing: "1px" }}>
                 IMPORTANT DATES
               </div>
@@ -319,7 +233,7 @@ export default function Registration() {
                 <p style={{ margin: "0.5rem 0" }}>Conference: 15th-18th February, 2026</p>
               </div>
             </div>
-            <div style={styles.sidebarCard}>
+            <div style={{ backgroundColor: "#4a5568", borderRadius: "15px", padding: "1.5rem", color: "white" }}>
               <div style={{ backgroundColor: "#2d3748", borderRadius: "20px", padding: "0.5rem 1rem", fontSize: "0.8rem", fontFamily: "Poppins", fontWeight: "600", marginBottom: "1rem", textAlign: "center", letterSpacing: "1px" }}>
                 CONFERENCE SECRETARIAT
               </div>
@@ -333,27 +247,25 @@ export default function Registration() {
           </div>
 
           {/* Right Content Area */}
-          <div style={styles.rightPanel}>
+          <div style={{ flex: 1, backgroundColor: "white", borderRadius: "15px", padding: "2rem", textAlign: "left" }}>
             <div style={{ marginBottom: "2rem" }}>
-              <h1 style={{ fontFamily: "Poppins", fontSize: window.innerWidth <= 768 ? "2rem" : "2.5rem", color: "#333", margin: "0 0 1rem 0", fontWeight: "bold" }}>
+              <h1 style={{ fontFamily: "Poppins", fontSize: "2.5rem", color: "#333", margin: "0 0 1rem 0", fontWeight: "bold" }}>
                 REGISTRATION
               </h1>
               <p style={{ fontFamily: "Poppins", fontSize: "1rem", color: "#666", lineHeight: "1.6", margin: "0" }}>
-                At least one author of an accepted paper must register and present his / her paper at the conference.
-                <br />
-                Only accepted, registered, and presented papers will be considered for publication.
+                At least one author of an accepted paper must register and present his / her paper at the conference. Only accepted, registered, and presented papers will be considered for publication.
               </p>
             </div>
 
             <div style={{ marginBottom: "3rem" }}>
-              <h2 style={{ fontFamily: "Poppins", fontSize: window.innerWidth <= 768 ? "1.5rem" : "1.8rem", color: "#333", margin: "0 0 1.5rem 0", fontWeight: "600" }}>
+              <h2 style={{ fontFamily: "Poppins", fontSize: "1.8rem", color: "#333", margin: "0 0 1.5rem 0", fontWeight: "600" }}>
                 Registration Fees
               </h2>
 
               {/* Indian Authors Table */}
-              <h3 style={{ fontFamily: "Poppins", fontSize: window.innerWidth <= 768 ? "1.2rem" : "1.4rem", color: "#4299e1", margin: "0 0 1rem 0", fontWeight: "600" }}>Indian Authors</h3>
-              <div style={styles.tableContainer}>
-                <table style={styles.table}>
+              <h3 style={{ fontFamily: "Poppins", fontSize: "1.4rem", color: "#4299e1", margin: "0 0 1rem 0", fontWeight: "600" }}>Indian Authors</h3>
+              <div style={{ width: "100%", overflowX: "auto", marginBottom: "2rem" }}>
+                <table style={{ width: "100%", borderCollapse: "collapse", fontFamily: "Poppins" }}>
                   <thead>
                     <tr>
                       <th style={tableHeaderStyle}>Category</th>
@@ -371,9 +283,9 @@ export default function Registration() {
               </div>
 
               {/* Foreign Authors Table */}
-              <h3 style={{ fontFamily: "Poppins", fontSize: window.innerWidth <= 768 ? "1.2rem" : "1.4rem", color: "#4299e1", margin: "2.5rem 0 1rem 0", fontWeight: "600" }}>Foreign Authors</h3>
-              <div style={styles.tableContainer}>
-                <table style={styles.table}>
+              <h3 style={{ fontFamily: "Poppins", fontSize: "1.4rem", color: "#4299e1", margin: "2.5rem 0 1rem 0", fontWeight: "600" }}>Foreign Authors</h3>
+              <div style={{ width: "100%", overflowX: "auto" }}>
+                <table style={{ width: "100%", borderCollapse: "collapse", fontFamily: "Poppins" }}>
                   <thead>
                     <tr>
                       <th style={tableHeaderStyle}>Category</th>
@@ -390,9 +302,35 @@ export default function Registration() {
                 </table>
               </div>
             </div>
+
+            {/* Accommodation Section */}
+            <div>
+              <h2 style={{ fontFamily: "Poppins", fontSize: "1.8rem", color: "#333", margin: "0 0 1.5rem 0", fontWeight: "600" }}>
+                Accommodation
+              </h2>
+              <div style={{ backgroundColor: "#f8f9fa", borderRadius: "12px", padding: "1.5rem", border: "1px solid #e9ecef", textAlign: "center" }}>
+                <p style={{ fontFamily: "Poppins", fontSize: "1rem", color: "#666", lineHeight: "1.6", margin: "0 0 1rem 0" }}>
+                  Limited Rooms are available for participants/Guests (on Payment basis). The availability of rooms will be First-Come First-Serve basis.
+                </p>
+                <p style={{ fontFamily: "Poppins", fontSize: "1rem", color: "#666", lineHeight: "1.6", margin: "0" }}>
+                  For more details, kindly contact the following Person:
+                </p>
+                <div style={{ marginTop: "1rem", paddingTop: "1rem", borderTop: "1px solid #e9ecef", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                  <h4 style={{ fontFamily: "Poppins", fontSize: "1.2rem", color: "#333", margin: "0 0 0.5rem 0", fontWeight: "600" }}>Mr. Gagan Kumar Singh</h4>
+                  <p style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontFamily: "Poppins", color: "#666", margin: "0.5rem 0" }}>
+                    <FaPhone /> +91-8318670117
+                  </p>
+                  <p style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontFamily: "Poppins", color: "#666", margin: "0" }}>
+                    <FaEnvelope /> gagan.singh@kiet.edu
+                  </p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
     </div>
   );
 }
+
