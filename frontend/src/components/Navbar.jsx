@@ -54,7 +54,7 @@ export default function Navbar() {
           left: 0,
           right: 0,
           zIndex: 1000,
-          padding: "1.2rem 2rem",
+          padding: "0.7rem 2rem",
           boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
           width: "100%",
         }}

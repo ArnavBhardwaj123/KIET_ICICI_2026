@@ -193,7 +193,7 @@ export default function Contact() {
               left: 0,
               right: 0,
               bottom: 0,
-              background: "linear-gradient(135deg, rgba(0, 50, 150, 0.9), rgba(0, 100, 200, 0.8))",
+              background: "linear-gradient(135deg, rgba(0, 51, 152, 0.61), rgba(0, 100, 200, 0.8))",
               zIndex: 1,
             }}
           />
@@ -262,24 +262,10 @@ export default function Contact() {
             </div>
 
             {/* Contact Details */}
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem", marginBottom: "3rem" }}>
+            <div className="contact-grid">
               {contactData.map((contact, index) => (
-                <div key={index} style={{
-                  backgroundColor: "#f8f9fa",
-                  borderRadius: "12px",
-                  padding: "1.5rem",
-                  border: "1px solid #e9ecef",
-                  boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
-                  flex: "1 1 300px",
-                  maxWidth: "calc(50% - 1rem)",
-                }}>
-                  <h3 style={{
-                    fontFamily: "Poppins",
-                    fontSize: "1.3rem",
-                    color: "#333",
-                    margin: "0 0 0.5rem 0",
-                    fontWeight: "600"
-                  }}>
+                <div key={index} className="contact-person-card">
+                  <h3 className="contact-person-name">
                     {contact.name}
                   </h3>
                   <p style={{
@@ -375,4 +361,3 @@ export default function Contact() {
     </div>
   );
 }
-

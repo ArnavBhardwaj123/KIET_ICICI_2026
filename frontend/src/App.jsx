@@ -8,12 +8,14 @@ import Contact from "./pages/contact.jsx";
 import Committee from "./pages/committee.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 import Speakers from "./pages/speakers.jsx";
 import ImportantDates from "./pages/important_dates.jsx";
 
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

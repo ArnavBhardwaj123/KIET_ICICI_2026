@@ -276,7 +276,7 @@ export default function Home() {
             alignItems: "center",
             justifyContent: "flex-start",
             paddingRight: "5rem",
-            paddingTop: "10rem",
+            paddingTop: "4rem",
             paddingLeft: "2rem",
           }}>
             <div
@@ -319,7 +319,7 @@ export default function Home() {
               left: 0,
               right: 0,
               bottom: 0,
-              background: "linear-gradient(135deg, rgba(0, 50, 150, 0.9), rgba(0, 100, 200, 0.8))",
+              background: "linear-gradient(135deg, rgba(0, 51, 152, 0.61), rgba(0, 100, 200, 0.8))",
               zIndex: 1,
             }}
           />
@@ -505,7 +505,7 @@ export default function Home() {
         }}
         className="responsive-row"
       >
-        <div style={{ flex: 1 }}>
+        <div style={{ flex: 1 }} className="about-section-image">
           <img
             src={"/images/IMG2.jpg"} // Replace with your image path
             alt="Conference collaboration"
@@ -513,7 +513,7 @@ export default function Home() {
           />
         </div>
         {/* Left Column: Text Content */}
-        <div style={{ flex: 1, textAlign: "left" }}>
+        <div style={{ flex: 1, textAlign: "left" }} className="about-section-text">
           <p
             style={{ color: "teal", fontFamily: "Poppins", fontSize: "1.5rem" }}
           >
