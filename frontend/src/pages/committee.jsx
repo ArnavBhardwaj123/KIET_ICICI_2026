@@ -386,7 +386,7 @@ export default function Committee() {
                 letterSpacing: "1px",
               }}
             >
-              IEEE ICICI 2026
+              ICICI 2026
             </p>
             <h1
               style={{
