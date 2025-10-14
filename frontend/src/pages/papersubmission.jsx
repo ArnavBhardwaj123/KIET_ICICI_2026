@@ -71,7 +71,7 @@ export default function PaperSubmission() {
                 letterSpacing: "1px",
               }}
             >
-              IEEE ICICI 2026
+              ICICI 2026
             </p>
             <h1
               style={{
@@ -286,10 +286,10 @@ export default function PaperSubmission() {
                   color: "#e2e8f0",
                 }}
               >
-                <p style={{ margin: "0.5rem 0" }}>Paper Submission: 31st January, 2026</p>
+                <p style={{ margin: "0.5rem 0" }}>Paper Submission: 15th November, 2025</p>
                 <p style={{ margin: "0.5rem 0" }}>Notification: 15th February, 2026</p>
-                <p style={{ margin: "0.5rem 0" }}>Camera Ready: 20th February, 2026</p>
-                <p style={{ margin: "0.5rem 0" }}>Conference: 15th-18th February, 2026</p>
+                <p style={{ margin: "0.5rem 0" }}>Camera Ready: 15th March, 2026</p>
+                <p style={{ margin: "0.5rem 0" }}>Conference: 24th-25th April, 2026</p>
               </div>
             </div>
             <div
@@ -404,7 +404,7 @@ export default function PaperSubmission() {
                 <li>Papers submitted to the conference should be written in English with the maximum paper length of Six (6) in IEEE format.</li>
                 <li>However, the authors can extend maximum 1 page with an over length page charge, of Rs.1,000/-(for Indian participants) and US $50/-(for International participants) per page.</li>
                 <li>The ”“Best Paper Awards”” will be given for each track of conference selected by the committee among the presented papers in ICICI- 2026.</li>
-                <li>Submit your papers through the conference submission portal by **November 15, 2025**.</li>
+                <li>Submit your papers through the conference submission portal by <strong>15th November, 2025</strong>.</li>
               </ul>
               <div className="submission-box">
                 <p

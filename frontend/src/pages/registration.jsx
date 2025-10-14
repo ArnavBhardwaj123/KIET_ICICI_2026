@@ -96,7 +96,7 @@ export default function Registration() {
                 letterSpacing: "1px",
               }}
             >
-              IEEE ICICI 2026
+              ICICI 2026
             </p>
             <h1
               style={{
@@ -189,7 +189,7 @@ export default function Registration() {
               <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem" }}>
                 <FaCalendarAlt style={{ color: "white" }} />
                 <p style={{ fontFamily: "Poppins", fontSize: "1.1rem", margin: "0" }}>
-                  15th - 18th February, 2026
+                  13th - 14th February, 2026
                 </p>
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>

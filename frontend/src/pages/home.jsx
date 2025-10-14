@@ -271,7 +271,7 @@ export default function Home() {
                 letterSpacing: "1px",
               }}
             >
-              IEEE ICICI 2026
+              ICICI 2026
             </p>
             <h1
               style={{
@@ -360,7 +360,7 @@ export default function Home() {
               >
                 <FaCalendarAlt style={{ color: "white" }} />
                 <p style={{ fontFamily: "Poppins", fontSize: "1.1rem", margin: "0" }}>
-                  15th - 18th February, 2026
+                  24th - 25th April, 2026
                 </p>
               </div>
               <div
@@ -464,13 +464,13 @@ export default function Home() {
           paddingLeft: "2rem",
           paddingRight: "2rem",
           display: "flex",
-          alignItems: "center",
+          alignItems: "flex",
           gap: "2rem",
         }}
         className="responsive-row"
       >
         {/* Left Column: Text Content */}
-        <div style={{ flex: 1, textAlign: "left" }}>
+        <div style={{ flex: 1, textAlign: "justify" }}>
           <p
             style={{ color: "teal", fontFamily: "Poppins", fontSize: "1.5rem" }}
           >
@@ -489,7 +489,8 @@ export default function Home() {
           <p
             style={{
               fontFamily: "Poppins",
-              fontSize: "1.2rem",
+              fontSize: "1.5rem",
+              fontWeight: "500",
               marginTop: "1rem",
               color: "#555",
             }}
@@ -538,11 +539,11 @@ Guided by a vision to empower innovators and thought leaders, KIET continues to 
           />
         </div>
         {/* Left Column: Text Content */}
-        <div style={{ flex: 1, textAlign: "left" }} className="about-section-text">
+        <div style={{ flex: 1, textAlign: "justify" }} className="about-section-text">
           <p
             style={{ color: "teal", fontFamily: "Poppins", fontSize: "1.5rem" }}
           >
-            Innovate. Collaborate. Lead.
+           
           </p>
           <h1
             style={{

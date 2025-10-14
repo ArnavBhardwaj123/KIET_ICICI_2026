@@ -209,7 +209,7 @@ export default function CallForPapers() {
                 letterSpacing: "1px",
               }}
             >
-              IEEE ICICI 2026
+              ICICI 2026
             </p>
             <h1
               style={{
@@ -390,10 +390,10 @@ export default function CallForPapers() {
                   color: "#e2e8f0",
                 }}
               >
-                <p style={{ margin: "0.5rem 0" }}>Paper Submission: 31st January, 2026</p>
+                <p style={{ margin: "0.5rem 0" }}>Paper Submission: 15th November, 2025</p>
                 <p style={{ margin: "0.5rem 0" }}>Notification: 15th February, 2026</p>
-                <p style={{ margin: "0.5rem 0" }}>Camera Ready: 20th February, 2026</p>
-                <p style={{ margin: "0.5rem 0" }}>Conference: 15th-18th February, 2026</p>
+                <p style={{ margin: "0.5rem 0" }}>Camera Ready: 15th March, 2026</p>
+                <p style={{ margin: "0.5rem 0" }}>Conference: 24th-25th April, 2026</p>
               </div>
             </div>
 
