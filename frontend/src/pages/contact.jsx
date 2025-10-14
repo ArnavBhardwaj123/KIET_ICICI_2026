@@ -7,22 +7,24 @@ const heroimage = "/images/KIET1.jpg";
 // Contact Data
 const contactData = [
   {
-    name: "Dr. Puneet Garg",
-    title: "For General inquiries",
-    phone: "+91-9996091999",
-    email: "puneet.garg@kiet.edu",
-  },
-  {
     name: "Dr. Manish Bhardwaj",
-    title: "For General inquiries",
+    title: "Associate Professor, Department of CSIT",
+    institution: "KIET Group of Institutions, Delhi-NCR, Ghaziabad",
     phone: "+91-8700600273",
     email: "manish.bhardwaj@kiet.edu",
   },
   {
+    name: "Dr. Puneet Garg",
+    title: "Associate Professor, Department of CSE-AI",
+    institution: "KIET Group of Institutions, Delhi-NCR, Ghaziabad",
+    phone: "+91-9996091999",
+    email: "puneet.garg@kiet.edu",
+  },
+  {
     name: "Mr. Satyam Shivam Sundaram",
     title: "For Conference fee related inquiries",
-    phone: "+91 99272 94522",
-    email: "satyam.sunderam@kiet.edu",
+    phone: "+91-xxxxxxxxxx",
+    email: "satyam.sundaram@kiet.edu",
   },
   {
     name: "Mr. Rajeev Kumar Singh",
@@ -222,27 +224,80 @@ export default function Contact() {
         <div className="responsive-row" style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", gap: "2rem" }}>
           {/* Left Sidebar */}
           <div className="sidebar" style={{ width: "300px", display: "flex", flexDirection: "column", gap: "1rem" }}>
-            <div style={{ backgroundColor: "#4a5568", borderRadius: "15px", padding: "1.5rem", color: "white" }}>
-              <div style={{ backgroundColor: "#2d3748", borderRadius: "20px", padding: "0.5rem 1rem", fontSize: "0.8rem", fontFamily: "Poppins", fontWeight: "600", marginBottom: "1rem", textAlign: "center", letterSpacing: "1px" }}>
+            
+            {/* Important Dates Card */}
+            <div style={{
+              backgroundColor: "#4a5568",
+              borderRadius: "15px",
+              padding: "1.5rem",
+              color: "white"
+            }}>
+              <div style={{
+                backgroundColor: "#2d3748",
+                borderRadius: "20px",
+                padding: "0.5rem 1rem",
+                fontSize: "0.8rem",
+                fontFamily: "Poppins",
+                fontWeight: "600",
+                marginBottom: "1rem",
+                textAlign: "center",
+                letterSpacing: "1px"
+              }}>
                 IMPORTANT DATES
               </div>
-              <div style={{ fontFamily: "Poppins", fontSize: "0.9rem", lineHeight: "1.6", color: "#e2e8f0" }}>
-                <p style={{ margin: "0.5rem 0" }}>Paper Submission: 31st January, 2026</p>
-                <p style={{ margin: "0.5rem 0" }}>Notification: 15th February, 2026</p>
-                <p style={{ margin: "0.5rem 0" }}>Camera Ready: 20th February, 2026</p>
-                <p style={{ margin: "0.5rem 0" }}>Conference: 15th-18th February, 2026</p>
+              <div style={{
+                fontFamily: "Poppins",
+                fontSize: "0.9rem",
+                lineHeight: "1.6",
+                color: "#e2e8f0"
+              }}>
+                <p style={{ margin: "0.5rem 0" }}>Paper Submission: November 15, 2025</p>
+                <p style={{ margin: "0.5rem 0" }}>Notification: February 15, 2026</p>
+                <p style={{ margin: "0.5rem 0" }}>Camera Ready & Registration: March 15, 2026</p>
+                <p style={{ margin: "0.5rem 0" }}>Conference: April 24-25, 2026</p>
               </div>
             </div>
-            <div style={{ backgroundColor: "#4a5568", borderRadius: "15px", padding: "1.5rem", color: "white" }}>
-              <div style={{ backgroundColor: "#2d3748", borderRadius: "20px", padding: "0.5rem 1rem", fontSize: "0.8rem", fontFamily: "Poppins", fontWeight: "600", marginBottom: "1rem", textAlign: "center", letterSpacing: "1px" }}>
-                CONFERENCE SECRETARIAT
+
+            {/* Contact Us Card */}
+            <div style={{
+              backgroundColor: "#4a5568",
+              borderRadius: "15px",
+              padding: "1.5rem",
+              color: "white"
+            }}>
+              <div style={{
+                backgroundColor: "#2d3748",
+                borderRadius: "20px",
+                padding: "0.5rem 1rem",
+                fontSize: "0.8rem",
+                fontFamily: "Poppins",
+                fontWeight: "600",
+                marginBottom: "1rem",
+                textAlign: "center",
+                letterSpacing: "1px"
+              }}>
+                CONTACT US
               </div>
-              <div style={{ fontFamily: "Poppins", fontSize: "0.9rem", lineHeight: "1.6", color: "#e2e8f0" }}>
-                <p style={{ margin: "0.5rem 0" }}>KIET Group of Institutions</p>
-                <p style={{ margin: "0.5rem 0" }}>Delhi-NCR, Ghaziabad</p>
-                <p style={{ margin: "0.5rem 0" }}>Email: icici2026@kiet.edu</p><p style={{ margin: "0.5rem 0" }}>Phone: +91-120-2844000</p>
+              <div style={{
+                fontFamily: "Poppins",
+                fontSize: "0.9rem",
+                lineHeight: "1.6",
+                color: "#e2e8f0",
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                  <div>
+                    <p style={{ margin: 0 }}>Phone : Dr. Puneet Garg (+91-9996091999)</p>
+                    <p style={{ margin: 0 }}>Dr. Manish Bhardwaj (+91-9457966671)</p>
+                    <br />
+                    <p style={{ margin: 0 }}>Email : icici@kiet.edu</p>
+                  </div>
+                </div>
               </div>
             </div>
+
           </div>
 
           {/* Right Content Area */}
@@ -305,7 +360,7 @@ export default function Contact() {
               ))}
             </div>
             
-            {/* --- MAP SECTION --- */}
+            {/* --- NEW MAP SECTION --- */}
             <div style={{ marginTop: "3rem", marginBottom: "3rem" }}>
                 <h2 style={{ fontFamily: "Poppins", fontSize: "1.8rem", color: "#333", margin: "0 0 1.5rem 0", fontWeight: "600" }}>
                     Our Location
@@ -318,7 +373,7 @@ export default function Contact() {
                     border: '1px solid #e2e8f0'
                 }}>
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3497.892415198929!2d77.49580127536387!3d28.75256227560134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf47204124251%3A0xf5c6d6eefa89a5df!2sKIET%20Group%20of%20Institutions!5e0!3m2!1sen!2sin!4v1728950058287!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3497.893214058242!2d77.49580457421184!3d28.75254547941214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf47204124251%3A0x35687752b82141a3!2sKIET%20Group%20of%20Institutions!5e0!3m2!1sen!2sin!4v1665429815154!5m2!1sen!2sin"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
