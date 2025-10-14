@@ -1113,3 +1113,30 @@ img {
   height: auto;
   filter: drop-shadow(0 6px 18px rgba(0,0,0,0.12));
 }
+
+/* Ultra-small devices: enforce left alignment at <=378px to override inline justify */
+@media (max-width: 400px) {
+  /* Headings and paragraph text within about/video sections */
+  .about-section-text h1,
+  .about-section-text p,
+  .about-text h1,
+  .about-text p,
+  .video-section h1,
+  .video-section p,
+  .responsive-row h1,
+  .responsive-row p,
+  .responsive-row div[style] p {
+    text-align: left !important;
+  }
+
+  /* Lists and list items */
+  ul, li {
+    text-align: left !important;
+    padding-left: 1rem !important;
+  }
+
+  /* Make sure any small caption or highlighted box also left aligns */
+  .video-section .highlight, .about-section-text .highlight {
+    text-align: left !important;
+  }
+}
