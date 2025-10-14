@@ -509,11 +509,11 @@ KIET Group of Institutions, established in 1998 by the Krishna Charitable Societ
         </div>
 
         {/* Right Column: Image */}
-        <div style={{ flex: 1 }}>
+        <div style={{ flex: 1, alignSelf: 'flex-start' }}>
           <img
             src={"/images/IMG1.jpg"} // Replace with your image path
             alt="Conference collaboration"
-            style={{ width: "100%", height: "auto", borderRadius: "8px" }}
+            style={{ width: "100%", height: "50vh", objectFit: "cover", borderRadius: "8px", marginTop: '3.5rem' }}
           />
         </div>
       </div>
@@ -532,7 +532,7 @@ KIET Group of Institutions, established in 1998 by the Krishna Charitable Societ
           <img
             src={"/images/IMG2.jpg"} // Replace with your image path
             alt="Conference collaboration"
-            style={{ width: "100%", height: "auto", borderRadius: "8px" }}
+            style={{ width: "100%", height: "50vh", objectFit: "cover", borderRadius: "8px" }}
           />
         </div>
         {/* Left Column: Text Content */}
@@ -580,7 +580,7 @@ The International Conference on Innovations in Computational Intelligence (ICICI
         className="video-section responsive-row"
         style={{
           backgroundColor: "white",
-          padding: "4rem 7rem",
+          padding: "4rem 2rem",
           display: "flex",
           alignItems: "center",
           gap: "2rem",
@@ -641,13 +641,11 @@ The International Conference on Innovations in Computational Intelligence (ICICI
             alignItems: "center",
           }}
         >
-          <video
-            src={"path/to/your/video.mp4"} // Replace with your video path
-            controls
-            style={{ width: "100%", height: "50vh", borderRadius: "8px" }}
-          >
-            Your browser does not support the video tag.
-          </video>
+          <img
+            src={"/images/IMG2.jpg"} // Replace with the image you want to use in place of the video
+            alt="Exploring ICICI-2026"
+            style={{ width: "100%", height: "50vh", objectFit: "cover", borderRadius: "8px" }}
+          />
           {/* Indexing note - highlighted and centered */}
           <div style={{
             marginTop: '1rem',
