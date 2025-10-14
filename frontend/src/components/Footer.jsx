@@ -1,69 +1,96 @@
-import React from "react";
-import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import { FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube, FaEnvelope, FaAngleUp } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+
+const socialLinks = [
+  { icon: <FaFacebookF />, href: "https://www.facebook.com/kiet.edu/?ref=br_rs", label: "Facebook", color: "#1877F2" },
+  { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/company/kiet-group-of-institutions/", label: "LinkedIn", color: "#0077B5" },
+  { icon: <FaXTwitter />, href: "https://twitter.com/kiet_edu", label: "X/Twitter", color: "#000000" },
+  { icon: <FaInstagram />, href: "https://www.instagram.com/kiet_edu/", label: "Instagram", color: "#000000" },
+  { icon: <FaYoutube />, href: "https://www.youtube.com/@KietEduGzb", label: "YouTube", color: "#FF0000" },
+  { icon: <FaEnvelope />, href: "mailto:icici2026@kiet.edu", label: "Email", color: "#D44638" }
+];
 
 export default function Footer() {
+  const [isVisible, setIsVisible] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const circumference = 2 * Math.PI * 23; // Radius of SVG circle is 23
+
+  const handleScroll = () => {
+    // Toggle button visibility
+    if (window.pageYOffset > 300) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+
+    // Calculate scroll progress
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+    setScrollProgress(progress);
+  };
+  
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <footer className="main-footer">
-      <div className="footer-content-wrapper">
-        {/* Top Section: Three Columns */}
-        <div className="footer-top-section">
-          {/* Column 1: Explore */}
-          <div className="footer-section explore">
-            <h3>Explore</h3>
-            <p>KIET Group Of Institutions</p>
-            <p>Lorem ipsum</p>
-            <p>Lorem ipsum</p>
-          </div>
-
-          {/* Column 2: Placeholder Text */}
-          <div className="footer-section middle-text">
-            <p>Lorem ipsum</p>
-            <p>Lorem ipsum</p>
-            <p>Lorem ipsum</p>
-          </div>
-
-          {/* Column 3: Socials and Contact */}
-          <div className="footer-section contact-socials">
-            <div className="social-icons">
-              <a href="https://www.facebook.com/kiet.edu/?ref=br_rs" target="_blank" rel="noopener noreferrer">
-                <FaFacebook size={24} color="white" />
+    <>
+      <footer className="new-footer-container">
+        <div className="footer-socials-section">
+          <div className="social-icons">
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.label}
+                style={{ backgroundColor: link.color }}
+                className="social-icon-link"
+              >
+                {link.icon}
               </a>
-              <a href="https://www.instagram.com/kiet_edu/" target="_blank" rel="noopener noreferrer">
-                <FaInstagram size={24} color="white" />
-              </a>
-              <a href="https://www.linkedin.com/company/kiet-group-of-institutions/" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin size={24} color="white" />
-              </a>
-              <a href="https://www.youtube.com/@KietEduGzb" target="_blank" rel="noopener noreferrer">
-                <FaYoutube size={24} color="white" />
-              </a>
-            </div>
-            <p className="email-text">
-              Write us at: <a href="mailto:support@kiet.edu">support@kiet.edu</a>
-            </p>
+            ))}
           </div>
         </div>
-
-        {/* Map Section */}
-        <div className="footer-map-section">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3497.8932140537333!2d77.49580101501783!3d28.75254258237105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf47204124251%3A0xf5c6d6eefa89a5df!2sKIET%20Group%20of%20Institutions!5e0!3m2!1sen!2sin!4v1676882822910!5m2!1sen!2sin"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="KIET Group of Institutions location"
-          ></iframe>
+        <div className="footer-bottom-bar">
+          <p>
+            KIET Group of institutions © All Rights Reserved 2025-26
+          </p>
         </div>
+      </footer>
 
-        {/* Footer Bottom */}
-        <div className="footer-bottom">
-          <span className="logo">LOGO</span>
-          <p className="copyright-text">© 2025 IEEE KIET - Developed by KIET</p>
-        </div>
-      </div>
-    </footer>
+      {/* Upgraded Scroll to Top Button with Progress Indicator */}
+      {isVisible && (
+        <button onClick={scrollToTop} className="scroll-to-top-progress" aria-label="Go to top">
+          <svg className="progress-ring" width="50" height="50">
+            <circle className="progress-ring__circle-bg" strokeWidth="4" fill="transparent" r="23" cx="25" cy="25" />
+            <circle
+              className="progress-ring__circle"
+              strokeWidth="4"
+              fill="transparent"
+              r="23"
+              cx="25"
+              cy="25"
+              style={{
+                strokeDasharray: circumference,
+                strokeDashoffset: circumference - (scrollProgress / 100) * circumference,
+              }}
+            />
+          </svg>
+          <FaAngleUp className="progress-arrow" />
+        </button>
+      )}
+    </>
   );
 }

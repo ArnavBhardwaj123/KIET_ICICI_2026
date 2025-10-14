@@ -7,24 +7,22 @@ const heroimage = "/images/KIET1.jpg";
 // Contact Data
 const contactData = [
   {
-    name: "Dr. Manish Bhardwaj",
-    title: "Associate Professor, Department of CSIT",
-    institution: "KIET Group of Institutions, Delhi-NCR, Ghaziabad",
-    phone: "+91-8700600273",
-    email: "manish.bhardwaj@kiet.edu",
-  },
-  {
     name: "Dr. Puneet Garg",
-    title: "Associate Professor, Department of CSE-AI",
-    institution: "KIET Group of Institutions, Delhi-NCR, Ghaziabad",
+    title: "For General inquiries",
     phone: "+91-9996091999",
     email: "puneet.garg@kiet.edu",
   },
   {
+    name: "Dr. Manish Bhardwaj",
+    title: "For General inquiries",
+    phone: "+91-8700600273",
+    email: "manish.bhardwaj@kiet.edu",
+  },
+  {
     name: "Mr. Satyam Shivam Sundaram",
     title: "For Conference fee related inquiries",
-    phone: "+91-xxxxxxxxxx",
-    email: "satyam.sundaram@kiet.edu",
+    phone: "+91 99272 94522",
+    email: "satyam.sunderam@kiet.edu",
   },
   {
     name: "Mr. Rajeev Kumar Singh",
@@ -305,6 +303,31 @@ export default function Contact() {
                   </div>
                 </div>
               ))}
+            </div>
+            
+            {/* --- MAP SECTION --- */}
+            <div style={{ marginTop: "3rem", marginBottom: "3rem" }}>
+                <h2 style={{ fontFamily: "Poppins", fontSize: "1.8rem", color: "#333", margin: "0 0 1.5rem 0", fontWeight: "600" }}>
+                    Our Location
+                </h2>
+                <div style={{
+                    width: '100%',
+                    height: '350px',
+                    borderRadius: '15px',
+                    overflow: 'hidden',
+                    border: '1px solid #e2e8f0'
+                }}>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3497.892415198929!2d77.49580127536387!3d28.75256227560134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf47204124251%3A0xf5c6d6eefa89a5df!2sKIET%20Group%20of%20Institutions!5e0!3m2!1sen!2sin!4v1728950058287!5m2!1sen!2sin"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen=""
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="KIET Group of Institutions Location"
+                    ></iframe>
+                </div>
             </div>
 
             {/* For Authors Section */}
