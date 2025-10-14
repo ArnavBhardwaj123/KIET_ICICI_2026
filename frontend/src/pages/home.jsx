@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
 import "../App.css";
@@ -77,10 +75,10 @@ function TracksOrbitSection() {
   };
 
   // Calculate position for each track node on the orbit
- // src/pages/home.jsx -> Inside TracksOrbitSection function
+  // src/pages/home.jsx -> Inside TracksOrbitSection function
 
   // Calculate position for each track node on the orbit
-    const getPosition = (index) => {
+  const getPosition = (index) => {
     const angle = (index / tracksData.length) * 2 * Math.PI - Math.PI / 2; // Start from top
     const x = orbitRadius * Math.cos(angle);
     const y = orbitRadius * Math.sin(angle);
@@ -130,9 +128,9 @@ function TracksOrbitSection() {
         <div className="orbit-container">
           {/* Central Hub with Image */}
           <div className="central-hub">
-            <img 
+            <img
               src="/images/robotic-hand.png" // IMPORTANT: Add your robotic hand image here
-              alt="Computational Intelligence" 
+              alt="Computational Intelligence"
               className="central-hub-image"
             />
           </div>
@@ -220,9 +218,8 @@ export default function Home() {
 
   return (
     <div>
-      <Navbar />
       {/* Hero Section */}
-      <div className="hero-section" style={{ width: "100%", height: "100vh", paddingTop: "90px" }}>
+      <div className="hero-section" style={{ width: "100%", height: "100vh" }}>
 
         {/* Top White Section */}
         <div
@@ -678,8 +675,8 @@ export default function Home() {
       {/* REVOLUTIONARY ROTATING TRACKS SECTION */}
       <TracksOrbitSection />
 
- 
-     
+
+
     </div>
   );
 }

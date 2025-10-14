@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import { useState, useEffect } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import "../App.css";
 
@@ -362,9 +360,8 @@ export default function Committee() {
 
   return (
     <div>
-      <Navbar />
       {/* Hero Section */}
-      <div className="hero-section" style={{ width: "100%", height: "100vh", paddingTop: "90px" }}>
+      <div className="hero-section" style={{ width: "100%", height: "100vh" }}>
         {/* Top White Section */}
         <div
           style={{
