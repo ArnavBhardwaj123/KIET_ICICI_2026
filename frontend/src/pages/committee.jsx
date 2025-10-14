@@ -633,13 +633,13 @@ export default function Committee() {
                 flexDirection: 'column',
                 gap: '1rem'
               }}>
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
-                  <div>
-                    <p style={{ margin: 0 }}>Phone : Dr. Puneet Garg (+91-9996091999)</p>
-                    <p style={{ margin: 0 }}>Dr. Manish Bhardwaj (+91-9457966671)</p>
-                    <br />
-                    <p style={{ margin: 0 }}>Email : icici@kiet.edu</p>
-                  </div>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem' }}>
+                <div style={{ textAlign: 'center' }}>
+                <p style={{ margin: 0 }}>Dr. Puneet Garg <br />(+91-9996091999)</p>
+                <p style={{ margin: 0 }}>Dr. Manish Bhardwaj <br /> (+91-9457966671)</p>
+                <br />
+                <p style={{ margin: 0 }}>Email : icici@kiet.edu</p>
+                </div>
                 </div>
               </div>
             </div>

@@ -6,25 +6,23 @@ const heroimage = "/images/KIET1.jpg";
 
 // Contact Data
 const contactData = [
-  {
-    name: "Dr. Manish Bhardwaj",
-    title: "Associate Professor, Department of CSIT",
-    institution: "KIET Group of Institutions, Delhi-NCR, Ghaziabad",
-    phone: "+91-8700600273",
-    email: "manish.bhardwaj@kiet.edu",
-  },
-  {
+   {
     name: "Dr. Puneet Garg",
-    title: "Associate Professor, Department of CSE-AI",
-    institution: "KIET Group of Institutions, Delhi-NCR, Ghaziabad",
+    title: "For General inquiries",
     phone: "+91-9996091999",
     email: "puneet.garg@kiet.edu",
   },
   {
-    name: "Mr. Satyam Shivam Sundaram",
+    name: "Dr. Manish Bhardwaj",
+    title: "For General inquiries",
+    phone: "+91-8700600273",
+    email: "manish.bhardwaj@kiet.edu",
+  },
+  {
+    name: "Mr. Satyam Shivam Sunderam",
     title: "For Conference fee related inquiries",
-    phone: "+91-xxxxxxxxxx",
-    email: "satyam.sundaram@kiet.edu",
+    phone: "+91-9927294522",
+    email: "satyam.sunderam@kiet.edu",
   },
   {
     name: "Mr. Rajeev Kumar Singh",
@@ -108,7 +106,7 @@ export default function Contact() {
                 letterSpacing: "1px",
               }}
             >
-              ICICI 2026
+              IEEE ICICI 2026
             </p>
             <h1
               style={{
@@ -287,13 +285,13 @@ export default function Contact() {
                 flexDirection: 'column',
                 gap: '1rem'
               }}>
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
-                  <div>
-                    <p style={{ margin: 0 }}>Phone : Dr. Puneet Garg (+91-9996091999)</p>
-                    <p style={{ margin: 0 }}>Dr. Manish Bhardwaj (+91-9457966671)</p>
-                    <br />
-                    <p style={{ margin: 0 }}>Email : icici@kiet.edu</p>
-                  </div>
+               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem' }}>
+                <div style={{ textAlign: 'center' }}>
+                <p style={{ margin: 0 }}>Dr. Puneet Garg <br />(+91-9996091999)</p>
+                <p style={{ margin: 0 }}>Dr. Manish Bhardwaj <br /> (+91-9457966671)</p>
+                <br />
+                <p style={{ margin: 0 }}>Email : icici@kiet.edu</p>
+                </div>
                 </div>
               </div>
             </div>
@@ -373,7 +371,7 @@ export default function Contact() {
                     border: '1px solid #e2e8f0'
                 }}>
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3497.893214058242!2d77.49580457421184!3d28.75254547941214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf47204124251%3A0x35687752b82141a3!2sKIET%20Group%20of%20Institutions!5e0!3m2!1sen!2sin!4v1665429815154!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3497.892415198929!2d77.49580127536387!3d28.75256227560134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf47204124251%3A0xf5c6d6eefa89a5df!2sKIET%20Group%20of%20Institutions!5e0!3m2!1sen!2sin!4v1728950058287!5m2!1sen!2sin"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
