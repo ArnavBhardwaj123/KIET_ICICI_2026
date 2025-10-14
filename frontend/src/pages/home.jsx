@@ -313,8 +313,8 @@ export default function Home() {
               }}
             >
               <div>Join global experts, researchers, and innovators</div>
-              <div>for four days of groundbreaking research,</div>
-              <div>collaboration, and learning.</div>
+              <div>for groundbreaking research, collaboration,</div>
+              <div>and learning.</div>
             </div>
           </div>
         </div>

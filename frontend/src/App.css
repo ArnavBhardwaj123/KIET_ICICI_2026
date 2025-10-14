@@ -139,6 +139,17 @@ body {
   }
 }
 
+/* Mobile-only: left align about / conference headings to prevent stretched justified text */
+@media (max-width: 768px) {
+  .about-section-text h1,
+  .about-text h1,
+  .video-section h1,
+  .about-section-text p,
+  .about-text p {
+    text-align: left !important;
+  }
+}
+
 /* Progress Bar Styles */
 .progress-bar-container {
   position: absolute;

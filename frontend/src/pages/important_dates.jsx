@@ -181,13 +181,14 @@ export default function ImportantDates() {
                 flexDirection: 'column',
                 gap: '1rem'
               }}>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem' }}>
-                <div style={{ textAlign: 'center' }}>
-                <p style={{ margin: 0 }}>Dr. Puneet Garg <br />(+91-9996091999)</p>
-                <p style={{ margin: 0 }}>Dr. Manish Bhardwaj <br /> (+91-9457966671)</p>
-                <br />
-                <p style={{ margin: 0 }}>Email : icici@kiet.edu</p>
-                </div>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                  
+                  <div>
+                    <p style={{ margin: 0 }}>Phone : Dr. Puneet Garg (+91-9996091999)</p>
+                    <p style={{ margin: 0 }}>Dr. Manish Bhardwaj (+91-9457966671)</p>
+                    <br />
+                    <p style={{ margin: 0 }}>Email : icici@kiet.edu</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -263,7 +264,7 @@ export default function ImportantDates() {
               <h3 style={{ color: "#333", fontFamily: "Poppins", fontSize: "1.3rem", fontWeight: "600", margin: "0 0 1rem 0" }}>
                 Important Notes
               </h3>
-              <ul style={{ color: "#666", fontFamily: "Poppins", fontSize: "0.95rem", lineHeight: "1.6", margin: "0", paddingLeft: "1.5rem" }}>
+              <ul style={{ color: "#666", fontFamily: "Poppins", fontSize: "0.95rem", lineHeight: "1.6", margin: "0", paddingLeft: "1.5rem",textAlign: "left" }}>
                 <li>All times are in Anywhere on Earth (AoE) timezone</li>
                 <li>Late submissions will not be considered</li>
                 <li>At least one author must register for the conference to present the paper</li>
