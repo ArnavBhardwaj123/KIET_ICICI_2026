@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
 import "../App.css";
+import PremiumLoader from "../components/PremiumLoader";
 
 const heroimage = "/images/KIET1.jpg";
 
@@ -160,6 +161,13 @@ function TracksOrbitSection() {
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [progress, setProgress] = useState(0);
+  // Show the premium loader on first mount for a short splash
+  const [showLoader, setShowLoader] = useState(true);
+
+  useEffect(() => {
+    const t = setTimeout(() => setShowLoader(false), 1500);
+    return () => clearTimeout(t);
+  }, []);
 
   // Slider data - Only background images change, content stays the same
   const slides = [
@@ -218,6 +226,24 @@ export default function Home() {
 
   return (
     <div>
+      {/* Fullscreen overlay for the premium loader */}
+      {showLoader && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          zIndex: 9999,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          background: 'linear-gradient(135deg,#7c3aed 0%,#6d28d9 50%,#4f46e5 100%)',
+          pointerEvents: 'auto'
+        }}>
+          <PremiumLoader />
+        </div>
+      )}
       {/* Hero Section */}
       <div className="hero-section" style={{ width: "100%", height: "100vh" }}>
 
@@ -458,7 +484,7 @@ export default function Home() {
               color: "#555",
             }}
           >
-            About the Conference
+            About KIET Group of Institutions
           </h1>
           <p
             style={{
@@ -478,8 +504,10 @@ export default function Home() {
               color: "#555",
             }}
           >
-            The International Conference on Innovations in Computational Intelligence (ICICI-2026), organized by KIET Group of Institutions, Delhi NCR, Ghaziabad, India is a prestigious academic event scheduled for April 24-25, 2026. This international conference aims to provide a global platform for researchers, academicians, industry professionals, and students to present and discuss their innovative ideas and cutting-edge research in the rapidly evolving fields of computational techniques, artificial intelligence, and machine learning.
-          </p>
+KIET Group of Institutions, Delhi-NCR, established in 1998 under the aegis of the Krishna Charitable Society, is a premier center for technical education, innovation, and research. From an initial intake of 180 students, KIET has evolved into one of the most distinguished institutes in the region, nurturing a vibrant community of 7500+ students and an alumni network exceeding 20,000 professionals across the globe.
+With its motto, “Achieving High,” KIET is committed to fostering innovation-driven learning, ethical leadership, and skill-oriented education. The institute’s progressive academic ecosystem is built upon strong industry linkages, interdisciplinary research, and a culture that inspires students to become competent and responsible global professionals.
+Accredited with a NAAC ‘A+’ grade and offering multiple NBA-accredited programs in disciplines such as CSE, CSIT, ECE, EEE, IT, ME, CE, MCA, MBA, and Pharmacy, KIET stands as a testament to academic excellence and institutional integrity.
+Guided by a vision to empower innovators and thought leaders, KIET continues to be recognized through numerous Education Excellence Awards, positioning itself as a leading hub for technical brilliance, creativity, and holistic development in India’s higher education landscape.          </p>
         </div>
 
         {/* Right Column: Image */}
@@ -534,7 +562,8 @@ export default function Home() {
               color: "#555",
             }}
           >
-            Exploring the future of computing and technology
+            International Conference on Innovations in Computational Intelligence (ICICI–2026)
+
           </p>
           <p
             style={{
@@ -544,8 +573,17 @@ export default function Home() {
               color: "#555",
             }}
           >
-            ICICI-2026 is dedicated to exploring the latest trends and developments in computational sciences, with a special focus on AI, machine learning, data science, and other emerging technologies. The conference will cover a wide range of topics, including deep learning, natural language processing, computer vision, big data analytics, IoT, Cyber Security, and AI applications across various industries. By providing an interdisciplinary platform, ICICI-2026 aims to bring together thought leaders from academia and industry to share their insights and foster collaboration.
-          </p>
+The International Conference on Innovations in Computational Intelligence (ICICI–2026) is a distinguished global forum that unites leading researchers, academicians, industry professionals, and innovators to advance discussions in Artificial Intelligence, Machine Learning, and Computational Sciences.
+Organized by the KIET Group of Institutions, the conference serves as a dynamic platform for presenting original research, exchanging ideas, and exploring emerging paradigms shaping the future of intelligent technologies.
+ICICI–2026 aims to foster interdisciplinary collaboration across domains including AI, Machine Learning, Data Science, Deep Learning, Natural Language Processing, Computer Vision, Big Data Analytics, IoT, and Cyber Security—areas driving the next phase of global digital transformation.
+
+Conference Highlights:
+Keynote Sessions by globally renowned experts in AI and computational intelligence.
+Technical Paper Presentations showcasing innovative research and real-world applications.
+Workshops & Panel Discussions on deep learning, data-driven decision-making, and intelligent systems.
+Networking Opportunities with distinguished researchers, industry leaders, and young innovators.
+Beyond academic excellence, ICICI–2026 embodies the spirit of innovation, collaboration, and knowledge exchange. It is more than a conference—it is an intellectual experience that connects ideas with impact, inspiring participants to reimagine the possibilities of computational intelligence.
+Join us at ICICI–2026 to explore, engage, and evolve with the global community shaping the intelligent technologies of tomorrow.          </p>
         </div>
       </div>
 

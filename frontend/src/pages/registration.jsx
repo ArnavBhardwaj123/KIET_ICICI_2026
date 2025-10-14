@@ -7,6 +7,7 @@ const heroimage = "/images/KIET1.jpg";
 export default function Registration() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   const slides = [
     { id: 1, backgroundImage: heroimage },
@@ -42,6 +43,12 @@ export default function Registration() {
   const goToSlide = (index) => {
     setCurrentSlide(index);
     setProgress(0);
+  };
+
+  // Demo function to show loader for 2 seconds
+  const simulateAsyncAction = () => {
+    setLoading(true);
+    setTimeout(() => setLoading(false), 2000);
   };
 
   const tableHeaderStyle = {

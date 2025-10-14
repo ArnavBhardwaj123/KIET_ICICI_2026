@@ -118,7 +118,7 @@ export default function Navbar() {
           backdropFilter: "blur(10px)",
           boxShadow: isScrolled ? "0 2px 10px rgba(0, 0, 0, 0.1)" : "none",
           display: "flex",
-          justifyContent: "center",
+          justifyContent: "flex-end",
           alignItems: "center",
           padding: "1rem 2rem",
           transition: "all 0.3s ease",
