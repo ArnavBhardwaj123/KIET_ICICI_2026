@@ -599,129 +599,104 @@ img {
 }
 
 /* FOOTER */
-.main-footer {
-  background-color: #121221;
-  color: white;
+/* === NEW FOOTER STYLES === */
+.new-footer-container {
   font-family: "Poppins", sans-serif;
-  padding: 1.5rem 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  background-color: #ffffff; /* Sets a clean background for the socials area */
 }
 
-.footer-content-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 4rem;
-}
-
-.footer-top-section {
+/* Top part with social icons */
+.footer-socials-section {
+  padding: 2rem 1rem;
   display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  padding-bottom: 1rem; 
-}
-
-.footer-section {
-  flex: 1;
-}
-
-.footer-section h3 {
-  margin-top: 0;
-  font-size: 1rem; 
-}
-
-.footer-section p {
-  margin: 0.25rem 0;
-  font-size: 0.8rem;
-  color: #ccc;
-}
-
-.middle-text {
-  text-align: center;
-}
-
-.contact-socials {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.25rem;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #e2e8f0; /* Optional separator line */
 }
 
 .social-icons {
   display: flex;
-  gap: 0.5rem; 
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.social-icons a {
-  color: white;
-}
-
-.email-text {
-  font-size: 0.8rem;
-  margin-top: 0.25rem;
-  text-align: right;
-}
-
-.footer-map-section {
-  width: 100%;
-  height: 150px; 
-  overflow: hidden;
-  border-radius: 8px;
-  margin-top: 1rem;
-}
-
-.footer-bottom {
+.social-icon-link {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease-in-out;
+  text-decoration: none;
 }
 
-.footer-bottom .logo {
-  font-weight: bold;
-  font-size: 1rem;
+.social-icon-link:hover {
+  transform: scale(1.1);
 }
 
-.footer-bottom .copyright-text {
-  font-size: 0.8rem; 
+/* Bottom bar with copyright */
+.footer-bottom-bar {
+  background-color: #163b64; 
+  color: #ffffff;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
 }
 
-/* Responsive styles for mobile footer */
-@media (max-width: 768px) {
-  .footer-content-wrapper {
-    padding: 0 1rem !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
-  }
-  
-  .footer-top-section,
-  .footer-bottom {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+.footer-bottom-bar p {
+  margin: 0;
+}
 
-  .footer-top-section {
-    gap: 2rem;
-  }
+/* === SCROLL TO TOP WITH PROGRESS === */
+.scroll-to-top-progress {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #2274d2; 
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+  animation: fadeIn 0.3s ease-in-out;
+}
 
-  .footer-section {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .contact-socials {
-    align-items: center;
-  }
+.scroll-to-top-progress:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.25);
+}
 
-  .social-icons {
-    justify-content: center;
-  }
+.progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg); /* Starts the progress from the top */
+}
 
-  .footer-map-section {
-    height: 120px;
-    margin-top: 1rem;
-  }
+.progress-ring__circle-bg {
+  stroke: rgba(131, 13, 13, 0.25); /* CHANGED: Transparent white track for better contrast */
+}
+
+.progress-ring__circle {
+  stroke: var(--secondary-color); /* CHANGED: Using vibrant secondary color for the progress ring */
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.progress-arrow {
+  color: var(--background-white); /* CHANGED: White arrow for high contrast against the new background */
+  font-size: 1.5rem;
 }
 
 /* Contact Page Specific Styles */
