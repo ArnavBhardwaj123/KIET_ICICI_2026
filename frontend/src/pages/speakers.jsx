@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
+import { FaCalendarAlt, FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 import "../App.css";
 
 const heroimage = "/images/KIET1.jpg";
@@ -245,7 +245,7 @@ export default function Speakers() {
               >
                 <FaCalendarAlt style={{ color: "white" }} />
                 <p style={{ fontFamily: "Poppins", fontSize: "1.1rem", margin: "0" }}>
-                  Conference Date: 23-24 March 2026
+                  Conference Date: April 24-25, 2026
                 </p>
               </div>
               <div
@@ -281,7 +281,6 @@ export default function Speakers() {
 
           {/* Progress Points/Indicators */}
           <div className="progress-indicators">
-            {/* Connecting Line Background */}
             <div
               style={{
                 position: "absolute",
@@ -294,8 +293,6 @@ export default function Speakers() {
                 zIndex: 1,
               }}
             />
-
-            {/* Progress Line */}
             <div
               style={{
                 position: "absolute",
@@ -311,10 +308,8 @@ export default function Speakers() {
                 borderRadius: "1px",
               }}
             />
-
             {slides.map((_, index) => {
               const isActive = index === currentSlide;
-
               return (
                 <div
                   key={index}
@@ -340,7 +335,7 @@ export default function Speakers() {
 
       {/* Speakers Content - blue overlay background behind the details (not footer) */}
       <div style={{
-        background: 'linear-gradient(180deg, #ffffffff 0%, #ffffffff 100%)',
+        background: 'linear-gradient(180deg, #ffffff 0%, #ffffff 100%)',
         padding: "4rem 2rem",
         minHeight: "100vh",
         color: 'white',
@@ -388,12 +383,7 @@ export default function Speakers() {
         }}>
           
           {/* Left Sidebar */}
-          <div className="sidebar" style={{
-            width: "300px",
-            display: "flex",
-            flexDirection: "column",
-            gap: "1rem"
-          }}>
+          <div className="sidebar" style={{ width: "300px", display: "flex", flexDirection: "column", gap: "1rem" }}>
             
             {/* Important Dates Card */}
             <div style={{
@@ -424,14 +414,14 @@ export default function Speakers() {
                 lineHeight: "1.6",
                 color: "#e2e8f0"
               }}>
-                <p style={{ margin: "0.5rem 0" }}>Paper Submission: 15th November, 2025</p>
-                <p style={{ margin: "0.5rem 0" }}>Notification: 15th February, 2026</p>
-                <p style={{ margin: "0.5rem 0" }}>Camera Ready: 15th March, 2026</p>
-                <p style={{ margin: "0.5rem 0" }}>Conference: 24th-25th April, 2026</p>
+                <p style={{ margin: "0.5rem 0" }}>Paper Submission: November 15, 2025</p>
+                <p style={{ margin: "0.5rem 0" }}>Notification: February 15, 2026</p>
+                <p style={{ margin: "0.5rem 0" }}>Camera Ready & Registration: March 15, 2026</p>
+                <p style={{ margin: "0.5rem 0" }}>Conference: April 24-25, 2026</p>
               </div>
             </div>
 
-            {/* Conference Secretariat Card */}
+            {/* Contact Us Card */}
             <div style={{
               backgroundColor: "#4a5568",
               borderRadius: "15px",
@@ -451,20 +441,30 @@ export default function Speakers() {
                 textAlign: "center",
                 letterSpacing: "1px"
               }}>
-                CONFERENCE SECRETARIAT
+                CONTACT US
               </div>
               <div style={{
                 fontFamily: "Poppins",
                 fontSize: "0.9rem",
                 lineHeight: "1.6",
-                color: "#e2e8f0"
+                color: "#e2e8f0",
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem'
               }}>
-                <p style={{ margin: "0.5rem 0" }}>KIET Group of Institutions</p>
-                <p style={{ margin: "0.5rem 0" }}>Delhi-NCR, Ghaziabad</p>
-                <p style={{ margin: "0.5rem 0" }}>Email: icici2026@kiet.edu</p>
-                <p style={{ margin: "0.5rem 0" }}>Phone: +91-120-2844000</p>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                  <div>
+                    <p style={{ margin: 0 }}>Phone : Dr. Puneet Garg (+91-9996091999)</p>
+                    <p style={{ margin: 0 }}>Dr. Manish Bhardwaj (+91-9457966671)</p>
+                    <br />
+                    <p style={{ margin: 0 }}>Email : icici@kiet.edu</p>
+
+                  </div>
+                </div>
+                
               </div>
             </div>
+
           </div>
 
           {/* Right Content Area */}
@@ -608,8 +608,6 @@ export default function Speakers() {
           </div>
         </div>
       </div>
-
-      {/* <Footer /> */}
     </div>
   );
 }

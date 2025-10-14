@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { FaPhone, FaEnvelope } from "react-icons/fa";
 import "../App.css";
 
 const heroimage = "/images/KIET1.jpg";
@@ -210,7 +211,7 @@ export default function PaperSubmission() {
                 <div
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`progress-point ${isActive ? "active" : ""}`}
+                  className={`progress-point ${isActive ? 'active' : ''}`}
                   style={{
                     width: isActive ? "14px" : "10px",
                     height: isActive ? "14px" : "10px",
@@ -246,89 +247,81 @@ export default function PaperSubmission() {
           className="responsive-row"
         >
           {/* Left Sidebar */}
-          <div
-            className="sidebar"
-            style={{
-              width: "300px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "1rem",
-            }}
-          >
-            <div
-              style={{
-                backgroundColor: "#4a5568",
-                borderRadius: "15px",
-                padding: "1.5rem",
-                color: "white",
-              }}
-            >
-              <div
-                style={{
-                  backgroundColor: "#2d3748",
-                  borderRadius: "20px",
-                  padding: "0.5rem 1rem",
-                  fontSize: "0.8rem",
-                  fontFamily: "Poppins",
-                  fontWeight: "600",
-                  marginBottom: "1rem",
-                  textAlign: "center",
-                  letterSpacing: "1px",
-                }}
-              >
+          <div className="sidebar" style={{ width: "300px", display: "flex", flexDirection: "column", gap: "1rem" }}>
+            
+            {/* Important Dates Card */}
+            <div style={{
+              backgroundColor: "#4a5568",
+              borderRadius: "15px",
+              padding: "1.5rem",
+              color: "white"
+            }}>
+              <div style={{
+                backgroundColor: "#2d3748",
+                borderRadius: "20px",
+                padding: "0.5rem 1rem",
+                fontSize: "0.8rem",
+                fontFamily: "Poppins",
+                fontWeight: "600",
+                marginBottom: "1rem",
+                textAlign: "center",
+                letterSpacing: "1px"
+              }}>
                 IMPORTANT DATES
               </div>
-              <div
-                style={{
-                  fontFamily: "Poppins",
-                  fontSize: "0.9rem",
-                  lineHeight: "1.6",
-                  color: "#e2e8f0",
-                }}
-              >
-                <p style={{ margin: "0.5rem 0" }}>Paper Submission: 15th November, 2025</p>
-                <p style={{ margin: "0.5rem 0" }}>Notification: 15th February, 2026</p>
-                <p style={{ margin: "0.5rem 0" }}>Camera Ready: 15th March, 2026</p>
-                <p style={{ margin: "0.5rem 0" }}>Conference: 24th-25th April, 2026</p>
+              <div style={{
+                fontFamily: "Poppins",
+                fontSize: "0.9rem",
+                lineHeight: "1.6",
+                color: "#e2e8f0"
+              }}>
+                <p style={{ margin: "0.5rem 0" }}>Paper Submission: November 15, 2025</p>
+                <p style={{ margin: "0.5rem 0" }}>Notification: February 15, 2026</p>
+                <p style={{ margin: "0.5rem 0" }}>Camera Ready & Registration: March 15, 2026</p>
+                <p style={{ margin: "0.5rem 0" }}>Conference: April 24-25, 2026</p>
               </div>
             </div>
-            <div
-              style={{
-                backgroundColor: "#4a5568",
-                borderRadius: "15px",
-                padding: "1.5rem",
-                color: "white",
-              }}
-            >
-              <div
-                style={{
-                  backgroundColor: "#2d3748",
-                  borderRadius: "20px",
-                  padding: "0.5rem 1rem",
-                  fontSize: "0.8rem",
-                  fontFamily: "Poppins",
-                  fontWeight: "600",
-                  marginBottom: "1rem",
-                  textAlign: "center",
-                  letterSpacing: "1px",
-                }}
-              >
-                CONFERENCE SECRETARIAT
+
+            {/* Contact Us Card */}
+            <div style={{
+              backgroundColor: "#4a5568",
+              borderRadius: "15px",
+              padding: "1.5rem",
+              color: "white"
+            }}>
+              <div style={{
+                backgroundColor: "#2d3748",
+                borderRadius: "20px",
+                padding: "0.5rem 1rem",
+                fontSize: "0.8rem",
+                fontFamily: "Poppins",
+                fontWeight: "600",
+                marginBottom: "1rem",
+                textAlign: "center",
+                letterSpacing: "1px"
+              }}>
+                CONTACT US
               </div>
-              <div
-                style={{
-                  fontFamily: "Poppins",
-                  fontSize: "0.9rem",
-                  lineHeight: "1.6",
-                  color: "#e2e8f0",
-                }}
-              >
-                <p style={{ margin: "0.5rem 0" }}>KIET Group of Institutions</p>
-                <p style={{ margin: "0.5rem 0" }}>Delhi-NCR, Ghaziabad</p>
-                <p style={{ margin: "0.5rem 0" }}>Email: icici2026@kiet.edu</p>
-                <p style={{ margin: "0.5rem 0" }}>Phone: +91-120-2844000</p>
+              <div style={{
+                fontFamily: "Poppins",
+                fontSize: "0.9rem",
+                lineHeight: "1.6",
+                color: "#e2e8f0",
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                  <div>
+                    <p style={{ margin: 0 }}>Phone : Dr. Puneet Garg (+91-9996091999)</p>
+                    <p style={{ margin: 0 }}>Dr. Manish Bhardwaj (+91-9457966671)</p>
+                    <br />
+                    <p style={{ margin: 0 }}>Email : icici@kiet.edu</p>
+                  </div>
+                </div>
               </div>
             </div>
+
           </div>
           {/* Right Content Area */}
           <div
@@ -558,4 +551,3 @@ export default function PaperSubmission() {
     </div>
   );
 }
-
