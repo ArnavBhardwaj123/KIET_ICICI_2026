@@ -165,7 +165,7 @@ export default function Home() {
   const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
-    const t = setTimeout(() => setShowLoader(false), 1500);
+    const t = setTimeout(() => setShowLoader(false), 500);
     return () => clearTimeout(t);
   }, []);
 
@@ -495,7 +495,7 @@ export default function Home() {
               color: "#555",
             }}
           >
-            Exploring the future of computing and technology
+            Exploring the Future of Computing and Technology
           </p>
           <p
             style={{
@@ -505,10 +505,7 @@ export default function Home() {
               color: "#555",
             }}
           >
-KIET Group of Institutions, Delhi-NCR, established in 1998 under the aegis of the Krishna Charitable Society, is a premier center for technical education, innovation, and research. From an initial intake of 180 students, KIET has evolved into one of the most distinguished institutes in the region, nurturing a vibrant community of 7500+ students and an alumni network exceeding 20,000 professionals across the globe.
-With its motto, “Achieving High,” KIET is committed to fostering innovation-driven learning, ethical leadership, and skill-oriented education. The institute’s progressive academic ecosystem is built upon strong industry linkages, interdisciplinary research, and a culture that inspires students to become competent and responsible global professionals.
-Accredited with a NAAC ‘A+’ grade and offering multiple NBA-accredited programs in disciplines such as CSE, CSIT, ECE, EEE, IT, ME, CE, MCA, MBA, and Pharmacy, KIET stands as a testament to academic excellence and institutional integrity.
-Guided by a vision to empower innovators and thought leaders, KIET continues to be recognized through numerous Education Excellence Awards, positioning itself as a leading hub for technical brilliance, creativity, and holistic development in India’s higher education landscape.          </p>
+KIET Group of Institutions, established in 1998 by the Krishna Charitable Society, is recognized as one of the leading engineering colleges in Delhi-NCR and a pioneer in the field of technical education. Beginning with just 180 students, the institute has grown remarkably to a strength of over 7,500 students, supported by a vibrant alumni network of 20,000+ professionals across the globe. Guided by its vision of skill-oriented and value-based education, KIET focuses on nurturing young minds to become competent and responsible professionals. The institute’s commitment to innovation, academic excellence, and holistic development has earned it numerous Education Excellence Awards and a distinct reputation among technical institutions in Uttar Pradesh. Accredited by NAAC with Grade ‘A+’, and with several programs including CSE, CSIT, CS, ECE, EEE, IT, ME, CE, MCA, MBA, and Pharmacy accredited by NBA, KIET continues to uphold its legacy of “Achieving High” through quality education, strong industry connect, and outstanding placement records. </p>
         </div>
 
         {/* Right Column: Image */}
@@ -574,17 +571,7 @@ Guided by a vision to empower innovators and thought leaders, KIET continues to 
               color: "#555",
             }}
           >
-The International Conference on Innovations in Computational Intelligence (ICICI–2026) is a distinguished global forum that unites leading researchers, academicians, industry professionals, and innovators to advance discussions in Artificial Intelligence, Machine Learning, and Computational Sciences.
-Organized by the KIET Group of Institutions, the conference serves as a dynamic platform for presenting original research, exchanging ideas, and exploring emerging paradigms shaping the future of intelligent technologies.
-ICICI–2026 aims to foster interdisciplinary collaboration across domains including AI, Machine Learning, Data Science, Deep Learning, Natural Language Processing, Computer Vision, Big Data Analytics, IoT, and Cyber Security—areas driving the next phase of global digital transformation.
-
-Conference Highlights:
-Keynote Sessions by globally renowned experts in AI and computational intelligence.
-Technical Paper Presentations showcasing innovative research and real-world applications.
-Workshops & Panel Discussions on deep learning, data-driven decision-making, and intelligent systems.
-Networking Opportunities with distinguished researchers, industry leaders, and young innovators.
-Beyond academic excellence, ICICI–2026 embodies the spirit of innovation, collaboration, and knowledge exchange. It is more than a conference—it is an intellectual experience that connects ideas with impact, inspiring participants to reimagine the possibilities of computational intelligence.
-Join us at ICICI–2026 to explore, engage, and evolve with the global community shaping the intelligent technologies of tomorrow.          </p>
+The International Conference on Innovations in Computational Intelligence (ICICI-2026), organized by KIET Group of Institutions, Delhi-NCR, Ghaziabad, India, will be held on April 24–25, 2026. This prestigious event aims to bring together researchers, academicians, industry professionals, and students to share innovative ideas and research in artificial intelligence, machine learning, and computational intelligence. The conference will feature keynote sessions by global experts, technical paper presentations, panel discussions, and hands-on workshops covering emerging areas such as deep learning, NLP, computer vision, big data analytics, IoT, and cyber security. ICICI-2026 provides a global platform to explore advancements, foster collaboration, and inspire innovation in the rapidly evolving world of AI and computational sciences.</p>
         </div>
       </div>
 
@@ -600,21 +587,21 @@ Join us at ICICI–2026 to explore, engage, and evolve with the global community
         }}
       >
         {/* Left Column: Text Content */}
-        <div style={{ flex: 1, textAlign: "left" }}>
+        <div style={{ flex: 1, textAlign: "justify" }}>
           <p
             style={{ color: "teal", fontFamily: "Poppins", fontSize: "1.5rem" }}
           >
-            Innovate. Collaborate. Lead.
           </p>
           <h1
             style={{
               fontFamily: "Poppins",
-              fontSize: "2.5rem",
+              fontSize: "1.7rem",
               marginTop: "0.5rem",
               color: "#555",
             }}
           >
-            About the Conference
+            Exploring ICICI–2026
+
           </h1>
           <p
             style={{
@@ -624,26 +611,26 @@ Join us at ICICI–2026 to explore, engage, and evolve with the global community
               color: "#555",
             }}
           >
-            A key highlight of the conference will be the keynote addresses delivered by globally recognized experts in artificial intelligence and computational techniques. These keynote sessions will offer attendees a unique opportunity to gain valuable perspectives on the latest advancements and future directions in AI and machine learning. In addition to the keynote addresses, ICICI-2026 will feature technical paper presentations, panel discussions, and interactive workshops designed to provide hands-on experience in areas like deep learning, AI-driven decision-making, and big data analytics.
+            ICICI-2026 is not just an academic conference but a vibrant platform for networking, collaboration, and knowledge exchange. It brings together researchers, academicians, industry professionals, and students to explore emerging trends and practical applications in AI and computational intelligence. The event encourages meaningful discussions, fosters research partnerships, and provides valuable insights into the future of AI, machine learning, and intelligent systems, making it a must-attend gathering for innovators and technology enthusiasts worldwide .
           </p>
-          <Link to="/registration" style={{ textDecoration: 'none' }}>
-            <button
-              style={{
-                backgroundColor: "navy",
-                color: "white",
-                border: "none",
-                borderRadius: "50px",
-                padding: "1rem 2rem",
-                fontSize: "1rem",
-                fontWeight: "bold",
-                marginTop: "2rem",
-                cursor: "pointer",
-              }}
-            >
-              Get Started
-            </button>
-          </Link>
+          <br></br>
+           <div style={{
+              backgroundColor: '#f0edffff',
+              color: '#1f2937',
+              padding: '0.75rem 1rem',
+              borderRadius: '8px',
+              border: '1px solid #ffedd5',
+              maxWidth: '900px',
+              textAlign: 'justify',
+              fontFamily: 'Poppins',
+              fontSize: '1rem',
+              fontWeight: 600
+            }}>
+            All the accepted, registered, and presented papers will be submitted to IEEE Xplore (Scopus Indexed) through IEEE Computational Intelligence Society (CIS) for possible inclusion.
+            </div>
+          
         </div>
+
 
         {/* Right Column: Video and SVG */}
         <div
@@ -661,6 +648,16 @@ Join us at ICICI–2026 to explore, engage, and evolve with the global community
           >
             Your browser does not support the video tag.
           </video>
+          {/* Indexing note - highlighted and centered */}
+          <div style={{
+            marginTop: '1rem',
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center'
+          }}>
+           
+          </div>
+
           {/* svg */}
           <div
             style={{

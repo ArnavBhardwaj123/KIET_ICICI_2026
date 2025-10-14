@@ -83,7 +83,7 @@ export default function IEEELoader() {
             animation: "pulse 2s ease-in-out infinite",
           }}
         >
-          IEEE LOADING...
+          ICICI 2026 LOADING...
         </div>
       </div>
     </>

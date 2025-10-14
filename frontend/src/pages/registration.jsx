@@ -286,6 +286,7 @@ export default function Registration() {
                 </table>
               </div>
 
+
               {/* Foreign Authors Table */}
               <h3 style={{ fontFamily: "Poppins", fontSize: "1.4rem", color: "#4299e1", margin: "2.5rem 0 1rem 0", fontWeight: "600" }}>Foreign Authors</h3>
               <div style={{ width: "100%", overflowX: "auto" }}>
@@ -306,6 +307,27 @@ export default function Registration() {
                 </table>
               </div>
             </div>
+                          {/* Payment / Bank Details for Foreign Authors */}
+              <div style={{ marginTop: "2rem" }}>
+                <h2 style={{ fontFamily: "Poppins", fontSize: "1.8rem", color: "#333", margin: "0 0 1rem 0", fontWeight: "600" }}>
+                  Payment / Bank Details (For Foreign Authors)
+                </h2>
+                <div style={{ backgroundColor: "#f8f9fa", borderRadius: "12px", padding: "1.25rem", border: "1px solid #e9ecef" }}>
+                  <div style={{ width: "100%", overflowX: "auto" }}>
+                    <table style={{ width: "100%", borderCollapse: "collapse", fontFamily: "Poppins" }}>
+                      <tbody>
+                        <tr><td style={tableCellStyle}>Account Holder Name</td><td style={tableCellStyle}>KIET Group of Institutions</td></tr>
+                        <tr><td style={tableCellStyle}>Account No.</td><td style={tableCellStyle}>125601000763</td></tr>
+                        <tr><td style={tableCellStyle}>Bank Name</td><td style={tableCellStyle}>ICICI Bank Ltd</td></tr>
+                        <tr><td style={tableCellStyle}>Branch</td><td style={tableCellStyle}>Choudhary More, Ghaziabad, UP, India</td></tr>
+                        <tr><td style={tableCellStyle}>IFSC Code</td><td style={tableCellStyle}>ICIC0001256</td></tr>
+                        <tr><td style={tableCellStyle}>SWIFT Code</td><td style={tableCellStyle}>ICICNBBNRI</td></tr>
+                        <tr><td style={tableCellStyle}>PAN No.</td><td style={tableCellStyle}>AAATK2465P</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
 
             {/* Accommodation Section */}
             <div>

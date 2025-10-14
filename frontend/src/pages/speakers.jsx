@@ -245,7 +245,7 @@ export default function Speakers() {
               >
                 <FaCalendarAlt style={{ color: "white" }} />
                 <p style={{ fontFamily: "Poppins", fontSize: "1.1rem", margin: "0" }}>
-                  Conference Date: March 2026
+                  Conference Date: 23-24 March 2026
                 </p>
               </div>
               <div
@@ -338,17 +338,53 @@ export default function Speakers() {
         </div>
       </div>
 
-      {/* Speakers Content */}
+      {/* Speakers Content - blue overlay background behind the details (not footer) */}
       <div style={{
-        backgroundColor: "#f5f5f5",
+        background: 'linear-gradient(180deg, #ffffffff 0%, #ffffffff 100%)',
         padding: "4rem 2rem",
-        minHeight: "100vh"
+        minHeight: "100vh",
+        color: 'white',
+        position: 'relative',
+        overflow: 'hidden'
       }}>
+        {/* Full-area overlay that sits above all speakers content (not footer) */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: 900, // below navbar (which uses 1000)
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          background: 'rgba(255,255,255,0.06)',
+          backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)',
+          pointerEvents: 'none' // don't block interactions
+        }}>
+          <div style={{
+            fontFamily: 'Poppins',
+            fontSize: '2.25rem',
+            fontWeight: 900,
+            color: '#000',
+            textAlign: 'center',
+            padding: '0.5rem 1rem',
+            // background: 'rgba(255,255,255,0.9)',
+            borderRadius: '8px',
+            // boxShadow: '0 6px 18px rgba(2,6,23,0.08)'
+          }}>
+            Soon to be updated
+          </div>
+        </div>
+
         <div className="responsive-row" style={{
           maxWidth: "1200px",
           margin: "0 auto",
           display: "flex",
-          gap: "2rem"
+          gap: "2rem",
+          position: 'relative',
+          zIndex: 1
         }}>
           
           {/* Left Sidebar */}
@@ -364,7 +400,10 @@ export default function Speakers() {
               backgroundColor: "#4a5568",
               borderRadius: "15px",
               padding: "1.5rem",
-              color: "white"
+              color: "white",
+              position: 'relative',
+              zIndex: 910
+              
             }}>
               <div style={{
                 backgroundColor: "#2d3748",
@@ -397,7 +436,9 @@ export default function Speakers() {
               backgroundColor: "#4a5568",
               borderRadius: "15px",
               padding: "1.5rem",
-              color: "white"
+              color: "white",
+              position: 'relative',
+              zIndex: 910
             }}>
               <div style={{
                 backgroundColor: "#2d3748",
