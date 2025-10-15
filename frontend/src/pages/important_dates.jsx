@@ -202,7 +202,7 @@ export default function ImportantDates() {
                 IMPORTANT DATES
               </h1>
               <p style={{ fontFamily: "Poppins", fontSize: "1.1rem", color: "#666", lineHeight: "1.6", margin: "0" }}>
-                Please note all the important deadlines for IEEE ICICI 2026. All deadlines are at 11:59 PM anywhere on earth (AoE).
+                Please note all the important deadlines for ICICI 2026. All deadlines are at 11:59 PM anywhere on earth (AoE).
               </p>
             </div>
             {/* Dates Timeline */}

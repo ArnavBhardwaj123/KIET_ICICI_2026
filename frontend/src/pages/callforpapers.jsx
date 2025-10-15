@@ -435,7 +435,7 @@ export default function CallForPapers() {
             }}
           >
             {/* Header */}
-            <div style={{ marginBottom: "2rem", textAlign: "left" }}>
+            <div style={{ marginBottom: "2rem", textAlign: "justify" }}>
               <h1
                 style={{
                   fontFamily: "Poppins",
