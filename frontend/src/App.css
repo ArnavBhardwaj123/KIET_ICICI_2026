@@ -113,13 +113,20 @@ body {
 }
 
 /* Navbar responsive styles */
+/* responsive update: adjusted navbar layout for small laptops */
+@media (max-width: 1366px) {
+  .nav-links {
+    gap: 1rem !important;
+  }
+}
+
+/* responsive update: hide desktop nav for tablet */
 @media (max-width: 1024px) {
   .nav-links {
-    gap: 1.5rem !important;
+    display: none !important;
   }
-
-  .nav-links a {
-    font-size: 0.85rem !important;
+  .mobile-menu-icon {
+    display: block !important;
   }
 }
 
@@ -548,6 +555,65 @@ img {
     order: 2; /* Image comes second */
   }
 }
+
+/* responsive update: layout adjustments for tablet view */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .responsive-row {
+    flex-direction: column !important;
+    gap: 2rem !important;
+    align-items: stretch !important;
+  }
+
+  .sidebar {
+    width: 100% !important;
+  }
+
+  .hero-section>div:first-of-type h1 {
+    font-size: 3rem !important;
+  }
+
+  .tracks-section {
+    flex-direction: column !important;
+    text-align: center;
+    padding: 3rem 1.5rem !important;
+  }
+  
+  .tracks-left-content {
+    max-width: 100%;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .speaker-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* responsive update: fine-tune spacing for small laptops */
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .nav-links {
+    gap: 1rem !important;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem !important;
+  }
+
+  .hero-section>div:first-of-type h1 {
+    font-size: 3.2rem !important;
+  }
+
+  .sidebar {
+    width: 280px !important; /* Slightly reduce sidebar width */
+  }
+
+  .tracks-title {
+    font-size: 2.8rem !important;
+  }
+}
+
 
 @keyframes slideInUp {
   from {
