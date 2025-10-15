@@ -11,7 +11,8 @@ export default function Navbar() {
   // Check if mobile view
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+      /* responsive update: changed max-width to 1024px to include tablets */
+      setIsMobile(window.innerWidth <= 1024);
     };
 
     checkMobile();
@@ -125,77 +126,82 @@ export default function Navbar() {
         }}
       >
         {/* Desktop Navigation */}
-        <ul
-          className="nav-links"
-          style={{
-            display: "flex",
-            listStyle: "none",
-            gap: "0.8rem", // Reduced from 1.5rem to 0.8rem for more compact spacing
-            margin: 0,
-            padding: 0,
-            flexWrap: "nowrap", // Changed to nowrap to keep buttons in one row
-            justifyContent: "center",
-            alignItems: "center",
-            width: "100%",
-            maxWidth: "1200px",
-          }}
-        >
-          {items.map((item) => (
-            <li key={item.name}>
-              <Link
-                to={item.path}
-                style={{
-                  color: "#333",
-                  textDecoration: "none",
-                  fontWeight: "500",
-                  fontSize: "0.85rem",
-                  fontFamily: "Poppins",
-                  letterSpacing: "0.3px",
-                  transition: "color 0.3s ease",
-                  padding: "0.5rem 0.7rem", // Reduced horizontal padding from 1rem to 0.7rem
-                  display: "block",
-                  textAlign: "center",
-                  whiteSpace: "nowrap",
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.color = "#40E0D0";
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.color = "#333";
-                }}
-              >
-                {item.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {!isMobile && (
+          <ul
+            className="nav-links"
+            style={{
+              display: "flex",
+              listStyle: "none",
+              gap: "0.8rem", // Reduced from 1.5rem to 0.8rem for more compact spacing
+              margin: 0,
+              padding: 0,
+              flexWrap: "nowrap", // Changed to nowrap to keep buttons in one row
+              justifyContent: "center",
+              alignItems: "center",
+              width: "100%",
+              maxWidth: "1200px",
+            }}
+          >
+            {items.map((item) => (
+              <li key={item.name}>
+                <Link
+                  to={item.path}
+                  style={{
+                    color: "#333",
+                    textDecoration: "none",
+                    fontWeight: "500",
+                    fontSize: "0.85rem",
+                    fontFamily: "Poppins",
+                    letterSpacing: "0.3px",
+                    transition: "color 0.3s ease",
+                    padding: "0.5rem 0.7rem", // Reduced horizontal padding from 1rem to 0.7rem
+                    display: "block",
+                    textAlign: "center",
+                    whiteSpace: "nowrap",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.color = "#40E0D0";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.color = "#333";
+                  }}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+
 
         {/* Mobile menu button */}
-        <button
-          className="mobile-menu-icon"
-          onClick={isOpen ? closeMenu : openMenu}
-          aria-label={isOpen ? "Close menu" : "Open menu"}
-          style={{
-            display: "none",
-            background: "transparent",
-            border: "none",
-            color: "#333",
-            fontSize: "1.4rem",
-            cursor: "pointer",
-            padding: "0.5rem",
-            zIndex: 1001,
-            borderRadius: "4px",
-            position: "absolute",
-            right: "2rem",
-            outline: "none", // Remove focus outline
-          }}
-        >
-          {isOpen ? <FaTimes /> : <FaBars />}
-        </button>
+        {isMobile && (
+          <button
+            className="mobile-menu-icon"
+            onClick={isOpen ? closeMenu : openMenu}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            style={{
+              display: "block",
+              background: "transparent",
+              border: "none",
+              color: "#333",
+              fontSize: "1.4rem",
+              cursor: "pointer",
+              padding: "0.5rem",
+              zIndex: 1001,
+              borderRadius: "4px",
+              position: "absolute",
+              right: "2rem",
+              outline: "none", // Remove focus outline
+            }}
+          >
+            {isOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        )}
       </nav>
 
       {/* Mobile slide-in nav menu - Upper Half */}
-      {isOpen && (
+      {isOpen && isMobile && (
         <div
           className={`mobile-nav-overlay ${isClosing ? 'closing' : ''}`}
           style={{
@@ -287,7 +293,7 @@ export default function Navbar() {
         </div>
       )}
       {/* Backdrop for mobile menu - Lower Half */}
-      {isOpen && (
+      {isOpen && isMobile &&(
         <div
           style={{
             position: "fixed",
