@@ -791,12 +791,140 @@ img {
   opacity: 1 !important;
 }
 
+/* Coustom copy */
+  .tracks-badge {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 50px;
+            justify-content: center;
+        }
+        .tracks-badge-inside{
+            margin-left: 0%;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .tracks-number {
+            font-size: 80px;
+            font-weight: 700;
+            color: #1a5490;
+            line-height: 1;
+            margin-bottom: 0;
+        }
+
+        .tracks-text {
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+.track-item-item{
+    display: flex;
+    gap: 15px;
+    margin-left: 0%;
+    flex-direction: column;
+    justify-content: center;
+}
+        .track-items {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            /* margin-left: calc(50% - 100px); */
+        }
+
+        .track-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .arrow-circle {
+            width: 32px;
+            height: 32px;
+            border: 2px solid #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .arrow-circle:hover {
+            background: #000;
+        }
+
+        .arrow-circle:hover::after {
+            border-color: #fff;
+        }
+
+        .arrow-circle::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-right: 2px solid #000;
+            border-bottom: 2px solid #000;
+            transform: rotate(-45deg);
+            transition: border-color 0.3s ease;
+        }
+
+        /* First arrow points up */
+        .track-item:first-child .arrow-circle::after {
+            border-right: 2px solid #000;
+            border-top: 2px solid #000;
+            border-bottom: none;
+            border-left: none;
+            transform: rotate(-45deg);
+        }
+
+        .track-item:first-child .arrow-circle:hover::after {
+            border-right: 2px solid #fff;
+            border-top: 2px solid #fff;
+            border-bottom: none;
+            border-left: none;
+        }
+
+        /* Second arrow points down */
+        .track-item:nth-child(2) .arrow-circle::after {
+            border-right: 2px solid #000;
+            border-bottom: 2px solid #000;
+            border-top: none;
+            border-left: none;
+            transform: rotate(45deg);
+        }
+
+        .track-item:nth-child(2) .arrow-circle:hover::after {
+            border-right: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            border-top: none;
+            border-left: none;
+        }
+
+        .track-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .track-instruction {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
 
 /* --- NEW: Tracks Orbit Section --- */
 .tracks-section {
   background-color: #ffffff;
   min-height: 100vh;
-  padding: 4rem 2rem;
+  padding-top: 4rem;
+  padding-bottom: 0rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -815,19 +943,21 @@ img {
 }
 
 .tracks-kicker {
-  color: #888;
+  color: #05B8A8;
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 1rem;
   letter-spacing: 1px;
+  text-align: left;
 }
 
 .tracks-title {
   color: #111;
-  font-size: 3.5rem;
+  font-size: 2rem;
   font-weight: bold;
   line-height: 1.1;
   margin-bottom: 1.5rem;
+  text-align: left;
 }
 
 .tracks-subtitle {
@@ -881,14 +1011,54 @@ img {
 }
 
 
-/* Right Content - Orbit */
+/* Right Content - Curved line */
 .tracks-right-content {
   flex: 1;
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-width: 600px;
-  min-height: 600px;
+  justify-content: flex-end;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.semicircle-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.semicircle-path {
+  position: absolute;
+  top: 0;
+  right: -250px;
+  width: 500px;
+  height: 500px;
+  border-left: 4px solid #000;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.semicircle-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #333;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.dot-1 {
+  top: 20%;
+  right: 0;
+}
+
+.dot-2 {
+  bottom: 20%;
+  right: 0;
 }
 
 .orbit-container {
