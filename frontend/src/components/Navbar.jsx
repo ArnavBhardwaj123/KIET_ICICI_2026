@@ -291,7 +291,7 @@ export default function Navbar() {
                 fontWeight: "500",
               }}
             >
-              IEEE ICICI 2026
+              ICICI 2026
             </div>
             <div
               style={{
