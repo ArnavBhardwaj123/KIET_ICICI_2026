@@ -64,7 +64,7 @@ export default function ImportantDates() {
           {/* Left Content */}
           <div style={{ flex: 1, maxWidth: "60%", textAlign: "left" }}>
             <p style={{ color: "#05B8A8", fontSize: "1.2rem", fontFamily: "Poppins", fontWeight: "600", margin: "0 0 1rem 0", letterSpacing: "1px" }}>
-              IEEE ICICI 2026
+              ICICI 2026
             </p>
             <h1 style={{ color: "#333", fontFamily: "Poppins", fontSize: "3.8rem", fontWeight: "bold", lineHeight: "1.1", margin: "0", textAlign: "left" }}>
               Important Dates
