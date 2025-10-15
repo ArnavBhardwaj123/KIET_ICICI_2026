@@ -98,6 +98,22 @@ export default function Registration() {
             >
               ICICI 2026
             </p>
+            {/* Right content - visible on mobile only */}
+            <div
+              className="mobile-only-text"
+              style={{
+                color: "#666",
+                fontFamily: "Poppins",
+                fontSize: "1.1rem",
+                fontWeight: "700",
+                lineHeight: "1.7",
+                margin: "0 0 1.5rem 0",
+                textAlign: "left",
+              }}
+            >
+              <div>Secure your spot at ICICI 2026 and connect with</div>
+              <div>researchers and experts from around the world.</div>
+            </div>
             <h1
               style={{
                 color: "#333",
@@ -126,8 +142,8 @@ export default function Registration() {
             </p>
           </div>
 
-          {/* Right Content */}
-          <div style={{
+          {/* Right Content - visible on desktop only */}
+          <div className="desktop-only-text" style={{
             position: "absolute",
             right: 0,
             flex: 1,
@@ -222,7 +238,7 @@ export default function Registration() {
       </div>
 
       {/* Registration Content */}
-      <div style={{ backgroundColor: "#f5f5f5", padding: "4rem 2rem", minHeight: "100vh" }}>
+      <div className="mobileview-mainpadding" style={{ backgroundColor: "#f5f5f5", padding: "4rem 2rem", minHeight: "100vh" }}>
         <div className="responsive-row" style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", gap: "2rem" }}>
           {/* Left Sidebar */}
           <div className="sidebar" style={{ width: "300px", display: "flex", flexDirection: "column", gap: "1rem" }}>
@@ -304,7 +320,7 @@ export default function Registration() {
           </div>
 
           {/* Right Content Area */}
-          <div style={{ flex: 1, backgroundColor: "white", borderRadius: "15px", padding: "2rem", textAlign: "left" }}>
+          <div className="mobileview-notmainpadding" style={{ flex: 1, backgroundColor: "white", borderRadius: "15px", padding: "2rem", textAlign: "left" }}>
             <div style={{ marginBottom: "2rem" }}>
               <h1 style={{ fontFamily: "Poppins", fontSize: "2.5rem", color: "#333", margin: "0 0 1rem 0", fontWeight: "bold" }}>
                 REGISTRATION

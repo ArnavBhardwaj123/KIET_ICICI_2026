@@ -211,6 +211,23 @@ export default function CallForPapers() {
             >
               ICICI 2026
             </p>
+            {/* Right content - visible on mobile only */}
+            <div
+              className="mobile-only-text"
+              style={{
+                color: "#666",
+                fontFamily: "Poppins",
+                fontSize: "1.1rem",
+                fontWeight: "700",
+                lineHeight: "1.7",
+                margin: "0 0 1.5rem 0",
+                textAlign: "left",
+              }}
+            >
+              <div>Share your unpublished work with IEEE and gain</div>
+              <div>visibility among leading researchers, experts, and</div>
+              <div>innovators.</div>
+            </div>
             <h1
               style={{
                 color: "#333",
@@ -239,8 +256,9 @@ export default function CallForPapers() {
             </p>
           </div>
 
-          {/* Right Content */}
+          {/* Right Content - visible on desktop only */}
           <div
+            className="desktop-only-text"
             style={{
               position: "absolute",
               right: 0,
@@ -333,6 +351,7 @@ export default function CallForPapers() {
       </div>
       {/* Call for Papers Content */}
       <div
+        className="mobileview-mainpadding"
         style={{
           backgroundColor: "#f5f5f5",
           padding: "4rem 2rem",
@@ -427,6 +446,7 @@ export default function CallForPapers() {
           </div>
           {/* Right Content Area */}
           <div
+            className="mobileview-notmainpadding"
             style={{
               flex: 1,
               backgroundColor: "white",
@@ -435,7 +455,7 @@ export default function CallForPapers() {
             }}
           >
             {/* Header */}
-            <div style={{ marginBottom: "2rem", textAlign: "justify" }}>
+            <div style={{ marginBottom: "2rem", textAlign: "left" }}>
               <h1
                 style={{
                   fontFamily: "Poppins",

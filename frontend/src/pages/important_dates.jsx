@@ -66,6 +66,23 @@ export default function ImportantDates() {
             <p style={{ color: "#05B8A8", fontSize: "1.2rem", fontFamily: "Poppins", fontWeight: "600", margin: "0 0 1rem 0", letterSpacing: "1px" }}>
               ICICI 2026
             </p>
+            {/* Right content - visible on mobile only */}
+            <div
+              className="mobile-only-text"
+              style={{
+                color: "#666",
+                fontFamily: "Poppins",
+                fontSize: "1.1rem",
+                fontWeight: "700",
+                lineHeight: "1.7",
+                margin: "0 0 1.5rem 0",
+                textAlign: "left",
+              }}
+            >
+              <div>Stay updated with all important conference</div>
+              <div>deadlines and events. Mark your calendar</div>
+              <div>to ensure timely submissions.</div>
+            </div>
             <h1 style={{ color: "#333", fontFamily: "Poppins", fontSize: "3.8rem", fontWeight: "bold", lineHeight: "1.1", margin: "0", textAlign: "left" }}>
               Important Dates
             </h1>
@@ -73,8 +90,8 @@ export default function ImportantDates() {
               Key Deadlines and Conference Schedule
             </p>
           </div>
-          {/* Right Content */}
-          <div style={{ position: "absolute", right: 0, flex: 1, maxWidth: "45%", display: "flex", alignItems: "center", justifyContent: "flex-start", paddingTop: "4rem", paddingLeft: "2rem", paddingRight: "5rem" }}>
+          {/* Right Content - visible on desktop only */}
+          <div className="desktop-only-text" style={{ position: "absolute", right: 0, flex: 1, maxWidth: "45%", display: "flex", alignItems: "center", justifyContent: "flex-start", paddingTop: "4rem", paddingLeft: "2rem", paddingRight: "5rem" }}>
             <div style={{ color: "#666", fontFamily: "Poppins", fontSize: "1.1rem", lineHeight: "1.7", margin: "0", textAlign: "left" }}>
               <div>Stay updated with all important conference</div>
               <div>deadlines and events. Mark your calendar</div>
@@ -114,7 +131,7 @@ export default function ImportantDates() {
       </div>
 
       {/* Important Dates Content */}
-      <div style={{ backgroundColor: "#f5f5f5", padding: "4rem 2rem", minHeight: "100vh" }}>
+      <div className="mobileview-mainpadding" style={{ backgroundColor: "#f5f5f5", padding: "4rem 2rem", minHeight: "100vh" }}>
         <div className="responsive-row" style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", gap: "2rem" }}>
           {/* Left Sidebar */}
           <div className="sidebar" style={{ width: "300px", display: "flex", flexDirection: "column", gap: "1rem" }}>
@@ -196,7 +213,7 @@ export default function ImportantDates() {
           </div>
 
           {/* Right Content Area */}
-          <div style={{ flex: 1, backgroundColor: "white", borderRadius: "15px", padding: "2rem" }}>
+          <div className="mobileview-notmainpadding" style={{ flex: 1, backgroundColor: "white", borderRadius: "15px", padding: "2rem" }}>
             <div style={{ marginBottom: "2rem" }}>
               <h1 style={{ fontFamily: "Poppins", fontSize: "2.5rem", color: "#333", margin: "0 0 1rem 0", fontWeight: "bold" }}>
                 IMPORTANT DATES

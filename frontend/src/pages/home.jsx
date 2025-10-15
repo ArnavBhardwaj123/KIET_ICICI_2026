@@ -236,6 +236,23 @@ export default function Home() {
             >
               ICICI 2026
             </p>
+            {/* Join global experts - visible on mobile only */}
+            <div
+              className="mobile-only-text"
+              style={{
+                color: "#666",
+                fontFamily: "Poppins",
+                fontSize: "1.1rem",
+                fontWeight: "700",
+                lineHeight: "1.7",
+                margin: "0 0 1.5rem 0",
+                textAlign: "left",
+              }}
+            >
+              <div>Join global experts, researchers, and innovators</div>
+              <div>for groundbreaking research, collaboration,</div>
+              <div>and learning.</div>
+            </div>
             <h1
               style={{
                 color: "#333",
@@ -252,8 +269,8 @@ export default function Home() {
             </h1>
           </div>
 
-          {/* Right Content */}
-          <div style={{
+          {/* Right Content - visible on desktop only */}
+          <div className="desktop-only-text" style={{
             position: "absolute",
             right: 0,
             flex: 1,
@@ -433,7 +450,7 @@ export default function Home() {
         className="responsive-row"
       >
         {/* Left Column: Text Content */}
-        <div style={{ flex: 1, textAlign: "justify" }}>
+        <div style={{ flex: 1, textAlign: "left" }}>
 
           {/* Moved: About Conference content into the first slot (below Innovate) */}
           <h1
@@ -497,7 +514,7 @@ export default function Home() {
           />
         </div>
         {/* Left Column: Text Content */}
-        <div style={{ flex: 1, textAlign: "justify" }} className="about-section-text">
+        <div style={{ flex: 1, textAlign: "left" }} className="about-section-text">
           <p
             style={{ color: "teal", fontFamily: "Poppins", fontSize: "1.5rem" }}
           >
@@ -543,7 +560,7 @@ export default function Home() {
             borderRadius: '8px',
             border: '1px solid #ffedd5',
             maxWidth: '900px',
-            textAlign: 'justify',
+            textAlign: 'left',
             fontFamily: 'Poppins',
             fontSize: '1rem',
             fontWeight: 600
@@ -568,7 +585,7 @@ export default function Home() {
         }}
       >
         {/* Left Column: Text Content */}
-        <div style={{ flex: 1, textAlign: "justify" }}>
+        <div style={{ flex: 1, textAlign: "left" }}>
           <p
             style={{ color: "teal", fontFamily: "Poppins", fontSize: "1.5rem" }}
           >

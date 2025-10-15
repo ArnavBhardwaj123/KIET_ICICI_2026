@@ -146,6 +146,23 @@ export default function Speakers() {
             >
               ICICI 2026
             </p>
+            {/* Right content - visible on mobile only */}
+            <div
+              className="mobile-only-text"
+              style={{
+                color: "#666",
+                fontFamily: "Poppins",
+                fontSize: "1.1rem",
+                fontWeight: "700",
+                lineHeight: "1.7",
+                margin: "0 0 1.5rem 0",
+                textAlign: "left",
+              }}
+            >
+              <div>Join us to hear from distinguished speakers sharing</div>
+              <div>cutting-edge research and insights from leading</div>
+              <div>institutions worldwide.</div>
+            </div>
             <h1
               style={{
                 color: "#333",
@@ -174,8 +191,8 @@ export default function Speakers() {
             </p>
           </div>
 
-          {/* Right Content */}
-          <div style={{
+          {/* Right Content - visible on desktop only */}
+          <div className="desktop-only-text" style={{
             position: "absolute",
             right: 0,
             flex: 1,
@@ -334,7 +351,7 @@ export default function Speakers() {
       </div>
 
       {/* Speakers Content - blue overlay background behind the details (not footer) */}
-      <div style={{
+      <div className="mobileview-mainpadding" style={{
         background: 'linear-gradient(180deg, #ffffff 0%, #ffffff 100%)',
         padding: "4rem 2rem",
         minHeight: "100vh",
@@ -467,7 +484,7 @@ export default function Speakers() {
           </div>
 
           {/* Right Content Area */}
-          <div style={{
+          <div className="mobileview-notmainpadding" style={{
             flex: 1,
             backgroundColor: "white",
             borderRadius: "15px",

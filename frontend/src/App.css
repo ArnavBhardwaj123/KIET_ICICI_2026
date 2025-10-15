@@ -192,8 +192,36 @@ img {
   height: auto;
 }
 
+/* Desktop: hide mobile-only text, show desktop-only text */
+.mobile-only-text {
+  display: none !important;
+}
+
+.desktop-only-text {
+  display: flex !important;
+}
+
+@media(max-width:768px){
+  .mobileview-mainpadding{
+    padding: 1.5rem 0.5rem !important;
+  }
+}
+@media(max-width:768px){
+  .mobileview-notmainpadding{
+    padding: 1rem !important;
+  }
+}
 /* Mobile / narrow screens */
 @media (max-width: 768px) {
+  /* Mobile: show mobile-only text, hide desktop-only text */
+  .mobile-only-text {
+    display: block !important;
+  }
+
+  .desktop-only-text {
+    display: none !important;
+  }
+
   /* Ensure all major containers are constrained */
   .container, 
   .section, 
@@ -240,33 +268,50 @@ img {
     padding-top: 70px !important;
     min-height: 100vh !important;
   }
+  @media (max-width: 768px) {
+    .hero-section {
+      padding-top: 0px !important;
+    }
+    
+  }
 
   .hero-section>div:first-of-type {
     height: auto !important;
     min-height: 50vh !important;
-    padding: 2rem 1rem !important;
+    padding: 2rem 1.5rem !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    text-align: center !important;
-    gap: 2rem !important;
+    text-align: left !important;
+    gap: 1rem !important;
   }
 
   .hero-section>div:first-of-type>div {
     max-width: 100% !important;
     position: relative !important;
-    text-align: center !important;
-    padding-left: 0 !important;
+    text-align: left !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
 
   .hero-section>div:first-of-type h1 {
     font-size: 2.5rem !important;
-    text-align: center !important;
+    text-align: left !important;
   }
 
   .hero-section>div:first-of-type p {
     font-size: 1rem !important;
-    text-align: center !important;
+    text-align: left !important;
     max-width: 100% !important;
+  }
+
+  /* Mobile-only text in hero section */
+  .hero-section .mobile-only-text {
+    text-align: left !important;
+    padding-left: 0 !important;
+  }
+
+  .hero-section .mobile-only-text div {
+    text-align: left !important;
   }
 
   .hero-section>div:last-of-type {
@@ -436,7 +481,23 @@ img {
   h1, h2, h3, h4, h5, h6, p {
     word-wrap: break-word;
     overflow-wrap: break-word;
-    hyphens: auto;
+    hyphens: none;
+    text-align: left;
+  }
+
+  /* Prevent hyphenation and ensure proper text breaking */
+  * {
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  /* Ensure proper text alignment for all text containers */
+  div, section, article {
+    text-align: left;
   }
 
   /* Fix any flex containers that might not wrap properly */

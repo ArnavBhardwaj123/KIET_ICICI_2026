@@ -388,6 +388,22 @@ export default function Committee() {
             >
               ICICI 2026
             </p>
+            {/* Right content - visible on mobile only */}
+            <div
+              className="mobile-only-text"
+              style={{
+                color: "#666",
+                fontFamily: "Poppins",
+                fontSize: "1.1rem",
+                fontWeight: "700",
+                lineHeight: "1.7",
+                margin: "0 0 1.5rem 0",
+                textAlign: "left",
+              }}
+            >
+              <div>Meet the esteemed members</div>
+              <div>who make our conference a success.</div>
+            </div>
             <h1
               style={{
                 color: "#333",
@@ -416,8 +432,9 @@ export default function Committee() {
             </p>
           </div>
 
-          {/* Right Content */}
+          {/* Right Content - visible on desktop only */}
           <div
+            className="desktop-only-text"
             style={{
               position: "absolute",
               right: 0,
@@ -553,6 +570,7 @@ export default function Committee() {
       </div>
       {/* Committee Content */}
       <div
+        className="mobileview-mainpadding"
         style={{
           backgroundColor: "#f5f5f5",
           padding: "4rem 2rem",
@@ -647,6 +665,7 @@ export default function Committee() {
           </div>
           {/* Right Content Area */}
           <div
+            className="mobileview-notmainpadding"
             style={{
               flex: 1,
               backgroundColor: "white",
