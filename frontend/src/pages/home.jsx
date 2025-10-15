@@ -476,6 +476,7 @@ export default function Home() {
           >
             Innovate. Collaborate. Lead.
           </p>
+          {/* Moved: About Conference content into the first slot (below Innovate) */}
           <h1
             style={{
               fontFamily: "Poppins",
@@ -484,7 +485,7 @@ export default function Home() {
               color: "#555",
             }}
           >
-            About KIET Group of Institutions
+            About the Conference
           </h1>
           <p
             style={{
@@ -495,7 +496,7 @@ export default function Home() {
               color: "#555",
             }}
           >
-            Exploring the Future of Computing and Technology
+            International Conference on Innovations in Computational Intelligence (ICICI–2026)
           </p>
           <p
             style={{
@@ -505,7 +506,7 @@ export default function Home() {
               color: "#555",
             }}
           >
-KIET Group of Institutions, established in 1998 by the Krishna Charitable Society, is recognized as one of the leading engineering colleges in Delhi-NCR and a pioneer in the field of technical education. Beginning with just 180 students, the institute has grown remarkably to a strength of over 7,500 students, supported by a vibrant alumni network of 20,000+ professionals across the globe. Guided by its vision of skill-oriented and value-based education, KIET focuses on nurturing young minds to become competent and responsible professionals. The institute’s commitment to innovation, academic excellence, and holistic development has earned it numerous Education Excellence Awards and a distinct reputation among technical institutions in Uttar Pradesh. Accredited by NAAC with Grade ‘A+’, and with several programs including CSE, CSIT, CS, ECE, EEE, IT, ME, CE, MCA, MBA, and Pharmacy accredited by NBA, KIET continues to uphold its legacy of “Achieving High” through quality education, strong industry connect, and outstanding placement records. </p>
+The International Conference on Innovations in Computational Intelligence (ICICI-2026), organized by KIET Group of Institutions, Delhi-NCR, Ghaziabad, India, will be held on April 24–25, 2026. This prestigious event aims to bring together researchers, academicians, industry professionals, and students to share innovative ideas and research in artificial intelligence, machine learning, and computational intelligence. The conference will feature keynote sessions by global experts, technical paper presentations, panel discussions, and hands-on workshops covering emerging areas such as deep learning, NLP, computer vision, big data analytics, IoT, and cyber security. ICICI-2026 provides a global platform to explore advancements, foster collaboration, and inspire innovation in the rapidly evolving world of AI and computational sciences.</p>
         </div>
 
         {/* Right Column: Image */}
@@ -542,6 +543,7 @@ KIET Group of Institutions, established in 1998 by the Krishna Charitable Societ
           >
            
           </p>
+          {/* Moved: Exploring ICICI content into the second slot */}
           <h1
             style={{
               fontFamily: "Poppins",
@@ -550,7 +552,7 @@ KIET Group of Institutions, established in 1998 by the Krishna Charitable Societ
               color: "#555",
             }}
           >
-            About the Conference
+            Exploring ICICI–2026
           </h1>
           <p
             style={{
@@ -560,7 +562,7 @@ KIET Group of Institutions, established in 1998 by the Krishna Charitable Societ
               color: "#555",
             }}
           >
-            International Conference on Innovations in Computational Intelligence (ICICI–2026)
+            ICICI-2026 is not just an academic conference but a vibrant platform for networking, collaboration, and knowledge exchange.
 
           </p>
           <p
@@ -571,7 +573,8 @@ KIET Group of Institutions, established in 1998 by the Krishna Charitable Societ
               color: "#555",
             }}
           >
-The International Conference on Innovations in Computational Intelligence (ICICI-2026), organized by KIET Group of Institutions, Delhi-NCR, Ghaziabad, India, will be held on April 24–25, 2026. This prestigious event aims to bring together researchers, academicians, industry professionals, and students to share innovative ideas and research in artificial intelligence, machine learning, and computational intelligence. The conference will feature keynote sessions by global experts, technical paper presentations, panel discussions, and hands-on workshops covering emerging areas such as deep learning, NLP, computer vision, big data analytics, IoT, and cyber security. ICICI-2026 provides a global platform to explore advancements, foster collaboration, and inspire innovation in the rapidly evolving world of AI and computational sciences.</p>
+            ICICI-2026 brings together researchers, academicians, industry professionals, and students to explore emerging trends and practical applications in AI and computational intelligence. The event encourages meaningful discussions, fosters research partnerships, and provides valuable insights into the future of AI, machine learning, and intelligent systems.
+          </p>
         </div>
       </div>
 
@@ -592,17 +595,28 @@ The International Conference on Innovations in Computational Intelligence (ICICI
             style={{ color: "teal", fontFamily: "Poppins", fontSize: "1.5rem" }}
           >
           </p>
+          {/* Moved: About KIET content into the third slot (above the indexing box) */}
           <h1
             style={{
               fontFamily: "Poppins",
-              fontSize: "1.7rem",
+              fontSize: "2.5rem",
               marginTop: "0.5rem",
               color: "#555",
             }}
           >
-            Exploring ICICI–2026
+            About KIET Group of Institutions
 
           </h1>
+          <p
+            style={{
+              fontFamily: "Poppins",
+              fontSize: "1.5rem",
+              fontWeight: "500",
+              marginTop: "1rem",
+              color: "#555",
+            }}
+          >
+            Exploring the Future of Computing and Technology        </p>
           <p
             style={{
               fontFamily: "Poppins",
@@ -611,8 +625,7 @@ The International Conference on Innovations in Computational Intelligence (ICICI
               color: "#555",
             }}
           >
-            ICICI-2026 is not just an academic conference but a vibrant platform for networking, collaboration, and knowledge exchange. It brings together researchers, academicians, industry professionals, and students to explore emerging trends and practical applications in AI and computational intelligence. The event encourages meaningful discussions, fosters research partnerships, and provides valuable insights into the future of AI, machine learning, and intelligent systems, making it a must-attend gathering for innovators and technology enthusiasts worldwide .
-          </p>
+KIET Group of Institutions, established in 1998 by the Krishna Charitable Society, is recognized as one of the leading engineering colleges in Delhi-NCR and a pioneer in the field of technical education. Beginning with just 180 students, the institute has grown remarkably to a strength of over 7,500 students, supported by a vibrant alumni network of 20,000+ professionals across the globe. Guided by its vision of skill-oriented and value-based education, KIET focuses on nurturing young minds to become competent and responsible professionals. The institute’s commitment to innovation, academic excellence, and holistic development has earned it numerous Education Excellence Awards and a distinct reputation among technical institutions in Uttar Pradesh. Accredited by NAAC with Grade ‘A+’, and with several programs including CSE, CSIT, CS, ECE, EEE, IT, ME, CE, MCA, MBA, and Pharmacy accredited by NBA, KIET continues to uphold its legacy of “Achieving High” through quality education, strong industry connect, and outstanding placement records. </p>
           <br></br>
            <div style={{
               backgroundColor: '#f0edffff',
