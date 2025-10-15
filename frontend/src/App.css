@@ -20,9 +20,8 @@ html, body {
   overflow-x: hidden;
 }
 
+/* responsive update: removed flex properties that centered the app and prevented full-width elements */
 body {
-  display: flex;
-  place-items: center;
 }
 
 .responsive-row {
@@ -559,6 +558,7 @@ img {
 /* responsive update: layout adjustments for tablet view */
 @media (min-width: 769px) and (max-width: 1024px) {
   .responsive-row {
+    /* responsive update: stacked photos for tablet view */
     flex-direction: column !important;
     gap: 2rem !important;
     align-items: stretch !important;

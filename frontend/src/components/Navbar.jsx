@@ -98,8 +98,7 @@ export default function Navbar() {
             style={{
               width: "100%",
               height: "auto",
-              maxHeight: isMobile ? "150px" : "200px",
-              objectFit: isMobile ? "contain" : "cover",
+              /* responsive update: removed maxHeight and objectFit to allow natural scaling without cropping */
               objectPosition: "center",
               display: "block",
             }}
@@ -132,10 +131,10 @@ export default function Navbar() {
             style={{
               display: "flex",
               listStyle: "none",
-              gap: "0.8rem", // Reduced from 1.5rem to 0.8rem for more compact spacing
+              gap: "0.8rem", 
               margin: 0,
               padding: 0,
-              flexWrap: "nowrap", // Changed to nowrap to keep buttons in one row
+              flexWrap: "nowrap", 
               justifyContent: "center",
               alignItems: "center",
               width: "100%",
@@ -154,7 +153,7 @@ export default function Navbar() {
                     fontFamily: "Poppins",
                     letterSpacing: "0.3px",
                     transition: "color 0.3s ease",
-                    padding: "0.5rem 0.7rem", // Reduced horizontal padding from 1rem to 0.7rem
+                    padding: "0.5rem 0.7rem", 
                     display: "block",
                     textAlign: "center",
                     whiteSpace: "nowrap",
@@ -192,7 +191,7 @@ export default function Navbar() {
               borderRadius: "4px",
               position: "absolute",
               right: "2rem",
-              outline: "none", // Remove focus outline
+              outline: "none", 
             }}
           >
             {isOpen ? <FaTimes /> : <FaBars />}
@@ -206,16 +205,16 @@ export default function Navbar() {
           className={`mobile-nav-overlay ${isClosing ? 'closing' : ''}`}
           style={{
             position: "fixed",
-            top: "80px", // Start below the navbar
-            right: 0, // Positioned at right edge
-            width: "100vw", // Full width
-            height: "60vh", // Extended height to show all buttons
+            top: "80px", 
+            right: 0, 
+            width: "100vw", 
+            height: "60vh", 
             background: "linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.95))",
             backdropFilter: "blur(20px)",
             WebkitBackdropFilter: "blur(20px)",
             boxShadow: "0 5px 25px rgba(0, 0, 0, 0.15)",
-            zIndex: 1001, // Higher z-index to be above everything
-            transform: isClosing ? "translateY(-100%)" : "translateY(0)", // Slide from top
+            zIndex: 1001, 
+            transform: isClosing ? "translateY(-100%)" : "translateY(0)", 
             transition: "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
             borderBottom: "1px solid rgba(0, 0, 0, 0.1)",
             display: "flex",
@@ -235,7 +234,7 @@ export default function Navbar() {
               display: "flex",
               flexDirection: "column",
               gap: "0.3rem",
-              alignItems: "center", // Center align the menu items
+              alignItems: "center", 
               flex: 1,
               justifyContent: "center",
             }}
@@ -245,7 +244,7 @@ export default function Navbar() {
                 key={item.name}
                 style={{
                   opacity: isClosing ? 0 : 1,
-                  transform: isClosing ? "translateY(-10px)" : "translateY(0)", // Slide up animation
+                  transform: isClosing ? "translateY(-10px)" : "translateY(0)", 
                   transition: `all 0.3s cubic-bezier(0.4, 0, 0.2, 1)`,
                   transitionDelay: isClosing ? `${(items.length - index) * 0.03}s` : `${index * 0.05}s`,
                 }}
@@ -266,7 +265,7 @@ export default function Navbar() {
                     display: "block",
                     position: "relative",
                     border: "1px solid transparent",
-                    textAlign: "center", // Center align text
+                    textAlign: "center", 
                     width: "200px",
                     whiteSpace: "nowrap",
                   }}
@@ -297,7 +296,7 @@ export default function Navbar() {
         <div
           style={{
             position: "fixed",
-            top: "calc(80px + 60vh)", // Start below the extended menu
+            top: "calc(80px + 60vh)", 
             left: 0,
             right: 0,
             bottom: 0,

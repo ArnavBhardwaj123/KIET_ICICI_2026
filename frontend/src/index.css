@@ -23,10 +23,9 @@ a:hover {
 }
 
 body {
-  /* The margin was causing the white space around the image */
   margin: 0;
   padding: 0;
-  display: flex;
+  /* responsive update: removed display:flex to allow full-width elements */
   overflow-x: hidden;
   font-family: 'Poppins', sans-serif;
 
@@ -81,6 +80,7 @@ button:focus-visible {
   }
 }
 
+/* responsive update: adjusted navbar for tablet view */
 /* Tablet and medium screens */
 @media (max-width: 1024px) and (min-width: 769px) {
   .nav-links {
