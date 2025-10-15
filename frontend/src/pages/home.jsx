@@ -507,6 +507,7 @@ export default function Home() {
             }}
           >
 The International Conference on Innovations in Computational Intelligence (ICICI-2026), organized by KIET Group of Institutions, Delhi-NCR, Ghaziabad, India, will be held on April 24–25, 2026. This prestigious event aims to bring together researchers, academicians, industry professionals, and students to share innovative ideas and research in artificial intelligence, machine learning, and computational intelligence. The conference will feature keynote sessions by global experts, technical paper presentations, panel discussions, and hands-on workshops covering emerging areas such as deep learning, NLP, computer vision, big data analytics, IoT, and cyber security. ICICI-2026 provides a global platform to explore advancements, foster collaboration, and inspire innovation in the rapidly evolving world of AI and computational sciences.</p>
+           
         </div>
 
         {/* Right Column: Image */}
@@ -575,6 +576,21 @@ The International Conference on Innovations in Computational Intelligence (ICICI
           >
             ICICI-2026 brings together researchers, academicians, industry professionals, and students to explore emerging trends and practical applications in AI and computational intelligence. The event encourages meaningful discussions, fosters research partnerships, and provides valuable insights into the future of AI, machine learning, and intelligent systems.
           </p>
+           <br></br>
+           <div style={{
+              backgroundColor: '#f0edffff',
+              color: '#1f2937',
+              padding: '0.75rem 1rem',
+              borderRadius: '8px',
+              border: '1px solid #ffedd5',
+              maxWidth: '900px',
+              textAlign: 'justify',
+              fontFamily: 'Poppins',
+              fontSize: '1rem',
+              fontWeight: 600
+            }}>
+            All the accepted, registered, and presented papers will be submitted to IEEE Xplore (Scopus Indexed) through IEEE Computational Intelligence Society (CIS) for possible inclusion.
+            </div>
         </div>
       </div>
 
@@ -626,21 +642,7 @@ The International Conference on Innovations in Computational Intelligence (ICICI
             }}
           >
 KIET Group of Institutions, established in 1998 by the Krishna Charitable Society, is recognized as one of the leading engineering colleges in Delhi-NCR and a pioneer in the field of technical education. Beginning with just 180 students, the institute has grown remarkably to a strength of over 7,500 students, supported by a vibrant alumni network of 20,000+ professionals across the globe. Guided by its vision of skill-oriented and value-based education, KIET focuses on nurturing young minds to become competent and responsible professionals. The institute’s commitment to innovation, academic excellence, and holistic development has earned it numerous Education Excellence Awards and a distinct reputation among technical institutions in Uttar Pradesh. Accredited by NAAC with Grade ‘A+’, and with several programs including CSE, CSIT, CS, ECE, EEE, IT, ME, CE, MCA, MBA, and Pharmacy accredited by NBA, KIET continues to uphold its legacy of “Achieving High” through quality education, strong industry connect, and outstanding placement records. </p>
-          <br></br>
-           <div style={{
-              backgroundColor: '#f0edffff',
-              color: '#1f2937',
-              padding: '0.75rem 1rem',
-              borderRadius: '8px',
-              border: '1px solid #ffedd5',
-              maxWidth: '900px',
-              textAlign: 'justify',
-              fontFamily: 'Poppins',
-              fontSize: '1rem',
-              fontWeight: 600
-            }}>
-            All the accepted, registered, and presented papers will be submitted to IEEE Xplore (Scopus Indexed) through IEEE Computational Intelligence Society (CIS) for possible inclusion.
-            </div>
+          
           
         </div>
 
