@@ -322,7 +322,7 @@ export default function Registration() {
           {/* Right Content Area */}
           <div className="mobileview-notmainpadding" style={{ flex: 1, backgroundColor: "white", borderRadius: "15px", padding: "2rem", textAlign: "left" }}>
             <div style={{ marginBottom: "2rem" }}>
-              <h1 style={{ fontFamily: "Poppins", fontSize: "2.5rem", color: "#333", margin: "0 0 1rem 0", fontWeight: "bold" }}>
+              <h1 style={{ fontFamily: "Poppins", fontSize: "2.3rem", color: "#333", margin: "0 0 1rem 0", fontWeight: "bold" }}>
                 REGISTRATION
               </h1>
               <p style={{ fontFamily: "Poppins", fontSize: "1rem", color: "#666", lineHeight: "1.6", margin: "0" }}>

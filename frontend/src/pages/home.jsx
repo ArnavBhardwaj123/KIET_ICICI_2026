@@ -489,7 +489,7 @@ export default function Home() {
         {/* Right Column: Image */}
         <div style={{ flex: 1, alignSelf: 'flex-start' }}>
           <img
-            src={"/images/IMG1.jpg"} // Replace with your image path
+            src={"/images/ABOUT-CONFERENCE.JPG"} // Replace with your image path
             alt="Conference collaboration"
             style={{ width: "100%", height: "50vh", objectFit: "cover", borderRadius: "8px", marginTop: '3.5rem' }}
           />
@@ -508,7 +508,7 @@ export default function Home() {
       >
         <div style={{ flex: 1 }} className="about-section-image">
           <img
-            src={"/images/IMG2.jpg"} // Replace with your image path
+            src={"/images/EXPLORING-ICICI_2026.JPG"} // Replace with your image path
             alt="Conference collaboration"
             style={{ width: "100%", height: "50vh", objectFit: "cover", borderRadius: "8px" }}
           />
@@ -636,7 +636,7 @@ export default function Home() {
           }}
         >
           <img
-            src={"/images/IMG2.jpg"} // Replace with the image you want to use in place of the video
+            src={"/images/ABOUT-KIET.JPG"} // Replace with the image you want to use in place of the video
             alt="Exploring ICICI-2026"
             style={{ width: "100%", height: "50vh", objectFit: "cover", borderRadius: "8px" }}
           />
