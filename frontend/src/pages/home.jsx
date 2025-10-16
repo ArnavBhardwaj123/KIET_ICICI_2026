@@ -31,7 +31,7 @@ const tracksData = [
   },
   {
     id: 4,
-    title: "Cyber-Security & Cry-ptography",
+    title: "Cyber-Security & Cryptography",
     description: "Emerging challenges in data security including Cryptography, Intrusion Detection, AI for Cyber-security, Blockchain, and Post-Quantum Cryptography.",
     icon: "🔒",
     color: "#D0021B"
@@ -47,7 +47,7 @@ const tracksData = [
     id: 6,
     title: "Computer Vision & Image Processing",
     description: "Latest research in computer vision including Image Classification, Object Detection, Facial Recognition, and Medical Image Processing.",
-    icon: "👁️",
+    icon: "👁",
     color: "#50E3C2"
   },
   {
@@ -66,55 +66,92 @@ const tracksData = [
   }
 ];
 
-//TRACKS SECTION COMPONENT!
-function TracksSection() {
+//TRACKS ORBIT COMPONENT!
+function TracksOrbitSection() {
+  const [activeTrack, setActiveTrack] = useState(0);
+  const orbitRadius = 250; // Radius of the orbit in pixels
+
+  const handleTrackClick = (index) => {
+    setActiveTrack(index);
+  };
+
+  // Calculate position for each track node on the orbit
+  // src/pages/home.jsx -> Inside TracksOrbitSection function
+
+  // Calculate position for each track node on the orbit
+  const getPosition = (index) => {
+    const angle = (index / tracksData.length) * 2 * Math.PI - Math.PI / 2; // Start from top
+    const x = orbitRadius * Math.cos(angle);
+    const y = orbitRadius * Math.sin(angle);
+    // Use CSS custom properties (variables) to set the position
+    return {
+      '--x-pos': `${x}px`,
+      '--y-pos': `${y}px`,
+    };
+  };
+
   return (
     <div className="tracks-section">
       {/* Left Content */}
       <div className="tracks-left-content">
         <p className="tracks-kicker">SHAPING THE FUTURE WITH IDEAS</p>
-        <h1 className="tracks-title" style={{ fontSize: "3rem", lineHeight: "1.1", margin: "0" }}>
-          <div style={{ whiteSpace: "nowrap" }}>Explore the Frontiers of</div>
-          <div>Computational<br />Intelligence</div>
+        <h1 className="tracks-title">
+          Explore the Frontiers of
+          <br />
+          Computational
+          <br />
+          Intelligence
         </h1>
-        <p className="tracks-subtitle" style={{ fontSize: "1.4rem", textAlign: "left", fontWeight: "500", marginTop: "1.5rem" }}>
+        <p className="tracks-subtitle">
           Diverse Tracks Showcasing Cutting-Edge Research and Innovation
         </p>
 
-        <div className="tracks-badge">
-          <div className="tracks-badge-inside">
-            <div className="tracks-number">08</div>
-            <div className="tracks-text">
-              TRACKS TO<br />
-              TRANSFORM THE<br />
+        <div className="tracks-info-box">
+          <div className="tracks-count-container">
+            <div className="tracks-count">08</div>
+            <p className="tracks-count-text">
+              TRACKS TO
+              <br />
+              TRANSFORM THE
+              <br />
               WORLD
-            </div>
+            </p>
           </div>
-        </div>
-        <div className="track-items">
-          <div className="track-item-item">
-            <div className="track-item">
-              <div className="arrow-circle"></div>
-              <div>
-                <div className="track-title">Artificial Intelligence & Machine Learning</div>
-              </div>
-            </div>
-            <div className="track-item">
-              <div className="arrow-circle"></div>
-              <div>
-                <div className="track-instruction">Select the track you want to explore by clicking on the arrows</div>
-              </div>
-            </div>
+          <div className="active-track-info">
+            <h3>{tracksData[activeTrack].title}</h3>
+            <p>Select the track you want to explore by clicking on the icons.</p>
           </div>
         </div>
       </div>
 
-      {/* Right Content - Semicircle */}
+      {/* Right Content - The Orbit */}
       <div className="tracks-right-content">
-        <div className="semicircle-container">
-          <div className="semicircle-path"></div>
-          <div className="semicircle-dot dot-1"></div>
-          <div className="semicircle-dot dot-2"></div>
+        <div className="orbit-container">
+          {/* Central Hub with Image */}
+          <div className="central-hub">
+            <img
+              src="/images/robotic-hand.png" // IMPORTANT: Add your robotic hand image here
+              alt="Computational Intelligence"
+              className="central-hub-image"
+            />
+          </div>
+
+          {/* Dotted line for the orbit path */}
+          <div className="orbit-path"></div>
+
+          {/* Track Nodes */}
+          {tracksData.map((track, index) => (
+            <div
+              key={track.id}
+              className={`track-node ${activeTrack === index ? "active" : ""}`}
+              style={getPosition(index)}
+              onClick={() => handleTrackClick(index)}
+            >
+              <div className="track-node-icon" style={{ backgroundColor: track.color }}>
+                {track.icon}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -126,10 +163,19 @@ export default function Home() {
   const [progress, setProgress] = useState(0);
   // Show the premium loader on first mount for a short splash
   const [showLoader, setShowLoader] = useState(true);
+  const [kietImageSlide, setKietImageSlide] = useState(0);
 
   useEffect(() => {
     const t = setTimeout(() => setShowLoader(false), 500);
     return () => clearTimeout(t);
+  }, []);
+
+  // Auto-slide for KIET images every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setKietImageSlide((prev) => (prev === 0 ? 1 : 0));
+    }, 3000);
+    return () => clearInterval(interval);
   }, []);
 
   // Slider data - Only background images change, content stays the same
@@ -236,23 +282,6 @@ export default function Home() {
             >
               ICICI 2026
             </p>
-            {/* Join global experts - visible on mobile only */}
-            <div
-              className="mobile-only-text"
-              style={{
-                color: "#666",
-                fontFamily: "Poppins",
-                fontSize: "1.1rem",
-                fontWeight: "700",
-                lineHeight: "1.7",
-                margin: "0 0 1.5rem 0",
-                textAlign: "left",
-              }}
-            >
-              <div>Join global experts, researchers, and innovators</div>
-              <div>for groundbreaking research, collaboration,</div>
-              <div>and learning.</div>
-            </div>
             <h1
               style={{
                 color: "#333",
@@ -269,8 +298,8 @@ export default function Home() {
             </h1>
           </div>
 
-          {/* Right Content - visible on desktop only */}
-          <div className="desktop-only-text" style={{
+          {/* Right Content */}
+          <div style={{
             position: "absolute",
             right: 0,
             flex: 1,
@@ -403,7 +432,7 @@ export default function Home() {
                 backgroundColor: "white",
                 transform: "translateY(-50%)",
                 zIndex: 2,
-                width: `calc((100% - 4rem) * ${(currentSlide + progress / 100) / slides.length})`,
+                width: `${(100 - (4 * 100 / window.innerWidth)) * ((currentSlide + progress / 100) / slides.length)}%`,
                 transition: progress === 0 ? "none" : "width 0.1s linear",
                 boxShadow: "0 0 6px rgba(255, 255, 255, 0.8)",
                 borderRadius: "1px",
@@ -439,7 +468,7 @@ export default function Home() {
       <div
         style={{
           backgroundColor: "white",
-          paddingTop: "6rem",
+          paddingTop: "12rem",
           paddingBottom: "2rem",
           paddingLeft: "2rem",
           paddingRight: "2rem",
@@ -450,8 +479,12 @@ export default function Home() {
         className="responsive-row"
       >
         {/* Left Column: Text Content */}
-        <div style={{ flex: 1, textAlign: "left" }}>
-
+        <div style={{ flex: 1, textAlign: "justify" }}>
+          <p
+            style={{ color: "teal", fontFamily: "Poppins", fontSize: "1.5rem" }}
+          >
+            Innovate. Collaborate. Lead.
+          </p>
           {/* Moved: About Conference content into the first slot (below Innovate) */}
           <h1
             style={{
@@ -482,8 +515,8 @@ export default function Home() {
               color: "#555",
             }}
           >
-            The International Conference on Innovations in Computational Intelligence (ICICI-2026), organized by KIET Group of Institutions, Delhi-NCR, Ghaziabad, India, will be held on April 24–25, 2026. This prestigious event aims to bring together researchers, academicians, industry professionals, and students to share innovative ideas and research in artificial intelligence, machine learning, and computational intelligence. The conference will feature keynote sessions by global experts, technical paper presentations, panel discussions, and hands-on workshops covering emerging areas such as deep learning, NLP, computer vision, big data analytics, IoT, and cyber security. ICICI-2026 provides a global platform to explore advancements, foster collaboration, and inspire innovation in the rapidly evolving world of AI and computational sciences.</p>
-
+The International Conference on Innovations in Computational Intelligence (ICICI-2026), organized by KIET Group of Institutions, Delhi-NCR, Ghaziabad, India, will be held on April 24–25, 2026. This prestigious event aims to bring together researchers, academicians, industry professionals, and students to share innovative ideas and research in artificial intelligence, machine learning, and computational intelligence. The conference will feature keynote sessions by global experts, technical paper presentations, panel discussions, and hands-on workshops covering emerging areas such as deep learning, NLP, computer vision, big data analytics, IoT, and cyber security. ICICI-2026 provides a global platform to explore advancements, foster collaboration, and inspire innovation in the rapidly evolving world of AI and computational sciences.</p>
+           
         </div>
 
         {/* Right Column: Image */}
@@ -514,11 +547,11 @@ export default function Home() {
           />
         </div>
         {/* Left Column: Text Content */}
-        <div style={{ flex: 1, textAlign: "left" }} className="about-section-text">
+        <div style={{ flex: 1, textAlign: "justify" }} className="about-section-text">
           <p
             style={{ color: "teal", fontFamily: "Poppins", fontSize: "1.5rem" }}
           >
-
+           
           </p>
           {/* Moved: Exploring ICICI content into the second slot */}
           <h1
@@ -552,21 +585,21 @@ export default function Home() {
           >
             ICICI-2026 brings together researchers, academicians, industry professionals, and students to explore emerging trends and practical applications in AI and computational intelligence. The event encourages meaningful discussions, fosters research partnerships, and provides valuable insights into the future of AI, machine learning, and intelligent systems.
           </p>
-          <br></br>
-          <div style={{
-            backgroundColor: '#f0edffff',
-            color: '#1f2937',
-            padding: '0.75rem 1rem',
-            borderRadius: '8px',
-            border: '1px solid #ffedd5',
-            maxWidth: '900px',
-            textAlign: 'left',
-            fontFamily: 'Poppins',
-            fontSize: '1rem',
-            fontWeight: 600
-          }}>
+           <br></br>
+           <div style={{
+              backgroundColor: '#f0edffff',
+              color: '#1f2937',
+              padding: '0.75rem 1rem',
+              borderRadius: '8px',
+              border: '1px solid #ffedd5',
+              maxWidth: '900px',
+              textAlign: 'justify',
+              fontFamily: 'Poppins',
+              fontSize: '1rem',
+              fontWeight: 600
+            }}>
             All the accepted, registered, and presented papers will be submitted to IEEE Xplore (Scopus Indexed) through IEEE Computational Intelligence Society (CIS) for possible inclusion.
-          </div>
+            </div>
         </div>
       </div>
 
@@ -575,17 +608,14 @@ export default function Home() {
         className="video-section responsive-row"
         style={{
           backgroundColor: "white",
-          paddingTop: "4rem",
-          paddingBottom: "0rem",
-          paddingLeft: "2rem",
-          paddingRight: "2rem",
+          padding: "4rem 2rem",
           display: "flex",
           alignItems: "center",
           gap: "2rem",
         }}
       >
         {/* Left Column: Text Content */}
-        <div style={{ flex: 1, textAlign: "left" }}>
+        <div style={{ flex: 1, textAlign: "justify" }}>
           <p
             style={{ color: "teal", fontFamily: "Poppins", fontSize: "1.5rem" }}
           >
@@ -620,9 +650,9 @@ export default function Home() {
               color: "#555",
             }}
           >
-            KIET Group of Institutions, established in 1998 by the Krishna Charitable Society, is recognized as one of the leading engineering colleges in Delhi-NCR and a pioneer in the field of technical education. Beginning with just 180 students, the institute has grown remarkably to a strength of over 7,500 students, supported by a vibrant alumni network of 20,000+ professionals across the globe. Guided by its vision of skill-oriented and value-based education, KIET focuses on nurturing young minds to become competent and responsible professionals. The institute’s commitment to innovation, academic excellence, and holistic development has earned it numerous Education Excellence Awards and a distinct reputation among technical institutions in Uttar Pradesh. Accredited by NAAC with Grade ‘A+’, and with several programs including CSE, CSIT, CS, ECE, EEE, IT, ME, CE, MCA, MBA, and Pharmacy accredited by NBA, KIET continues to uphold its legacy of “Achieving High” through quality education, strong industry connect, and outstanding placement records. </p>
-
-
+KIET Group of Institutions, established in 1998 by the Krishna Charitable Society, is recognized as one of the leading engineering colleges in Delhi-NCR and a pioneer in the field of technical education. Beginning with just 180 students, the institute has grown remarkably to a strength of over 7,500 students, supported by a vibrant alumni network of 20,000+ professionals across the globe. Guided by its vision of skill-oriented and value-based education, KIET focuses on nurturing young minds to become competent and responsible professionals. The institute’s commitment to innovation, academic excellence, and holistic development has earned it numerous Education Excellence Awards and a distinct reputation among technical institutions in Uttar Pradesh. Accredited by NAAC with Grade ‘A+’, and with several programs including CSE, CSIT, CS, ECE, EEE, IT, ME, CE, MCA, MBA, and Pharmacy accredited by NBA, KIET continues to uphold its legacy of “Achieving High” through quality education, strong industry connect, and outstanding placement records. </p>
+          
+          
         </div>
 
 
@@ -635,11 +665,76 @@ export default function Home() {
             alignItems: "center",
           }}
         >
-          <img
-            src={"/images/ABOUT-KIET.JPG"} // Replace with the image you want to use in place of the video
-            alt="Exploring ICICI-2026"
-            style={{ width: "100%", height: "50vh", objectFit: "cover", borderRadius: "8px" }}
-          />
+          {/* Image Slider Container */}
+          <div style={{ position: 'relative', width: '100%', height: '50vh', borderRadius: '8px', overflow: 'hidden' }}>
+            {/* First Image */}
+            <img
+              src={"/images/ABOUT-KIET-1.jpg"}
+              alt="About KIET - Image 1"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                opacity: kietImageSlide === 0 ? 1 : 0,
+                transition: 'opacity 0.5s ease-in-out'
+              }}
+            />
+            {/* Second Image */}
+            <img
+              src={"/images/ABOUT-KIET.JPG"}
+              alt="About KIET - Image 2"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                opacity: kietImageSlide === 1 ? 1 : 0,
+                transition: 'opacity 0.5s ease-in-out'
+              }}
+            />
+            {/* Navigation Dots */}
+            <div style={{
+              position: 'absolute',
+              bottom: '15px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              display: 'flex',
+              gap: '10px',
+              zIndex: 10
+            }}>
+              <div
+                onClick={() => setKietImageSlide(0)}
+                style={{
+                  width: kietImageSlide === 0 ? '12px' : '10px',
+                  height: kietImageSlide === 0 ? '12px' : '10px',
+                  borderRadius: '50%',
+                  backgroundColor: 'white',
+                  border: '2px solid rgba(255, 255, 255, 0.8)',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.3)'
+                }}
+              />
+              <div
+                onClick={() => setKietImageSlide(1)}
+                style={{
+                  width: kietImageSlide === 1 ? '12px' : '10px',
+                  height: kietImageSlide === 1 ? '12px' : '10px',
+                  borderRadius: '50%',
+                  backgroundColor: 'white',
+                  border: '2px solid rgba(255, 255, 255, 0.8)',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.3)'
+                }}
+              />
+            </div>
+          </div>
           {/* Indexing note - highlighted and centered */}
           <div style={{
             marginTop: '1rem',
@@ -700,8 +795,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* TRACKS SECTION */}
-      <TracksSection />
+      {/* REVOLUTIONARY ROTATING TRACKS SECTION */}
+      <TracksOrbitSection />
 
 
 

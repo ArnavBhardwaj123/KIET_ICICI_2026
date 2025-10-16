@@ -480,6 +480,22 @@ export default function CallForPapers() {
                 <br /><br />
                 ICICI-2026 offers a platform for the exchange of ideas and dissemination of innovative research across a variety of tracks. Contributors are invited to submit their work under the following seven tracks:
               </p>
+              {/* IEEE Xplore Indexing Highlight */}
+              <div style={{
+                backgroundColor: '#f0edffff',
+                color: '#1f2937',
+                padding: '1rem 1.5rem',
+                borderRadius: '8px',
+                border: '1px solid #ffedd5',
+                marginTop: '1.5rem',
+                textAlign: 'center',
+                fontFamily: 'Poppins',
+                fontSize: '1rem',
+                fontWeight: 600,
+                lineHeight: '1.6'
+              }}>
+                All the accepted, registered, and presented papers will be submitted to IEEE Xplore (Scopus Indexed) through IEEE Computational Intelligence Society (CIS) for possible inclusion.
+              </div>
             </div>
             <div style={{ border: '1px solid #e2e8f0', borderRadius: '12px', overflow: 'hidden' }}>
               {tracksData.map((track, index) => (
