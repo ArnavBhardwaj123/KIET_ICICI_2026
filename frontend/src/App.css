@@ -146,7 +146,7 @@ html, body {
 }
 
 /* Mobile-only: left align about / conference headings to prevent stretched justified text */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .about-section-text h1,
   .about-text h1,
   .video-section h1,
@@ -207,18 +207,18 @@ img {
   display: flex !important;
 }
 
-@media(max-width:768px){
+@media(max-width:1024px){
   .mobileview-mainpadding{
     padding: 1.5rem 0.5rem !important;
   }
 }
-@media(max-width:768px){
+@media(max-width:1024px){
   .mobileview-notmainpadding{
     padding: 1rem !important;
   }
 }
 /* Mobile / narrow screens */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   /* Mobile: show mobile-only text, hide desktop-only text */
   .mobile-only-text {
     display: block !important;
@@ -274,7 +274,7 @@ img {
     padding-top: 70px !important;
     min-height: 100vh !important;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     .hero-section {
       padding-top: 0px !important;
     }
@@ -555,10 +555,9 @@ img {
   }
 }
 
-/* responsive update: layout adjustments for tablet view */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* responsive update: layout adjustments for all tablets to stack image below text */
+@media (min-width: 768px) and (max-width: 1024px) {
   .responsive-row {
-    /* responsive update: stacked photos for tablet view */
     flex-direction: column !important;
     gap: 2rem !important;
     align-items: stretch !important;
@@ -859,7 +858,7 @@ img {
   gap: 0.5rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .contact-details-grid {
     flex-direction: column;
     align-items: stretch;
@@ -893,7 +892,7 @@ img {
 }
 
 /* Responsive styles for the contact grid */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .contact-grid {
     flex-direction: column;
     align-items: stretch;
