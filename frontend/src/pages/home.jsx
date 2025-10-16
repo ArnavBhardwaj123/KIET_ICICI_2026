@@ -459,7 +459,7 @@ export default function Home() {
         className="responsive-row"
       >
         {/* Left Column: Text Content */}
-        <div style={{ flex: 1, textAlign: "left" }}>
+        <div style={{ flex: 1, textAlign: "justify" }}>
 
           {/* Moved: About Conference content into the first slot (below Innovate) */}
           <h1
@@ -523,7 +523,7 @@ export default function Home() {
           />
         </div>
         {/* Left Column: Text Content */}
-        <div style={{ flex: 1, textAlign: "left" }} className="about-section-text">
+        <div style={{ flex: 1, textAlign: "justify" }} className="about-section-text">
           <p
             style={{ color: "teal", fontFamily: "Poppins", fontSize: "1.5rem" }}
           >
@@ -594,7 +594,7 @@ export default function Home() {
         }}
       >
         {/* Left Column: Text Content */}
-        <div style={{ flex: 1, textAlign: "left" }}>
+        <div style={{ flex: 1, textAlign: "justify" }}>
           <p
             style={{ color: "teal", fontFamily: "Poppins", fontSize: "1.5rem" }}
           >
