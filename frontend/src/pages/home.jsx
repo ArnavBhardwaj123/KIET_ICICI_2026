@@ -147,7 +147,7 @@ function ResearchTracksCarousel() {
         maxWidth: "80rem",
         height: "24rem",
         position: "relative",
-        marginTop: "3rem"
+        marginTop: "6rem"
       }} className="carousel-perspective carousel-container-spacing">
         {/* Navigation Arrows */}
         <button
