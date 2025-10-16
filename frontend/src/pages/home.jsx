@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
+import { FaCalendarAlt, FaMapMarkerAlt, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "../App.css";
 import PremiumLoader from "../components/PremiumLoader";
 
@@ -66,60 +66,386 @@ const tracksData = [
   }
 ];
 
-//TRACKS SECTION COMPONENT!
-function TracksSection() {
-  return (
-    <div className="tracks-section">
-      {/* Left Content */}
-      <div className="tracks-left-content">
-        <p className="tracks-kicker">SHAPING THE FUTURE WITH IDEAS</p>
-        <h1 className="tracks-title" style={{ fontSize: "3rem", lineHeight: "1.1", margin: "0" }}>
-          <div style={{ whiteSpace: "nowrap" }}>Explore the Frontiers of</div>
-          <div>Computational<br />Intelligence</div>
-        </h1>
-        <p className="tracks-subtitle" style={{ fontSize: "1.4rem", textAlign: "left", fontWeight: "500", marginTop: "1.5rem" }}>
-          Diverse Tracks Showcasing Cutting-Edge Research and Innovation
-        </p>
+// RESEARCH TRACKS CAROUSEL COMPONENT
+function ResearchTracksCarousel() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
-        <div className="tracks-badge">
-          <div className="tracks-badge-inside">
-            <div className="tracks-number">08</div>
-            <div className="tracks-text">
-              TRACKS TO<br />
-              TRANSFORM THE<br />
-              WORLD
-            </div>
-          </div>
-        </div>
-        <div className="track-items">
-          <div className="track-item-item">
-            <div className="track-item">
-              <div className="arrow-circle"></div>
-              <div>
-                <div className="track-title">Artificial Intelligence & Machine Learning</div>
+  const researchTracks = [
+    { name: "Artificial Intelligence", role: "AI & ML", icon: "🤖", image: "/images/AI.jpg", color: "#4A90E2" },
+    { name: "Data Science", role: "Big Data Analytics", icon: "📊", image: "/images/Data-science.jpg", color: "#7ED321" },
+    { name: "Internet of Things", role: "IoT & Smart Systems", icon: "🌐", image: "/images/IOT.jpg", color: "#F5A623" },
+    { name: "Cybersecurity", role: "Cryptography", icon: "🔒", image: "/images/Cyber-security.jpg", color: "#D0021B" },
+    { name: "Natural Language", role: "NLP & Speech", icon: "💬", image: "/images/Natural.jpg", color: "#9013FE" },
+    { name: "Computer Vision", role: "Image Processing", icon: "👁️", image: "/images/Computervision.jpg", color: "#50E3C2" },
+    { name: "Interdisciplinary Research", role: "Distributed Tech", icon: "⛓️", image: "/images/Research.jpg", color: "#F8E71C" },
+    { name: "Computational Intelligence", role: "Emerging Tech", icon: "⚛️", image: "/images/Intelligence.jpg", color: "#BD10E0" }
+  ];
+
+  const updateCarousel = (newIndex) => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentIndex((newIndex + researchTracks.length) % researchTracks.length);
+    setTimeout(() => setIsAnimating(false), 800);
+  };
+
+  const getCardPosition = (index) => {
+    const offset = (index - currentIndex + researchTracks.length) % researchTracks.length;
+    if (offset === 0) return "center";
+    if (offset === 1) return "right-1";
+    if (offset === 2) return "right-2";
+    if (offset === researchTracks.length - 1) return "left-1";
+    if (offset === researchTracks.length - 2) return "left-2";
+    return "hidden";
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "ArrowLeft") updateCarousel(currentIndex - 1);
+      if (e.key === "ArrowRight") updateCarousel(currentIndex + 1);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [currentIndex]);
+
+  return (
+    <div style={{
+      // minHeight: "100vh",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      backgroundColor: "#f5f5f5",
+      overflow: "hidden",
+      padding: "2rem 1rem",
+      position: "relative"
+    }}>
+      {/* Title */}
+      <h1 style={{
+        position: "absolute",
+        top: "1.5rem",
+        fontSize: "clamp(3rem, 8vw, 6rem)",
+        fontFamily: "Poppins",
+        fontWeight: "900",
+        textTransform: "uppercase",
+        letterSpacing: "0.05em",
+        backgroundImage: "linear-gradient(to bottom, rgba(8, 42, 123, 0.35) 30%, rgba(255, 255, 255, 0) 76%)",
+        WebkitBackgroundClip: "text",
+        backgroundClip: "text",
+        color: "transparent",
+        pointerEvents: "none",
+        whiteSpace: "nowrap",
+        textAlign: "center"
+      }}
+      className="research-tracks-title">
+        RESEARCH TRACKS
+      </h1>
+
+      {/* Carousel Container */}
+      <div style={{
+        width: "100%",
+        maxWidth: "80rem",
+        height: "24rem",
+        position: "relative",
+        marginTop: "3rem"
+      }} className="carousel-perspective carousel-container-spacing">
+        {/* Navigation Arrows */}
+        <button
+          onClick={() => updateCarousel(currentIndex - 1)}
+          style={{
+            position: "absolute",
+            left: "clamp(0.5rem, 2vw, 1.25rem)",
+            top: "50%",
+            transform: "translateY(-50%)",
+            zIndex: 20,
+            width: "2.5rem",
+            height: "2.5rem",
+            borderRadius: "50%",
+            backgroundColor: "rgba(8, 42, 123, 0.7)",
+            color: "white",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            border: "none",
+            cursor: "pointer",
+            transition: "all 0.3s",
+            outline: "none"
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = "#000";
+            e.currentTarget.style.transform = "translateY(-50%) scale(1.1)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = "rgba(8, 42, 123, 0.7)";
+            e.currentTarget.style.transform = "translateY(-50%) scale(1)";
+          }}
+        >
+          <FaChevronLeft size={20} />
+        </button>
+
+        <button
+          onClick={() => updateCarousel(currentIndex + 1)}
+          style={{
+            position: "absolute",
+            right: "clamp(0.5rem, 2vw, 1.25rem)",
+            top: "50%",
+            transform: "translateY(-50%)",
+            zIndex: 20,
+            width: "2.5rem",
+            height: "2.5rem",
+            borderRadius: "50%",
+            backgroundColor: "rgba(8, 42, 123, 0.7)",
+            color: "white",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            border: "none",
+            cursor: "pointer",
+            transition: "all 0.3s",
+            outline: "none"
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = "#000";
+            e.currentTarget.style.transform = "translateY(-50%) scale(1.1)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = "rgba(8, 42, 123, 0.7)";
+            e.currentTarget.style.transform = "translateY(-50%) scale(1)";
+          }}
+        >
+          <FaChevronRight size={20} />
+        </button>
+
+        {/* Cards */}
+        <div style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "relative"
+        }}>
+          {researchTracks.map((track, i) => {
+            const position = getCardPosition(i);
+            const isCenter = position === "center";
+            
+            let transformStyle = {};
+            let zIndex = 1;
+            let opacity = 0;
+            let pointerEvents = "none";
+
+            if (position === "center") {
+              transformStyle = { transform: "translateX(0) scale(1.1)", zIndex: 10, opacity: 1 };
+              zIndex = 10;
+              opacity = 1;
+              pointerEvents = "auto";
+            } else if (position === "left-1") {
+              transformStyle = { transform: "translateX(-12rem) scale(0.9)", zIndex: 5, opacity: 0.9 };
+              zIndex = 5;
+              opacity = 0.9;
+              pointerEvents = "auto";
+            } else if (position === "left-2") {
+              transformStyle = { transform: "translateX(-24rem) scale(0.8)", zIndex: 1, opacity: 0.7 };
+              zIndex = 1;
+              opacity = 0.7;
+              pointerEvents = "auto";
+            } else if (position === "right-1") {
+              transformStyle = { transform: "translateX(12rem) scale(0.9)", zIndex: 5, opacity: 0.9 };
+              zIndex = 5;
+              opacity = 0.9;
+              pointerEvents = "auto";
+            } else if (position === "right-2") {
+              transformStyle = { transform: "translateX(24rem) scale(0.8)", zIndex: 1, opacity: 0.7 };
+              zIndex = 1;
+              opacity = 0.7;
+              pointerEvents = "auto";
+            }
+
+            return (
+              <div
+                key={i}
+                onClick={() => updateCarousel(i)}
+                className="track-card"
+                style={{
+                  position: "absolute",
+                  width: "14rem",
+                  height: "20rem",
+                  backgroundColor: "white",
+                  borderRadius: "1.5rem",
+                  overflow: "hidden",
+                  boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)",
+                  transition: "all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+                  cursor: "pointer",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: track.image ? "flex-end" : "center",
+                  padding: track.image ? "0" : "1.5rem",
+                  ...transformStyle,
+                  zIndex,
+                  opacity,
+                  pointerEvents,
+                  filter: isCenter ? "grayscale(0%)" : "grayscale(80%)"
+                }}
+              >
+                {track.image ? (
+                  <>
+                    {/* Image taking top half */}
+                    <div style={{
+                      width: "100%",
+                      height: "50%",
+                      backgroundImage: `url(${track.image})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat"
+                    }}></div>
+                    {/* Content area taking bottom half */}
+                    <div style={{
+                      width: "100%",
+                      height: "50%",
+                      padding: "1rem",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      backgroundColor: "white"
+                    }}>
+                      <h3 style={{
+                        fontFamily: "Poppins",
+                        fontSize: "1.3rem",
+                        fontWeight: "700",
+                        color: "#082A7B",
+                        marginBottom: "0.5rem",
+                        textAlign: "center"
+                      }}>
+                        {track.name}
+                      </h3>
+                      <p style={{
+                        fontFamily: "Poppins",
+                        fontSize: "0.85rem",
+                        color: "#666",
+                        textAlign: "center",
+                        opacity: 0.8
+                      }}>
+                        {track.role}
+                      </p>
+                      <div style={{
+                        width: "3rem",
+                        height: "0.25rem",
+                        backgroundColor: track.color,
+                        marginTop: "0.75rem",
+                        borderRadius: "0.125rem"
+                      }}></div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div style={{
+                      fontSize: "4rem",
+                      marginBottom: "1rem",
+                      transition: "transform 0.3s"
+                    }}>
+                      {track.icon}
+                    </div>
+                    <h3 style={{
+                      fontFamily: "Poppins",
+                      fontSize: "1.3rem",
+                      fontWeight: "700",
+                      color: "#082A7B",
+                      marginBottom: "0.5rem",
+                      textAlign: "center"
+                    }}>
+                      {track.name}
+                    </h3>
+                    <p style={{
+                      fontFamily: "Poppins",
+                      fontSize: "0.85rem",
+                      color: "#666",
+                      textAlign: "center",
+                      opacity: 0.8
+                    }}>
+                      {track.role}
+                    </p>
+                    <div style={{
+                      width: "3rem",
+                      height: "0.25rem",
+                      backgroundColor: track.color,
+                      marginTop: "1rem",
+                      borderRadius: "0.125rem"
+                    }}></div>
+                  </>
+                )}
               </div>
-            </div>
-            <div className="track-item">
-              <div className="arrow-circle"></div>
-              <div>
-                <div className="track-instruction">Select the track you want to explore by clicking on the arrows</div>
-              </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
 
-      {/* Right Content - Semicircle */}
-      <div className="tracks-right-content">
-        <div className="semicircle-container">
-          <div className="semicircle-path"></div>
-          <div className="semicircle-dot dot-1"></div>
-          <div className="semicircle-dot dot-2"></div>
-        </div>
+      {/* Track Info */}
+      <div style={{
+        textAlign: "center",
+        marginTop: "2rem",
+        transition: "all 0.5s"
+      }}>
+        <h2 style={{
+          fontFamily: "Poppins",
+          fontSize: "clamp(2rem, 5vw, 3rem)",
+          fontWeight: "700",
+          color: "#082A7B",
+          marginBottom: "0.5rem",
+          position: "relative",
+          display: "inline-block"
+        }}>
+          {researchTracks[currentIndex].name}
+        </h2>
+        <p style={{
+          fontFamily: "Poppins",
+          fontSize: "clamp(1rem, 2.5vw, 1.5rem)",
+          color: "#666",
+          fontWeight: "500",
+          textTransform: "uppercase",
+          letterSpacing: "0.1em",
+          marginTop: "0.5rem",
+          opacity: 0.8
+        }}>
+          {researchTracks[currentIndex].role}
+        </p>
+      </div>
+
+      {/* Dots */}
+      <div style={{
+        display: "flex",
+        justifyContent: "center",
+        gap: "0.75rem",
+        marginTop: "1.5rem",
+        flexWrap: "wrap"
+      }}>
+        {researchTracks.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => updateCarousel(i)}
+            style={{
+              width: "0.75rem",
+              height: "0.75rem",
+              aspectRatio: "1 / 1",
+              borderRadius: "50%",
+              transition: "all 0.3s",
+              cursor: "pointer",
+              border: "none",
+              backgroundColor: i === currentIndex ? "#082A7B" : "rgba(8, 42, 123, 0.2)",
+              transform: i === currentIndex ? "scale(1.25)" : "scale(1)",
+              padding: 0,
+              flexShrink: 0
+            }}
+          />
+        ))}
       </div>
     </div>
   );
 }
+
+//TRACKS SECTION COMPONENT!
+// Old TracksSection removed - replaced with ResearchTracksCarousel
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -725,7 +1051,7 @@ export default function Home() {
           </div>
 
           {/* svg */}
-          <div
+          {/* <div
             style={{
               display: "flex",
               alignItems: "center",
@@ -770,12 +1096,12 @@ export default function Home() {
                 fill="#e0e0e0"
               />
             </svg>
-          </div>
+          </div> */}
         </div>
       </div>
 
-      {/* TRACKS SECTION */}
-      <TracksSection />
+      {/* RESEARCH TRACKS CAROUSEL */}
+      <ResearchTracksCarousel />
 
 
 

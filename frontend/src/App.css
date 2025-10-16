@@ -518,6 +518,16 @@ img {
     max-width: 100% !important;
   }
 
+  /* Research tracks carousel mobile adjustments */
+  .research-tracks-title {
+    top: 1rem !important;
+    font-size: clamp(2.5rem, 6vw, 3rem) !important;
+  }
+
+  .carousel-container-spacing {
+    margin-top: 4.5rem !important;
+  }
+
   /* Fix any absolute positioned elements that might cause overflow */
   [style*="position: absolute"] {
     max-width: 100% !important;
