@@ -645,7 +645,7 @@ export default function Home() {
           }}
         >
           {/* Image Slider Container */}
-          <div style={{ position: 'relative', width: '100%', height: '50vh', borderRadius: '8px', overflow: 'hidden' }}>
+          <div className="image-slider-height" style={{ position: 'relative', width: '100%', height: '50vh', borderRadius: '8px', overflow: 'hidden' }}>
             {/* First Image */}
             <img
               src={"/images/ABOUT-KIET-1.jpg"}

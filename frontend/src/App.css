@@ -23,7 +23,11 @@ html, body {
 /* responsive update: removed flex properties that centered the app and prevented full-width elements */
 /* body {
 } */
-
+@media(max-width: 768px){
+  .image-slider-height{
+    height: 25vh !important;
+  }
+}
 .responsive-row {
   flex-wrap: wrap;
   width: 100%;
@@ -565,6 +569,15 @@ img {
 
   .sidebar {
     width: 100% !important;
+  }
+
+  /* Reorder the second 'About' section (Exploring ICICI) for tablet */
+  .responsive-row .about-section-text {
+    order: 1; /* Text comes first */
+  }
+
+  .responsive-row .about-section-image {
+    order: 2; /* Image comes second */
   }
 
   .hero-section>div:first-of-type h1 {
