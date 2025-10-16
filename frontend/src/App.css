@@ -21,8 +21,8 @@ html, body {
 }
 
 /* responsive update: removed flex properties that centered the app and prevented full-width elements */
-body {
-}
+/* body {
+} */
 
 .responsive-row {
   flex-wrap: wrap;

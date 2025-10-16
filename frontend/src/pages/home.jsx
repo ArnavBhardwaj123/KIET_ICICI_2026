@@ -47,7 +47,7 @@ const tracksData = [
     id: 6,
     title: "Computer Vision & Image Processing",
     description: "Latest research in computer vision including Image Classification, Object Detection, Facial Recognition, and Medical Image Processing.",
-    icon: "👁️",
+    icon: "👁",
     color: "#50E3C2"
   },
   {
@@ -126,10 +126,19 @@ export default function Home() {
   const [progress, setProgress] = useState(0);
   // Show the premium loader on first mount for a short splash
   const [showLoader, setShowLoader] = useState(true);
+  const [kietImageSlide, setKietImageSlide] = useState(0);
 
   useEffect(() => {
     const t = setTimeout(() => setShowLoader(false), 500);
     return () => clearTimeout(t);
+  }, []);
+
+  // Auto-slide for KIET images every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setKietImageSlide((prev) => (prev === 0 ? 1 : 0));
+    }, 3000);
+    return () => clearInterval(interval);
   }, []);
 
   // Slider data - Only background images change, content stays the same
@@ -450,7 +459,7 @@ export default function Home() {
         className="responsive-row"
       >
         {/* Left Column: Text Content */}
-        <div style={{ flex: 1, textAlign: "left" }}>
+        <div style={{ flex: 1, textAlign: "justify" }}>
 
           {/* Moved: About Conference content into the first slot (below Innovate) */}
           <h1
@@ -514,7 +523,7 @@ export default function Home() {
           />
         </div>
         {/* Left Column: Text Content */}
-        <div style={{ flex: 1, textAlign: "left" }} className="about-section-text">
+        <div style={{ flex: 1, textAlign: "justify" }} className="about-section-text">
           <p
             style={{ color: "teal", fontFamily: "Poppins", fontSize: "1.5rem" }}
           >
@@ -585,7 +594,7 @@ export default function Home() {
         }}
       >
         {/* Left Column: Text Content */}
-        <div style={{ flex: 1, textAlign: "left" }}>
+        <div style={{ flex: 1, textAlign: "justify" }}>
           <p
             style={{ color: "teal", fontFamily: "Poppins", fontSize: "1.5rem" }}
           >
@@ -626,7 +635,7 @@ export default function Home() {
         </div>
 
 
-        {/* Right Column: Video and SVG */}
+        {/* Right Column: Image Slider */}
         <div
           style={{
             flex: 1,
@@ -635,11 +644,76 @@ export default function Home() {
             alignItems: "center",
           }}
         >
-          <img
-            src={"/images/ABOUT-KIET.JPG"} // Replace with the image you want to use in place of the video
-            alt="Exploring ICICI-2026"
-            style={{ width: "100%", height: "50vh", objectFit: "cover", borderRadius: "8px" }}
-          />
+          {/* Image Slider Container */}
+          <div style={{ position: 'relative', width: '100%', height: '50vh', borderRadius: '8px', overflow: 'hidden' }}>
+            {/* First Image */}
+            <img
+              src={"/images/ABOUT-KIET-1.jpg"}
+              alt="About KIET - Image 1"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                opacity: kietImageSlide === 0 ? 1 : 0,
+                transition: 'opacity 0.5s ease-in-out'
+              }}
+            />
+            {/* Second Image */}
+            <img
+              src={"/images/ABOUT-KIET.JPG"}
+              alt="About KIET - Image 2"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                opacity: kietImageSlide === 1 ? 1 : 0,
+                transition: 'opacity 0.5s ease-in-out'
+              }}
+            />
+            {/* Navigation Dots */}
+            <div style={{
+              position: 'absolute',
+              bottom: '15px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              display: 'flex',
+              gap: '10px',
+              zIndex: 10
+            }}>
+              <div
+                onClick={() => setKietImageSlide(0)}
+                style={{
+                  width: kietImageSlide === 0 ? '12px' : '10px',
+                  height: kietImageSlide === 0 ? '12px' : '10px',
+                  borderRadius: '50%',
+                  backgroundColor: 'white',
+                  border: '2px solid rgba(255, 255, 255, 0.8)',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.3)'
+                }}
+              />
+              <div
+                onClick={() => setKietImageSlide(1)}
+                style={{
+                  width: kietImageSlide === 1 ? '12px' : '10px',
+                  height: kietImageSlide === 1 ? '12px' : '10px',
+                  borderRadius: '50%',
+                  backgroundColor: 'white',
+                  border: '2px solid rgba(255, 255, 255, 0.8)',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.3)'
+                }}
+              />
+            </div>
+          </div>
           {/* Indexing note - highlighted and centered */}
           <div style={{
             marginTop: '1rem',
@@ -705,6 +779,6 @@ export default function Home() {
 
 
 
-    </div>
-  );
+    </div>
+  );
 }
